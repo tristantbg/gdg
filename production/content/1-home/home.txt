@@ -1,0 +1,13 @@
+Title: Home
+
+----
+
+Text: 
+
+----
+
+Backgroundimage: dn8_web_2.jpg
+
+----
+
+Backgroundimagemobile: dn8_mobile_web.jpg
