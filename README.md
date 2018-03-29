@@ -21,7 +21,8 @@ Kirby runs on PHP 5.3+, Apache, or Nginx
 2. `yarn`
 3. `npm start`
 4. `grunt`
-5. `php -S localhost:9000`
+5. `cd production`
+6. `php -S localhost:9000`
 
 ## License
 [MIT license](http://opensource.org/licenses/mit-license.php)
