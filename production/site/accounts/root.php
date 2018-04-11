@@ -9,4 +9,5 @@ password: >
 language: en
 role: admin
 history:
+  - invites/bruno-serralongue
   - expositions/alex-prager

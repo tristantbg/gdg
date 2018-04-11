@@ -4,10 +4,11 @@ webfont("GLBaderBoldItalic", "gl-bader/GLBaderBoldItalic")
 webfont("GLBaderRegular", "gl-bader/GLBaderRegular")
 webfont("GLBaderItalic", "gl-bader/GLBaderItalic")
 webfont("GT-Sectra-Display-Super", "gt-sectra/GT-Sectra-Display-Super")
+webfont("GT-Sectra-Display-Medium", "gt-sectra/GT-Sectra-Display-Medium")
 
 $font = 1.2rem
-$font-heading = 7rem
-$font-lead = 4.2rem
+$font-heading = 6rem
+$font-lead = 2rem
 $font-reading = 2.4rem
 
 html
@@ -17,13 +18,13 @@ body
 	font-size $font
 
 heading()
-	font-family "GT-Sectra-Display-Super", sans-serif
+	font-family "GT-Sectra-Display-Super", Georgia, serif
+	letter-spacing 0.03em
+	line-height 1
 
 serif()
-	font-family Georgia, "GeorgiaRegular", serif
-	letter-spacing -0.01em
-	&.condensed
-		font-family Garamond
+	font-family "GT-Sectra-Display-Medium", Georgia, serif
+	letter-spacing 0.03em
 
 sans-serif-condensed()
 	font-family "GLBaderNarrowBold", sans-serif
@@ -48,6 +49,13 @@ site-title()
 	letter-spacing 0.16em
 	text-transform uppercase
 
+lead()
+	serif()
+	font-size $font-lead
+	line-height 1.2
+	p
+		line-height 1.2
+
 link()
 	serif()
 	font-size 3rem
@@ -60,11 +68,14 @@ link()
 	sans-serif()
 
 
-.title, .heading, .lead, .bold
+.title, .heading, .bold
 	heading()
 
 .title, .heading
 	font-size $font-heading
+
+.lead
+	lead()
 
 .text, .post-text
 	font-size $font-reading
