@@ -1,14 +1,14 @@
 title: Site
 fields:
   generalSettings:
-    label: Site Settings
+    label: Général
     type: headline
   title:
-    label: Title
+    label: Titre
     type:  text
   description:
     label: Description
-    type:  textarea
+    type:  simplemde
   keywords:
     label: Keywords
     type:  tags
@@ -27,3 +27,41 @@ fields:
     type: image
     help: 1200x630px minimum
     width: 1/2
+  placeSettings:
+    label: Infos pratiques
+    type: headline
+  address:
+    label: Adresse
+    type: simplemde
+  openingHours:
+    label: Heures d'ouverture
+    type: simplemde
+  contact:
+    label: Contact
+    type: simplemde
+  socials:
+    label: Réseaux sociaux
+    type: structure
+    style: table
+    fields:
+      title:
+        label: Title
+        type: text
+        required: true
+      url:
+        label: URL
+        type: url
+        required: true
+  footer:
+    label: Footer
+    type: simplemde
+  legalPage:
+    label: Mentions légales
+    type: select
+    options: pages
+    width: 1/2
+  # creditsPage:
+  #   label: Crédits
+  #   type: select
+  #   options: pages
+  #   width: 1/2

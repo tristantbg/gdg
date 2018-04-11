@@ -1,0 +1,96 @@
+webfont("GLBaderNarrowBold", "gl-bader/GLBaderNarrowBold")
+webfont("GLBaderBold", "gl-bader/GLBaderBold")
+webfont("GLBaderBoldItalic", "gl-bader/GLBaderBoldItalic")
+webfont("GLBaderRegular", "gl-bader/GLBaderRegular")
+webfont("GLBaderItalic", "gl-bader/GLBaderItalic")
+webfont("GT-Sectra-Display-Super", "gt-sectra/GT-Sectra-Display-Super")
+
+$font = 1.2rem
+$font-heading = 7rem
+$font-lead = 4.2rem
+$font-reading = 2.4rem
+
+html
+	font-size 10px
+
+body
+	font-size $font
+
+heading()
+	font-family "GT-Sectra-Display-Super", sans-serif
+
+serif()
+	font-family Georgia, "GeorgiaRegular", serif
+	letter-spacing -0.01em
+	&.condensed
+		font-family Garamond
+
+sans-serif-condensed()
+	font-family "GLBaderNarrowBold", sans-serif
+
+sans-serif()
+	font-family "GLBaderRegular", Helvetica, sans-serif
+	line-height 1.5
+	letter-spacing 0.01em
+	p
+		line-height 1.5
+	strong
+		font-family "GLBaderBold", Helvetica, sans-serif
+	em
+		font-family "GLBaderItalic", Helvetica, sans-serif
+	&.condensed, .condensed
+		sans-serif-condensed()
+
+site-title()
+	sans-serif-condensed()
+	white-space nowrap
+	line-height 1.05
+	letter-spacing 0.16em
+	text-transform uppercase
+
+link()
+	serif()
+	font-size 3rem
+	padding-left ($font-reading*3)
+
+.serif
+	serif()
+
+.sans-serif
+	sans-serif()
+
+
+.title, .heading, .lead, .bold
+	heading()
+
+.title, .heading
+	font-size $font-heading
+
+.text, .post-text
+	font-size $font-reading
+	sans-serif()
+	p
+		text-indent 3em
+
+.lead
+	font-size $font-lead
+
+.caption
+	font-size 1.6rem
+
+.tiny
+	font-size 1.2rem
+
+.upper
+	text-transform uppercase
+
+.lh-normal
+	line-height 1
+	p
+		line-height 1
+
+.ls-small
+	letter-spacing -0.01em
+
+.ls-narrow
+	letter-spacing -0.03em

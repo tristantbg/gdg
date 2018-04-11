@@ -8,14 +8,18 @@
     "prestart": "rm -rf ../dist",
     "start": "webpack --config ./webpack.config.js --watch --watch-poll -d --progress"
   },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11"
+  ],
   "engines": {
     "node": ">=8.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.40",
-    "@babel/preset-env": "^7.0.0-beta.40",
-    "babel-loader": "^8.0.0-beta",
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta.0",
     "grunt": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-cssmin": "^1.0.2",
@@ -23,16 +27,23 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-php": "*",
+    "grunt-svgstore": "^1.0.0",
     "jeet": "*",
     "modernizr-webpack-plugin": "^1.0.6",
+    "normalize.css": "^7.0.0",
     "rupture": "^0.7.1",
     "stylus": "^0.54.5",
     "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^4.1.1",
-    "normalize.css": "^7.0.0",
-    "webpack-cli": "^2.0.11"
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   },
   "dependencies": {
+    "flickity": "^2.1.1",
+    "gr8": "^3.1.5",
+    "gsap": "^1.20.4",
+    "lazysizes": "^4.0.2",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "viewport-units-buggyfill": "^0.6.2"
   }
 }

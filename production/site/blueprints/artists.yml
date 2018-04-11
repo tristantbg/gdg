@@ -1,0 +1,38 @@
+title: Artistes
+icon: users
+deletable: false
+options:
+  url: false
+  template: false
+pages:
+  template:
+    - artist
+  num: zero
+  max: null
+  limit: 200
+  sort: surname asc
+  hide: false
+files: false
+fields:
+  title:
+    label: Titre
+    type: title
+  artists:
+    label: Artistes
+    type: index
+    options: children
+    columns:
+      autoid: ID
+      title: Titre
+      surname: Nom
+      uid: Slug
+  artpieces:
+    label: Œuvres
+    type: index
+    options: grandchildren
+    columns:
+      autoid: ID
+      title: Titre
+      subtitle: Sous-Titre
+      year: Année
+      uid: Slug

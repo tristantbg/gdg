@@ -47,14 +47,20 @@ const projectPath = path.resolve(__dirname);
 //Define all the global config
 const config = {
   entry: {
-    final: projectPath + '/src/js/webpack/app.js'
+    final: projectPath + '/src/js/app.js'
   },
   output: {
-    path: projectPath + 'production/assets/js/build/',
+    path: projectPath + '/production/assets/js/build/',
     filename: 'app.min.js'
   },
   plugins: [
-    new UglifyJsPlugin(),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false
+        }
+      }
+    }),
     new ModernizrWebpackPlugin(modernizrConfig)
   ],
   module: {

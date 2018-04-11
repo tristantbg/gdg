@@ -34,6 +34,20 @@ c::set('autobuster', true);
 c::set('plugin.embed.video.lazyload', true);
 c::set('plugin.embed.video.lazyload.btn', 'assets/images/play.png');
 c::set('kirbytext.image.figure', false);
+c::set('textarea.buttons', array(
+  "bold",
+  "italic",
+  "link",
+  "page",
+  "email"
+));
+c::set('simplemde.buttons', array(
+  "bold",
+  "italic",
+  "link",
+  "page",
+  "email"
+));
 //Typo
 c::set('typography', false);
 c::set('typography.ordinal.suffix', false);
@@ -69,4 +83,19 @@ c::set('routes', array(
 				Sitemap: ' . u('sitemap.xml'), 'txt');
 		}
 		)
-	));
+));
+c::set('languages', array(
+  array(
+    'code'    => 'fr',
+    'name'    => 'Français',
+    'locale'  => 'fr_FR',
+    'default' => true,
+    'url'     => '/',
+  ),
+  array(
+    'code'    => 'en',
+    'name'    => 'English',
+    'locale'  => 'en_US',
+    'url'     => '/en',
+  ),
+));

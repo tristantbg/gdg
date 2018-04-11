@@ -1,0 +1,27 @@
+.embed__thumb>img
+	opacity 1
+	min-width 60px
+	max-width 100px
+	filter: drop-shadow(0 0 20px rgba(0,0,0,0.8))
+
+.lazy, .plyr
+	transition opacity 300ms ease
+	opacity 0
+
+.lazy.lazyloaded, .lazy.flickity-lazyloaded, .plyr.plyr--ready
+	opacity 1
+
+.row
+	span(1)
+
+.column
+	float left
+	display block
+	min-height 1px
+
+.contained
+	padding-left 20%
+	padding-right 20%
+	&.narrow
+		padding-left 15%
+		padding-right 15%

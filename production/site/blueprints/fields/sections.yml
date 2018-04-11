@@ -1,0 +1,43 @@
+type: engineer
+fieldsets:
+  text:
+    label: Text
+    fields:
+      first:
+        label: Text
+        type: textarea
+  images:
+    label: Images
+    fields:
+      first:
+        type: images
+  slider:
+    label: Slider
+    fields:
+      first:
+        type: images
+  quote:
+    label: Quote
+    fields:
+      first:
+        label: Text
+        type: textarea
+        required: true
+      caption:
+        label: Caption
+        type: textarea
+  link:
+    label: Link
+    fields:
+      first:
+        label: URL
+        type: url
+  embed:
+    label: Embed
+    fields:
+      first:
+        label: URL
+        type: url
+      second:
+        label: Caption
+        type: textarea

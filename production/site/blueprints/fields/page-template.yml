@@ -1,0 +1,19 @@
+type: group
+fields:
+  template:
+    label: Page template
+    type: select
+    required: true
+    options:
+      a: A
+      b: B
+      c: C
+  template-image-1:
+    label: Image 1
+    type: hero
+  template-image-2:
+    label: Image 2
+    type: hero
+  template-image-3:
+    label: Image 3
+    type: hero

@@ -1,0 +1,73 @@
+.slider
+	span(1)
+	hideselect()
+	.flickity-viewport
+		+below($md)
+			transition height 0.3s ease
+	.flickity-slider
+		// transform none !important
+	.slide
+		width 100%
+		height 100%
+		.content
+			width 100%
+			height 100%
+			img, video
+				display block
+				width 100%
+				height 100%
+				object-fit contain
+				font-family: "object-fit: contain";
+			&.fullscreen
+				img, video
+					object-fit cover
+					font-family: "object-fit: cover";
+			&.video
+				.plyr--ready
+					width 100%
+					height 100%
+	.flickity-prev-next-button
+		cursor none !important
+		top 0
+		height 100%
+		width 50%
+		margin-top 0
+		background transparent
+		padding 0
+		heading()
+		font-size $font-lead
+		color $primary
+		color var(--bg-color)
+		transform none
+		border none
+		border-radius 0
+		z-index 10
+		+below($md)
+			display none
+		svg
+			display none
+		.cursor
+			align()
+			pointer-events none
+			visibility hidden
+		&.previous
+			left 0
+			.cursor
+				&::after
+					filter: drop-shadow(-2px 2px 2px alpha($secondary, 0.1))
+					content 'Previous'
+		&.next
+			right 0
+			.cursor
+				&::after
+					filter: drop-shadow(2px 2px 2px alpha($secondary, 0.1))
+					content 'Next'
+		&[disabled]
+			display none
+		&:hover
+			.cursor
+				visibility visible
+
+.slider-caption
+	margin-top 1em
+	text-align center

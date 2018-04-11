@@ -1,0 +1,65 @@
+*
+	// hideselect()
+	box-sizing border-box
+
+::selection
+	color alpha($secondary, 0.99)
+	background alpha($menu-color, 0.99)
+
+::-moz-selection
+	color rgba(255,255,255,0.99)
+	background alpha($menu-color, 0.99)
+
+html
+	--bg-color $primary
+	--font-color $secondary
+
+body,html
+	width 100%
+	-webkit-text-size-adjust 100%
+	background $primary
+	background var(--bg-color)
+
+body
+	text-rendering optimizeLegibility
+	font-smoothing()
+	color $secondary
+	color var(--font-color)
+	sans-serif()
+
+p
+	margin-bottom 1em
+	line-height 1
+
+p:last-child
+	margin-bottom 0
+
+a, a:hover, a:visited, a:focus
+	color inherit
+	text-decoration none
+	cursor pointer
+
+video::-webkit-media-controls
+	display none
+
+video::-webkit-media-controls-play-button {}
+
+video::-webkit-media-controls-volume-slider {}
+
+video::-webkit-media-controls-mute-button {}
+
+video::-webkit-media-controls-timeline {}
+
+video::-webkit-media-controls-current-time-display {}
+
+
+#main, #container, #page-content
+	span(1)
+
+#container
+	margin-top 9rem
+
+body.is-loading
+	#page-content
+		opacity 0
+		transition opacity 100ms ease

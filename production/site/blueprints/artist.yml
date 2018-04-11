@@ -1,0 +1,60 @@
+title: Artiste
+icon: user
+pages:
+  template:
+    - artpiece
+  num:
+    mode: default
+    display: null
+  max: null
+  limit: 200
+  sort: false
+  hide: false
+files:
+  sortable: false
+  max: null
+  hide: false
+  sanitize: true
+  fields: null
+  size: null
+  width: null
+  height: null
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
+fields:
+  autoid:
+    type: hidden
+  prevnext: prevnext
+  title:
+    label: Titre de la page
+    type: title
+    width: 1/2
+  surname:
+    label: Nom
+    type: text
+    help: Pour le tri alphabetique
+    required: true
+    width: 1/2
+  featured:
+    label: Featured image
+    type: image
+  summary:
+    label: Infos
+    type: simplemde
+  text:
+    label: Biographie
+    type: simplemde
+  pageindex:
+    label: Œuvres
+    type: index
+    options: children
+    columns:
+      title: Titre
+      uid: Slug

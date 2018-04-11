@@ -1,0 +1,29 @@
+title: Expositions
+icon: bullseye
+deletable: false
+options:
+  url: false
+  template: false
+pages:
+  template:
+    - exhibition
+  num: date
+  max: null
+  limit: 200
+  sort: dateStart desc
+  hide: false
+files: false
+fields:
+  title:
+    label: Titre
+    type: title
+  pageindex:
+    label: Index
+    type: index
+    options: children
+    columns:
+      autoid: ID
+      title: Titre
+      date: Début
+      dateEnd: Fin
+      uid: Slug

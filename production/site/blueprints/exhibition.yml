@@ -1,0 +1,161 @@
+title: Exposition
+icon: eye
+pages: false
+files:
+  sortable: false
+  max: null
+  hide: false
+  sanitize: true
+  fields: null
+  size: null
+  width: null
+  height: null
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
+fields:
+  autoid:
+    type: hidden
+  prevnext: prevnext
+  tabs1:
+    label: Général
+    type: tabs
+  title:
+    label: Titre
+    type: title
+  subtitle:
+    label: Sous-Titre
+    type: textarea
+    buttons: false
+  date:
+    label: Début
+    type: datetime
+    required: true
+    date:
+      format: DD/MM/YYYY
+      default: today
+    time:
+      format: 24
+      interval: 5
+      default: now
+    width: 1/2
+  dateEnd:
+    label: Fin
+    type: datetime
+    required: true
+    date:
+      format: DD/MM/YYYY
+    time:
+      format: 24
+      interval: 5
+    width: 1/2
+  featured:
+    label: Featured image
+    type: image
+    width: 1/2
+  poster:
+    label: Poster
+    type: image
+    width: 1/2
+  summary:
+    label: Chapeau
+    type: simplemde
+  text:
+    label: Texte
+    type: simplemde
+  tabs1bis:
+    label: Sections
+    type: tabs
+  sections:
+    type: engineer
+    fieldsets:
+      text:
+        label: Texte
+        fields:
+          content:
+            label: Texte
+            type: textarea
+      # images:
+      #   label: Images
+      #   fields:
+      #     info:
+      #       label: Images
+      #       type: info
+      #     content:
+      #       type: images
+      slider:
+        label: Slider
+        fields:
+          info:
+            label: Slider
+            type: info
+          content:
+            type: images
+      embed:
+        label: Embed
+        fields:
+          url:
+            label: URL
+            type: url
+            required: true
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+  tabs2:
+    label: Invités
+    type: tabs
+  artists:
+    label: Invités
+    type: structure
+    style: table
+    modalsize: large
+    # validate:
+    #   unique: artist
+    fields:
+      artist:
+        label: Artiste
+        type: quickselect
+        options: query
+        required: true
+        query:
+          page: invites
+          fetch: children
+          value: '{{autoid}}'
+          text: '{{title}}'
+  tabs3:
+    label: Œuvres
+    type: tabs
+  artpieces:
+    label: Œuvres
+    type: structure
+    style: table
+    modalsize: large
+    # validate:
+    #   unique: artpiece
+    fields:
+      artpiece:
+        label: Œuvre
+        type: quickselect
+        options: query
+        required: true
+        query:
+          page: invites
+          fetch: grandchildren
+          value: '{{autoid}}'
+          text: '{{title}} ({{uri}})'
+  tabs4:
+    label: Template
+    type: tabs
+  templateGroup:
+    extends: page-template
+    required: true
+

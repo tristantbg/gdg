@@ -9,4 +9,4 @@ password: >
 language: en
 role: admin
 history:
-  - home
+  - expositions/alex-prager

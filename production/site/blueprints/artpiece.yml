@@ -1,0 +1,43 @@
+title: Œuvre
+icon: paint-brush
+pages: false
+files:
+  sortable: false
+  max: null
+  hide: false
+  sanitize: true
+  fields: null
+  size: null
+  width: null
+  height: null
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
+fields:
+  autoid:
+    type: hidden
+  prevnext: prevnext
+  title:
+    label: Titre
+    type: title
+    width: 1/2
+  featured:
+    label: Featured image
+    type: image
+    width: 1/2
+  year:
+    label: Année
+    type: text
+    width: 1/2
+  summary:
+    label: Légendes & crédits
+    type: simplemde
+  text:
+    label: Description
+    type: simplemde

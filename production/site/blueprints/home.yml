@@ -1,0 +1,78 @@
+title: Homepage
+icon: home
+pages: false
+files:
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
+fields:
+  tabs1:
+    label: Général
+    type: tabs
+  title:
+    label: Titre
+    type:  title
+  exhibition:
+    label: Exposition
+    type: quickselect
+    options: query
+    query:
+      page: exhibitions
+      options: children
+  titleColor:
+    label: Couleur du titre
+    type: color
+  tabs2:
+    label: Template
+    type: tabs
+  template:
+    label: Page template
+    type: select
+    required: true
+    options:
+      a: A
+      b: B
+      c: C
+  template-image-1:
+    label: Image 1
+    type: hero
+  template-image-2:
+    label: Image 2
+    type: hero
+  template-image-3:
+    label: Image 3
+    type: hero
+  template-image-4:
+    label: Image 4
+    type: hero
+  template-image-5:
+    label: Image 5
+    type: hero
+  template-video:
+    label: Video
+    type: structure
+    limit: 1
+    style: table
+    fields:
+      thumb:
+        label: Thumbnail
+        type: image
+      stream:
+        label: Video stream link (.m3u8)
+        type: url
+      mp4:
+        label: Video mp4 link
+        type: url
+      webm:
+        label: Video webm link
+        type: url
+      file:
+        label: Video file
+        type: select
+        options: videos

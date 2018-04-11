@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="<?= $site->language()->code() ?>" class="no-js">
 <head>
 
 	<meta charset="UTF-8" />
@@ -55,7 +55,7 @@
 	<link rel="shortcut icon" href="<?= url('assets/images/favicon.ico') ?>">
 	<link rel="icon" href="<?= url('assets/images/favicon.ico') ?>" type="image/x-icon">
 
-	<?php 
+	<?php
 	echo css('assets/css/build/build.min.css');
 	echo js('assets/js/build/vendor/modernizr-bundle.js');
 	?>
@@ -70,20 +70,23 @@
 
 <body page-type="<?= $page->intendedTemplate() ?>">
 
-<div id="outdated">
-	<div class="inner">
-	<p class="browserupgrade">You are using an <strong>outdated</strong> browser.
-	<br>Please <a href="http://outdatedbrowser.com" target="_blank">upgrade your browser</a> to improve your experience.</p>
-	</div>
-</div>
-
 <div id="loader"></div>
 
 <div id="main">
 
 	<header>
+    <div id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 		<div id="site-title">
-			<h1><?= $site->title()->html() ?></h1>
+      <?php if ($page->isHomepage()): ?>
+        <h1><?= $site->title()->html() ?></h1>
+      <?php else: ?>
+        <?= $site->title()->html() ?>
+      <?php endif ?>
 		</div>
 	</header>
 

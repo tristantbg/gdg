@@ -1,13 +1,14 @@
-title: About
+title: À propos
+deletable: false
+options:
+  url: false
+  template: false
 pages: false
 files: false
 fields:
   title:
-    label: Title
+    label: Titre
     type:  text
   text:
-    label: Text
-    type:  textarea
-  contact:
-    label: Contact
-    type: textarea
+    label: Texte
+    type:  simplemde

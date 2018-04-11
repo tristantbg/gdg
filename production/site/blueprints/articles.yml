@@ -1,0 +1,26 @@
+title: Articles
+icon: newspaper-o
+pages:
+  template:
+    - article
+  num:
+    mode: default
+    display: null
+  max: null
+  limit: 200
+  sort: false
+  hide: false
+files: false
+fields:
+  title:
+    label: Titre
+    type: title
+  pageindex:
+    label: Index
+    type: index
+    options: children
+    columns:
+      autoid: ID
+      title: Titre
+      date: Publication
+      uid: Slug
