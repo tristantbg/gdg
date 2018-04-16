@@ -1,0 +1,1 @@
+<div class="image-placeholder"><div class="inner heading"><?= $text ?></div></div>

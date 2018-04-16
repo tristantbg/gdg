@@ -1,5 +1,7 @@
 </div>
 
+<?php snippet('partials/footer') ?>
+
 </div>
 
 </div>

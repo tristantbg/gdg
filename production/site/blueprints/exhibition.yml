@@ -23,6 +23,9 @@ fields:
   autoid:
     type: hidden
   prevnext: prevnext
+  previewfiles:
+    type: previewfiles
+  reveal: reveal
   tabs1:
     label: Général
     type: tabs
@@ -38,7 +41,6 @@ fields:
     type: datetime
     required: true
     date:
-      format: DD/MM/YYYY
       default: today
     time:
       format: 24
@@ -49,8 +51,6 @@ fields:
     label: Fin
     type: datetime
     required: true
-    date:
-      format: DD/MM/YYYY
     time:
       format: 24
       interval: 5
@@ -60,7 +60,7 @@ fields:
     type: image
     width: 1/2
   poster:
-    label: Poster
+    label: Visuel de l'expo
     type: image
     width: 1/2
   summary:

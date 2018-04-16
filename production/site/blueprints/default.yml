@@ -11,6 +11,11 @@ files:
         - link
         - email
 fields:
+  autoid:
+    type: hidden
+  previewfiles:
+    type: previewfiles
+  reveal: reveal
   title:
     label: Titre
     type:  text

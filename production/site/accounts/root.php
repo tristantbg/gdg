@@ -9,5 +9,8 @@ password: >
 language: en
 role: admin
 history:
-  - invites/bruno-serralongue
-  - expositions/alex-prager
+  - home
+  - art-culture
+  - a-propos
+  - patrimoine
+  - expositions/always-someone-asleep-and-someone-awake

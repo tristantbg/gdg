@@ -1,0 +1,14 @@
+.video-player
+	svg
+		cursor pointer
+		align()
+		width 50%
+		max-width 11rem
+		opacity 0.5
+		transition opacity 200ms ease, width 200ms ease, max-width 200ms ease
+		transform-origin center
+		&:hover
+			width 55%
+			max-width 12rem
+	video.playing + svg
+		opacity 0

@@ -1,4 +1,4 @@
-title: Articles
+title: Tag
 icon: newspaper-o
 pages:
   template:
@@ -12,6 +12,11 @@ pages:
   hide: false
 files: false
 fields:
+  autoid:
+    type: hidden
+  tabs1:
+    label: Général
+    type: tabs
   title:
     label: Titre
     type: title
@@ -24,3 +29,9 @@ fields:
       title: Titre
       date: Publication
       uid: Slug
+  tabs2:
+    label: Template
+    type: tabs
+  templateGroup:
+    extends: page-template
+    required: true

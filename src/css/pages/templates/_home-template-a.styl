@@ -1,0 +1,36 @@
+[page-type=home][page-template=a]
+	#container
+		margin-top 7rem
+	.sticky-title
+		top 12vw
+		span(10/16, $offset: 4/16)
+		margin-top -3.7vw
+		padding-right $gutter
+	.template-component
+		// position absolute
+		z-index 0
+		&.image-1
+			span(5/16, $offset: 1/16)
+		&.images-2_3
+			margin-top -11vw
+			span(6/16, $offset: 9/16)
+			.image-2
+				span(1/2)
+				padding-right ($gutter/2)
+			.image-3
+				span(1/2)
+				padding-left ($gutter/2)
+		&.image-4
+			span(3/16, $offset: 5/16)
+			margin-top -10vw
+			padding-right $gutter
+		&.image-5
+			span(6/16, $offset: 8/16)
+			margin-top -48.5vw
+		&.video-1
+			width 'calc(25% - %s)' % $gutter
+			height 38vw
+			transform translateY(-3vw)
+		&.text-1
+			span(3/16, $offset: 4/16)
+			margin-top -32vw

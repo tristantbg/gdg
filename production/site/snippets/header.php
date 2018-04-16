@@ -68,29 +68,14 @@
 
 </head>
 
-<body page-type="<?= $page->intendedTemplate() ?>">
+<body page-type="<?= $page->intendedTemplate() ?>" page-template="<?= $page->pageTemplate() ?>">
 
 <div id="loader"></div>
 
 <div id="main">
 
-	<header>
-    <div id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-		<div id="site-title">
-      <a href="<?= $site->url() ?>">
-        <?php if ($page->isHomepage()): ?>
-          <h1><?= $site->title()->html() ?></h1>
-        <?php else: ?>
-          <?= $site->title()->html() ?>
-        <?php endif ?>
-      </a>
-		</div>
-	</header>
+	<?php snippet('partials/header') ?>
+	<?php snippet('partials/menu') ?>
 
 	<div id="container">
 

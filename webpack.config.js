@@ -11,11 +11,12 @@ const modernizrConfig = {
   'feature-detects': [
     // "emoji",
     // "history",
+    "svg",
     "touchevents",
     // "video",
     // "webgl",
     "css/animations",
-    // "css/backgroundblendmode",
+    "css/backgroundblendmode",
     // "css/columns",
     // "css/filters",
     "css/flexbox",

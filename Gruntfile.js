@@ -35,6 +35,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        svgstore: {
+          options: {
+            prefix : '', // This will prefix each <g> ID
+          },
+          default : {
+              files: {
+                'production/assets/images/svg-sprite.svg': ['src/svg/*.svg'],
+              }
+            }
+        },
         stylus: {
             compile: {
                 options: {
@@ -80,6 +90,7 @@ module.exports = function(grunt) {
             }
         }
     });
+    grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-stylus');
@@ -89,5 +100,5 @@ module.exports = function(grunt) {
     grunt.registerTask('javascript', ['concat', 'uglify']);
     grunt.registerTask('stylesheets', ['stylus', 'cssmin']);
     grunt.registerTask('test', ['php', 'mocha']);
-    grunt.registerTask('default', ['stylesheets', 'watch']);
+    grunt.registerTask('default', ['svgstore', 'stylesheets', 'watch']);
 };

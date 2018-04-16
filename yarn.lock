@@ -3364,6 +3364,13 @@ he@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.0.0.tgz#6da5b265d7f2c3b5e480749168e0e159d05728da"
 
+hls.js@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-0.9.1.tgz#36516d4fac3ab44108e5c127ef0f3e9cd06f6330"
+  dependencies:
+    string.prototype.endswith "^0.2.0"
+    url-toolkit "^2.1.2"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -5937,6 +5944,10 @@ string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
+string.prototype.endswith@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/string.prototype.endswith/-/string.prototype.endswith-0.2.0.tgz#a19c20dee51a98777e9a47e10f09be393b9bba75"
+
 string_decoder@^1.0.0, string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
@@ -6410,6 +6421,10 @@ url-parse-lax@^3.0.0:
 url-to-options@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/url-to-options/-/url-to-options-1.0.1.tgz#1505a03a289a48cbd7a434efbaeec5055f5633a9"
+
+url-toolkit@^2.1.2:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/url-toolkit/-/url-toolkit-2.1.4.tgz#e0dac60e5fdd50b8ac984307699e8b72439b3fd3"
 
 url@^0.11.0:
   version "0.11.0"

@@ -10,10 +10,12 @@ pages:
   num: date
   max: null
   limit: 200
-  sort: dateStart desc
+  sort: date desc
   hide: false
 files: false
 fields:
+  autoid:
+    type: hidden
   title:
     label: Titre
     type: title

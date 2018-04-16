@@ -32,6 +32,9 @@ fields:
   autoid:
     type: hidden
   prevnext: prevnext
+  previewfiles:
+    type: previewfiles
+  reveal: reveal
   title:
     label: Titre de la page
     type: title

@@ -1,0 +1,14 @@
+title: Index
+icon: list
+deletable: false
+options:
+  url: false
+  template: false
+pages: false
+files: false
+fields:
+  autoid:
+    type: hidden
+  title:
+    label: Titre
+    type:  text

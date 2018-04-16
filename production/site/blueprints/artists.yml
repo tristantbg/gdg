@@ -14,6 +14,8 @@ pages:
   hide: false
 files: false
 fields:
+  autoid:
+    type: hidden
   title:
     label: Titre
     type: title

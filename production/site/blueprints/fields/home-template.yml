@@ -1,0 +1,65 @@
+type: group
+fields:
+  previewfiles:
+    type: previewfiles
+  reveal: reveal
+  pageTemplate:
+    label: Page template
+    type: select
+    required: true
+    options:
+      a: A
+      b: B
+      c: C
+  templateImage1:
+    label: Image 1
+    type: hero
+    width: 1/2
+  templateImage2:
+    label: Image 2
+    type: hero
+    width: 1/2
+  templateImage3:
+    label: Image 3
+    type: hero
+    width: 1/2
+  templateImage4:
+    label: Image 4
+    type: hero
+    width: 1/2
+  templateImage5:
+    label: Image 5
+    type: hero
+    width: 1/2
+  templateVideo1:
+    label: Video
+    type: structure
+    limit: 1
+    entry: >
+      Thumb: {{thumb}}
+      <br>Stream: {{stream}}
+      <br>mp4: {{mp4}}
+      <br>webm: {{webm}}
+      <br>mp4file: {{mp4file}}
+      <br>webmfile: {{webmfile}}
+    fields:
+      thumb:
+        label: Thumbnail
+        type: image
+      stream:
+        label: Video stream link (.m3u8)
+        type: url
+      mp4:
+        label: Video mp4 link (.mp4)
+        type: url
+      webm:
+        label: Video webm link (.webm)
+        type: url
+      filemp4:
+        label: Video file (.mp4)
+        type: select
+        options: videos
+      filewebm:
+        label: Video file (.mp4)
+        type: select
+        options: videos

@@ -2,7 +2,7 @@ title: Site
 fields:
   generalSettings:
     label: Général
-    type: headline
+    type: tabs
   title:
     label: Titre
     type:  text
@@ -27,39 +27,87 @@ fields:
     type: image
     help: 1200x630px minimum
     width: 1/2
-  placeSettings:
-    label: Infos pratiques
-    type: headline
-  address:
-    label: Adresse
-    type: simplemde
-  openingHours:
-    label: Heures d'ouverture
-    type: simplemde
-  contact:
+  tabs2:
+    label: Menu
+    type: tabs
+  menu:
+    label: Menu
+    type: engineer
+    fieldsets:
+      page:
+        label: Page
+        fields:
+          page:
+            label: Page
+            type: quickselect
+            options: query
+            required: true
+            query:
+              page: /
+              fetch: index
+              value: '{{autoid}}'
+              text: '{{title}}'
+            width: 1/2
+          bold:
+            label: Titre en gras
+            type: toggle
+            width: 1/2
+  logosMenu:
+    label: Logos Menu
+    type: images
+  tabs3:
+    label: Footer
+    type: tabs
+  contactEmail:
     label: Contact
-    type: simplemde
+    type: email
   socials:
     label: Réseaux sociaux
-    type: structure
-    style: table
-    fields:
-      title:
-        label: Title
-        type: text
-        required: true
-      url:
-        label: URL
-        type: url
-        required: true
+    type: engineer
+    fieldsets:
+      link:
+        label: Link
+        fields:
+          title:
+            label: Title
+            type: text
+            required: true
+            width: 1/2
+          icon:
+            label: Icone
+            type: select
+            options: images
+            width: 1/2
+          link:
+            label: URL
+            type: url
+            required: true
   footer:
     label: Footer
     type: simplemde
+  pressPage:
+    label: Page presse
+    type: quickselect
+    options: query
+    query:
+      page: /
+      fetch: index
+      value: '{{autoid}}'
+      text: '{{title}}'
+    width: 1/2
   legalPage:
     label: Mentions légales
-    type: select
-    options: pages
+    type: quickselect
+    options: query
+    query:
+      page: /
+      fetch: index
+      value: '{{autoid}}'
+      text: '{{title}}'
     width: 1/2
+  logos:
+    label: Logos
+    type: images
   # creditsPage:
   #   label: Crédits
   #   type: select

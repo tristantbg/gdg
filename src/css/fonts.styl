@@ -5,26 +5,50 @@ webfont("GLBaderRegular", "gl-bader/GLBaderRegular")
 webfont("GLBaderItalic", "gl-bader/GLBaderItalic")
 webfont("GT-Sectra-Display-Super", "gt-sectra/GT-Sectra-Display-Super")
 webfont("GT-Sectra-Display-Medium", "gt-sectra/GT-Sectra-Display-Medium")
+webfont("GT-Sectra-Display-Medium-Italic", "gt-sectra/GT-Sectra-Display-Medium-Italic")
 
-$font = 1.2rem
+$font = 1.4rem
+$fontSmall = 1.2rem
 $font-heading = 6rem
+$font-sub-heading = 4.6rem
+$font-caption-title = 2.6rem
 $font-lead = 2rem
-$font-reading = 2.4rem
+$font-reading = 1.6rem
 
 html
 	font-size 10px
+	+above($md + 1)
+		font-size 0.66vw
 
 body
 	font-size $font
+
+menu()
+	font-family "GT-Sectra-Display-Medium", Georgia, serif
+	font-size 5.2rem
+	line-height 6.2rem
+	letter-spacing 0.03em
+	&.bold
+		font-family "GT-Sectra-Display-Super", Georgia, serif
 
 heading()
 	font-family "GT-Sectra-Display-Super", Georgia, serif
 	letter-spacing 0.03em
 	line-height 1
 
+
+sub-heading()
+	font-family "GT-Sectra-Display-Medium", Georgia, serif
+	letter-spacing 0.03em
+	line-height 1
+
 serif()
 	font-family "GT-Sectra-Display-Medium", Georgia, serif
 	letter-spacing 0.03em
+	em
+		font-family "GT-Sectra-Display-Medium-Italic", Georgia, serif
+	&.bold
+		font-family "GT-Sectra-Display-Super", Georgia, serif
 
 sans-serif-condensed()
 	font-family "GLBaderNarrowBold", sans-serif
@@ -35,7 +59,7 @@ sans-serif()
 	letter-spacing 0.01em
 	p
 		line-height 1.5
-	strong
+	strong, .bold
 		font-family "GLBaderBold", Helvetica, sans-serif
 	em
 		font-family "GLBaderItalic", Helvetica, sans-serif
@@ -45,8 +69,8 @@ sans-serif()
 site-title()
 	sans-serif-condensed()
 	white-space nowrap
-	line-height 1.05
-	letter-spacing 0.16em
+	line-height 1
+	letter-spacing 0.18em
 	text-transform uppercase
 
 lead()
@@ -57,9 +81,10 @@ lead()
 		line-height 1.2
 
 link()
-	serif()
-	font-size 3rem
-	padding-left ($font-reading*3)
+	//
+
+.site-title
+	site-title()
 
 .serif
 	serif()
@@ -67,41 +92,50 @@ link()
 .sans-serif
 	sans-serif()
 
-
-.title, .heading, .bold
+.title, .heading, .heading-font
 	heading()
 
 .title, .heading
 	font-size $font-heading
 
+h2, .sub-heading
+	sub-heading()
+	font-size $font-sub-heading
+
+.caption-title
+	sub-heading()
+	font-size $font-caption-title
+
+.summary
+	font-size ($font + 0.4)
+
+.text
+	font-size $font-reading
+
+.tag
+	color #9b9b9b
+	letter-spacing .15em
+	text-transform uppercase
+	font-size 1rem
+	line-height 2
+	border-bottom 1px solid
+	display inline-block
+
+.caption
+	margin-top .1em
+	color #c8c8c8
+
 .lead
 	lead()
-
-.text, .post-text
-	font-size $font-reading
-	sans-serif()
-	p
-		text-indent 3em
 
 .lead
 	font-size $font-lead
 
-.caption
-	font-size 1.6rem
+.small
+	font-size $fontSmall
 
 .tiny
-	font-size 1.2rem
+	font-size ($fontSmall - 0.2)
 
 .upper
 	text-transform uppercase
-
-.lh-normal
-	line-height 1
-	p
-		line-height 1
-
-.ls-small
-	letter-spacing -0.01em
-
-.ls-narrow
-	letter-spacing -0.03em

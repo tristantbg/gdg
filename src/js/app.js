@@ -7,6 +7,18 @@ import Flickity from 'flickity';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
 
+const freezeVp = (e) => {
+  e.preventDefault();
+};
+
+const stopBodyScrolling = (bool) => {
+  if (bool === true) {
+    document.body.addEventListener("touchmove", freezeVp, false);
+  } else {
+    document.body.removeEventListener("touchmove", freezeVp, false);
+  }
+};
+
 const App = {
   header: null,
   siteTitle: null,
@@ -16,18 +28,18 @@ const App = {
     App.siteTitle = document.querySelector("#site-title");
     App.menu = document.getElementById("menu");
     App.interact.init();
-    setTimeout(function() {
-      document.getElementById("loader").classList.add('hidden');
-    }, 200);
+    document.getElementById("loader").style.display = 'none';
   },
   interact: {
     init: () => {
       App.interact.linkTargets()
       App.interact.eventTargets()
       App.interact.embedKirby()
+      App.interact.videoPlayers.init()
       App.interact.loadSliders()
     },
     eventTargets: () => {
+      App.interact.menuBurger()
     },
     linkTargets: () => {
       document.querySelectorAll("a").forEach(function(element, index) {
@@ -37,6 +49,104 @@ const App = {
           element.setAttribute('target', '_self');
         }
       });
+    },
+    videoPlayers: {
+      init: () => {
+        const videos = document.getElementsByClassName('video-player');
+        if (videos.length < 1) return;
+
+        const hls = [];
+
+        const attachStream = (videoElement) => {
+          if (videoElement.getAttribute('data-stream') && Hls.isSupported()) {
+            hls[i] = new Hls({
+              minAutoBitrate: 1700000
+            });
+            hls[i].loadSource(videoElement.getAttribute('data-stream'));
+            hls[i].attachMedia(videoElement);
+          }
+        };
+        const togglePlay = (videoElement) => {
+          if (videoElement.paused) {
+            videoElement.play();
+            videoElement.classList.add('playing');
+          } else {
+            videoElement.pause();
+            videoElement.classList.remove('playing');
+          }
+        };
+
+        for (var i = 0; i < videos.length; i++) {
+          const videoElement = videos[i].querySelector('video');
+          const videoPlayButton = videos[i].querySelector('.play-button');
+          videoElement.controls = false;
+          attachStream(videoElement);
+          videoPlayButton.addEventListener('click', () => {
+            togglePlay(videoElement);
+          });
+        }
+
+        // const options = {
+        //   controls: ['play-large'],
+        //   clickToPlay: false,
+        //   iconUrl: _root + "/assets/images/plyr.svg"
+        // };
+        // App.players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player, options));
+
+      },
+      pause: () => {
+        App.players.forEach((el) => {
+          el.pause();
+        });
+      }
+    },
+    menuBurger: () => {
+      const burger = document.getElementById('burger');
+      if (burger) {
+        burger.addEventListener('click', () => {
+          document.body.classList.toggle("menu-on");
+          burger.classList.toggle("opened");
+
+        // if (burger.classList.contains("opened")) {
+        //   App.interact.menu.on();
+        // } else {
+        //   App.interact.menu.off();
+        // }
+        });
+      }
+    },
+    menu: {
+      on: () => {
+        stopBodyScrolling(true);
+        App.container.style.marginBottom = "0px";
+        App.menuOver.classList.add('opened');
+        new TimelineLite().set(App.menuOver, {
+          autoAlpha: 1,
+        }).fromTo(App.menuOver, 0.5, {
+          yPercent: 100,
+          force3D: true,
+        }, {
+          yPercent: 0,
+          force3D: true,
+          ease: Power3.easeInOut
+        });
+      },
+      off: () => {
+        stopBodyScrolling(false);
+        burger.classList.remove("opened");
+        App.menuOver.classList.remove('opened');
+        new TimelineLite().fromTo(App.menuOver, 0.5, {
+          yPercent: 0,
+          force3D: true,
+        }, {
+          yPercent: 100,
+          force3D: true,
+          ease: Power3.easeInOut
+        }).set(App.menuOver, {
+          autoAlpha: 0,
+          onComplete: App.sizeSet
+        });
+      }
     },
     embedKirby: () => {
       var pluginEmbedLoadLazyVideo = function() {
@@ -81,7 +191,6 @@ const App = {
           if (!cellElement || !Modernizr.touchevents || cellElement.getAttribute('data-media') == "video") {
             return;
           } else {
-            console.log('ok');
             this.next();
           }
         });

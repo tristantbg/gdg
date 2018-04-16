@@ -58,7 +58,13 @@ video::-webkit-media-controls-current-time-display {}
 	span(1)
 
 #container
-	margin-top 9rem
+	transition filter 400ms ease
+	margin-top 10rem
+
+#page-content
+	min-height 50vh
+	+below($md)
+		padding 0 $gutter
 
 body.is-loading
 	#page-content
