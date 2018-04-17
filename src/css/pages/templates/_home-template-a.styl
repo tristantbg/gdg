@@ -1,18 +1,19 @@
 [page-type=home][page-template=a]
 	#container
 		margin-top 7rem
+	.header-template
+		min-height 91.3vw
 	.sticky-title
-		top 12vw
+		top 12vh
+		margin-top 27.6vw
 		span(10/16, $offset: 4/16)
-		margin-top -3.7vw
 		padding-right $gutter
 	.template-component
-		// position absolute
 		z-index 0
 		&.image-1
 			span(5/16, $offset: 1/16)
 		&.images-2_3
-			margin-top -11vw
+			top 13vw
 			span(6/16, $offset: 9/16)
 			.image-2
 				span(1/2)
@@ -21,16 +22,16 @@
 				span(1/2)
 				padding-left ($gutter/2)
 		&.image-4
+			top 60vw
 			span(3/16, $offset: 5/16)
-			margin-top -10vw
 			padding-right $gutter
 		&.image-5
+			top 37.5vw
 			span(6/16, $offset: 8/16)
-			margin-top -48.5vw
 		&.video-1
+			top 28.1vw
 			width 'calc(25% - %s)' % $gutter
 			height 38vw
-			transform translateY(-3vw)
 		&.text-1
+			top 37vw
 			span(3/16, $offset: 4/16)
-			margin-top -32vw

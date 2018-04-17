@@ -30,8 +30,9 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 */
 
 c::set('debug', true);
+c::set('imagekit.lazy', false);
 c::set('autobuster', true);
-c::set('date.handler', 'strftime'); 
+c::set('date.handler', 'strftime');
 c::set('plugin.embed.video.lazyload', true);
 c::set('plugin.embed.video.lazyload.btn', 'assets/images/play.png');
 c::set('kirbytext.image.figure', false);
@@ -64,7 +65,7 @@ c::set('typography.hyphenation.titlecase', false);
 c::set('sitemap.exclude', array('error'));
 c::set('sitemap.important', array('contact'));
 c::set('thumb.quality', 100);
-//c::set('thumbs.driver', 'im');
+c::set('thumbs.driver', 'im');
 c::set('routes', array(
 	// array(
 	// 	'pattern' => 'info/(:any)',

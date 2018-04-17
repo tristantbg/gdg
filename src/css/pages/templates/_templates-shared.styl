@@ -4,16 +4,24 @@ section.header-template
 	position relative
 	padding-bottom 8rem
 
-.template-component.video-cover
-	overflow hidden
-	video
-		width 100%
+.template-component
+	position absolute
+	top 0
+	left 0
+	&.video-cover
+	 overflow hidden
+	 video
+			width 100%
+			height 100%
+			object-fit cover
+	.video-container
 		height 100%
-		object-fit cover
+		overflow hidden
 
 .sticky-title
 	position sticky
 	position -webkit-sticky
-	height 0
 	z-index 10
 	pointer-events none
+	h1 + .caption-title
+		margin-top 2rem

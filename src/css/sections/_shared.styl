@@ -1,6 +1,5 @@
 section.section
 	span(1)
-	contained()
 	&:not(:first-child)
 		margin-top 12rem
 
@@ -18,3 +17,7 @@ section.section
 	& > *
 		column(1/4, $gutter: 3, $cycle: 4)
 		margin-bottom ($gutter*2)
+
+.page-section
+	.caption-title + *:not(.caption-title)
+		margin-top 2rem

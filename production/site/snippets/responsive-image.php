@@ -1,7 +1,7 @@
 <?php if($image = $field->toFile()): ?>
 
 	<div class="responsive-image">
-		<?php 
+		<?php
 		if (isset($ratio)) {
 			$src = $image->crop(1000, floor(1000/$ratio))->url();
 			$srcset = $image->crop(500, floor(500/$ratio))->url() . ' 500w,';
@@ -12,28 +12,33 @@
 			for ($i = 1000; $i <= 3000; $i += 1000) $srcset .= $image->width($i)->url() . ' ' . $i . 'w,';
 		}
 		?>
-		<img class="lazy lazyload" 
-		src="<?= $image->width(50)->dataUri() ?>" 
-		data-src="<?= $src ?>" 
-		data-srcset="<?= $srcset ?>" 
-		data-sizes="auto" 
-		data-optimumx="1.5" 
+    <?php if (isset($ratio)): ?>
+    <div class="ph" style="padding-bottom: <?= number_format(100 / $ratio, 5, '.', '') ?>%"></div>
+    <?php else: ?>
+    <div class="ph" style="padding-bottom: <?= number_format(100 / $image->ratio(), 5, '.', '') ?>%"></div>
+    <?php endif ?>
+		<img class="lazy lazyload"
+		src="<?= $image->width(50)->dataUri() ?>"
+		data-src="<?= $src ?>"
+		data-srcset="<?= $srcset ?>"
+		data-sizes="auto"
+		data-optimumx="1.5"
 		<?php if (isset($caption) && $caption): ?>
-		alt="<?= $caption.' - © '.$site->title()->html() ?>" 
+		alt="<?= $caption.' - © '.$site->title()->html() ?>"
 		<?php elseif ($image->caption()->isNotEmpty()): ?>
-		alt="<?= $image->caption().' - © '.$site->title()->html() ?>" 
+		alt="<?= $image->caption().' - © '.$site->title()->html() ?>"
 		<?php else: ?>
-		alt="<?= $page->title()->html().' - © '.$site->title()->html() ?>" 
+		alt="<?= $page->title()->html().' - © '.$site->title()->html() ?>"
 		<?php endif ?>
 		width="100%" height="auto" />
 		<noscript>
-			<img src="<?= $src ?>" 
+			<img src="<?= $src ?>"
 			<?php if (isset($caption) && $caption): ?>
-			alt="<?= $caption.' - © '.$site->title()->html() ?>" 
+			alt="<?= $caption.' - © '.$site->title()->html() ?>"
 			<?php elseif ($image->caption()->isNotEmpty()): ?>
-			alt="<?= $image->caption().' - © '.$site->title()->html() ?>" 
+			alt="<?= $image->caption().' - © '.$site->title()->html() ?>"
 			<?php else: ?>
-			alt="<?= $page->title()->html().' - © '.$site->title()->html() ?>" 
+			alt="<?= $page->title()->html().' - © '.$site->title()->html() ?>"
 			<?php endif ?>
 			width="100%" height="auto" />
 		</noscript>

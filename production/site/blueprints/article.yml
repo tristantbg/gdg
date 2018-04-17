@@ -24,7 +24,7 @@ fields:
     type: hidden
   prevnext: prevnext
   previewfiles:
-    type: previewfiles
+    type: hidden
   reveal: reveal
   tabs1:
     label: Général
@@ -32,6 +32,9 @@ fields:
   title:
     label: Titre
     type: title
+  secondaryTitle:
+    label: Titre Secondaire
+    type: text
   subtitle:
     label: Sous-Titre
     type: text
@@ -60,3 +63,102 @@ fields:
   text:
     label: Texte
     type: simplemde
+  tabs2:
+    label: Sections
+    type: tabs
+  sections:
+    type: engineer
+    fieldsets:
+      text:
+        label: Texte
+        fields:
+          info:
+            label: Texte
+            type: info
+          content:
+            label: Texte
+            type: textarea
+      # images:
+      #   label: Images
+      #   fields:
+      #     info:
+      #       label: Images
+      #       type: info
+      #     content:
+      #       type: images
+      announcement:
+        label: Annonce
+        fields:
+          info:
+            label: Annonce
+            type: info
+          title:
+            label: Titre
+            type: text
+          summary:
+            label: Texte
+            type: textarea
+          tags:
+            label: Tags
+            type: tags
+          link:
+            label: Lien
+            type: url
+      relatedpages:
+        label: Pages associées
+        fields:
+          info:
+            label: Pages associées
+            type: info
+          title:
+            label: Titre
+            type: text
+          content:
+            type: engineer
+            fields:
+              content:
+                label: Page
+                type: quickselect
+                options: query
+                required: true
+                query:
+                  page: /
+                  fetch: index
+                  template:
+                    - exhibition
+                    - article
+                  value: '{{autoid}}'
+                  text: '{{title}} ({{uri}})'
+      slider:
+        label: Slider
+        fields:
+          info:
+            label: Slider
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          content:
+            type: images
+      embed:
+        label: Embed
+        fields:
+          info:
+            label: Embed
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          thumb:
+            label: Thumb
+            type: image
+          url:
+            label: URL
+            type: url
+            required: true

@@ -3,7 +3,7 @@
 return function ($site, $pages, $page) {
 
 	return array(
-    'pagesIndex' => $site->index()->visible()
+		'articles' => $page->children()->visible()->sortBy('date', 'desc'),
 	);
 }
 

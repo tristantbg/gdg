@@ -19,6 +19,8 @@ html
 	font-size 10px
 	+above($md + 1)
 		font-size 0.66vw
+	+above($xl + 1)
+		font-size 0.44vw
 
 body
 	font-size $font
@@ -35,7 +37,6 @@ heading()
 	font-family "GT-Sectra-Display-Super", Georgia, serif
 	letter-spacing 0.03em
 	line-height 1
-
 
 sub-heading()
 	font-family "GT-Sectra-Display-Medium", Georgia, serif
@@ -94,6 +95,8 @@ link()
 
 .title, .heading, .heading-font
 	heading()
+	&.secondary
+		sub-heading()
 
 .title, .heading
 	font-size $font-heading

@@ -3,11 +3,11 @@ $transition = 200ms
 #burger
   backface-visibility hidden
   -webkit-backface-visibility hidden
-  width 2.4rem
-  height 1.9rem
+  width 20px
+  height 14px
   margin $padding
   position fixed
-  left 'calc(20% - %s)' % $padding
+  left 'calc(13% - %s)' % ($padding*2)
   top 0
   transform rotate(0deg)
   transition all $transition
@@ -42,7 +42,7 @@ $transition = 200ms
     transition-delay $transition
   span:nth-child(2), span:nth-child(3)
     transition-delay 0s
-    top 0.8rem
+    top 6px
   span:nth-child(4)
     transition-delay $transition
     bottom 0
@@ -50,7 +50,7 @@ $transition = 200ms
     span:nth-child(1), span:nth-child(4)
       transition-delay 0s
       opacity 0
-      top 0.8rem
+      top 6px
     span:nth-child(2)
       transition-delay $transition
       transform rotate(45deg)

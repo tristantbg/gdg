@@ -14,7 +14,7 @@ fields:
   autoid:
     type: hidden
   previewfiles:
-    type: previewfiles
+    type: hidden
   reveal: reveal
   title:
     label: Titre

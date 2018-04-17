@@ -11,6 +11,37 @@ fields:
       a: A
       b: B
       c: C
+  featuredPage:
+    label: Featured page
+    type: quickselect
+    options: query
+    width: 1/2
+    required: true
+    query:
+      page: /
+      fetch: index
+      template:
+        - exhibition
+        - article
+      value: '{{autoid}}'
+      text: '{{title}} ({{uri}})'
+  featuredPage2:
+    label: Featured page 2
+    type: quickselect
+    options: query
+    width: 1/2
+    help: Pour template C
+    query:
+      page: /
+      fetch: index
+      template:
+        - exhibition
+        - article
+      value: '{{autoid}}'
+      text: '{{title}} ({{uri}})'
+  titleColor:
+    label: Couleur du titre
+    type: color
   templateImage1:
     label: Image 1
     type: hero

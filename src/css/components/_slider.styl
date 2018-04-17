@@ -1,4 +1,4 @@
-.slider
+.slider, .inline-slider
 	span(1)
 	hideselect()
 	.flickity-viewport
@@ -27,47 +27,45 @@
 					width 100%
 					height 100%
 	.flickity-prev-next-button
-		cursor none !important
 		top 0
 		height 100%
-		width 50%
+		width 15rem
 		margin-top 0
 		background transparent
 		padding 0
-		heading()
 		font-size $font-lead
-		color $primary
-		color var(--bg-color)
 		transform none
 		border none
 		border-radius 0
 		z-index 10
-		+below($md)
-			display none
-		svg
-			display none
+		.flickity-button-icon
+			left 15%
+			width 70%
 		.cursor
 			align()
 			pointer-events none
 			visibility hidden
 		&.previous
-			left 0
+			left -15rem
 			.cursor
 				&::after
-					filter: drop-shadow(-2px 2px 2px alpha($secondary, 0.1))
 					content 'Previous'
 		&.next
-			right 0
+			right -15rem
 			.cursor
 				&::after
-					filter: drop-shadow(2px 2px 2px alpha($secondary, 0.1))
 					content 'Next'
 		&[disabled]
 			display none
 		&:hover
 			.cursor
 				visibility visible
+		&:focus
+			box-shadow none
+			outline none
 
 .slider-caption
 	margin-top 1em
 	text-align center
+	+above($md + 1)
+		padding 0 25%

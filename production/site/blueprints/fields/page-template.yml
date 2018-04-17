@@ -7,15 +7,24 @@ fields:
     type: select
     required: true
     options:
+      none: Aucun
       a: A
       b: B
       c: C
   templateImage1:
     label: Image 1
     type: hero
+    width: 1/2
   templateImage2:
     label: Image 2
     type: hero
+    width: 1/2
   templateImage3:
     label: Image 3
     type: hero
+    width: 1/2
+  templateImage4:
+    label: Image 4
+    type: hero
+    help: Remplace le “Visuel d'Expo”
+    width: 1/2

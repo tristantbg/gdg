@@ -33,7 +33,7 @@ fields:
     type: hidden
   prevnext: prevnext
   previewfiles:
-    type: previewfiles
+    type: hidden
   reveal: reveal
   title:
     label: Titre de la page

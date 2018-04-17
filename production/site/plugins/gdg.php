@@ -20,7 +20,7 @@ function translate($key, $replacements = array()) {
 
 page::$methods['formattedDate'] = function($page) {
 
-	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd')) {
+	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
 		$formattedDate = utf8_encode($page->date('%e&nbsp;%B %Y'));
 	}
 	else if($page->date('%Y') == $page->date('%Y', 'dateEnd')) {
@@ -36,6 +36,29 @@ page::$methods['formattedDate'] = function($page) {
 	return $formattedDate;
 };
 
+page::$methods['displayTags'] = function($page) {
+
+  if ($page->intendedTemplate() == 'exhibition') {
+
+    $html = '<div class="tag">'.l::get('exhibitions.singular').'</div>';
+
+  } else {
+
+    $tags = $page->tags()->split();
+    $html = '';
+
+    if(count($tags) > 0) {
+
+      foreach ($tags as $key => $t) {
+        $html .= '<div class="tag">'.html($t).'</div>';
+      }
+
+    }
+
+  }
+    return '<div class="tags">'.$html.'</div>';
+};
+
 page::$methods['getArtpieces'] = function($page) {
 
 	$artpieces = new Collection();
@@ -49,7 +72,7 @@ page::$methods['getArtpieces'] = function($page) {
 			$artpieces->data[] = $artPage;
 		}
 	}
-	
+
 	return $artpieces;
 };
 
@@ -66,6 +89,22 @@ page::$methods['getExhibitions'] = function($page) {
 			}
 		}
 	}
-	
+
 	return $relatedExhibitions;
+};
+
+page::$methods['getArtists'] = function($page) {
+
+  $artists = new Collection();
+
+  if($page->artists()->isNotEmpty()) {
+    $index = site()->index()->filterBy('intendedTemplate', 'artist')->visible();
+    $artistsList = $page->artists()->toStructure();
+    foreach ($artistsList as $key => $artId) {
+      $artistPage = $index->findBy('autoid', $artId);
+      $artists->data[] = $artistPage;
+    }
+  }
+
+  return $artists;
 };

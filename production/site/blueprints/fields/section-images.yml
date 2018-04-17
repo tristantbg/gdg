@@ -1,7 +1,0 @@
-label: Images
-fields:
-  info:
-    label: Images
-    type: info
-  content:
-    type: images

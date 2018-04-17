@@ -6,7 +6,7 @@
 		<div class="db c6 fl tc2" md="c12 mb4" sm="tc1">
 			<?= $site->footer()->kt() ?>
 		</div>
-		<div id="footer-links" class="c3 co3 fl bold" md="c12 co0">
+		<div id="footer-links" class="c3 co3 fl bold" md="c6 co0" sm="c12">
 			<div class="row mb2">
 				<div class="row mb1"><?= l::get('search') ?></div>
 				<div class="row">
@@ -25,7 +25,7 @@
 					<?php foreach($site->languages() as $language): ?>
 						<li>
 							<a class="button" href="<?= $page->url($language->code()) ?>">
-								<?= html($language->name()) ?>
+								<?= l::get('language.'.$language->code()) ?>
 							</a>
 						</li>
 					<?php endforeach ?>
@@ -74,7 +74,7 @@
 				</div>
 			<?php endforeach ?>
 		</div>
-		<?php if ($legal = $site->index()->findBy('autoid', $site->legalPage()->value())): ?>	
+		<?php if ($legal = $site->index()->findBy('autoid', $site->legalPage()->value())): ?>
 		<div class="c3 co3 fl x xafe" md="c4" sm="c12 co0 mt2">
 			<a href="<?= $legal->url() ?>"><?= $legal->title()->html() ?></a>
 		</div>

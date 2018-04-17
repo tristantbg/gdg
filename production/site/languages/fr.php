@@ -1,5 +1,8 @@
 <?php
 
+
+l::set('language.fr', 'Français');
+l::set('language.en', 'Anglais');
 l::set('artpieces.singular', 'Œuvre');
 l::set('artpieces.plural', 'Œuvres');
 l::set('exhibitions.singular', 'Exposition');

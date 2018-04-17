@@ -1,0 +1,39 @@
+[page-type=home][page-template=b]
+	#container
+		margin-top 7rem
+	.header-template
+		min-height 77.5vw
+	.sticky-title
+		top 12vh
+		margin-top 22.6vw
+		span(9/16, $offset: 5/16)
+		padding-right $gutter
+	.template-component
+		z-index 0
+		&.images-1_2
+			top 8vw
+			span(6/16, $offset: 1/16)
+			.image-1
+				span(1/2)
+				padding-right ($gutter/2)
+			.image-2
+				span(1/2)
+				padding-left ($gutter/2)
+		&.image-3
+			top 23.1vw
+			span(4/16, $offset: 12/16)
+		&.image-4
+			top 35vw
+			span(5/16)
+			padding-right $gutter
+		&.image-5
+			top 49.5vw
+			span(5/16, $offset: 6/16)
+			padding $gutter
+		&.video-1
+			span(4/16, $offset: 8/16)
+			width 'calc(25% - %s)' % $gutter
+			height 38vw
+		&.text-1
+			top 34.6vw
+			span(3/16, $offset: 5/16)

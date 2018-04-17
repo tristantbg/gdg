@@ -20,23 +20,105 @@ fields:
   title:
     label: Titre
     type:  title
-  featuredPage:
-    label: Featured page
-    type: quickselect
-    options: query
-    width: 1/2
-    query:
-      page: /
-      fetch: index
-      template:
-        - exhibition
-        - article
-      value: '{{autoid}}'
-      text: '{{title}} ({{uri}})'
-  titleColor:
-    label: Couleur du titre
-    type: color
-    width: 1/2
+  tabs1bis:
+    label: Sections
+    type: tabs
+  sections:
+    type: engineer
+    fieldsets:
+      text:
+        label: Texte
+        fields:
+          info:
+            label: Texte
+            type: info
+          content:
+            label: Texte
+            type: textarea
+      # images:
+      #   label: Images
+      #   fields:
+      #     info:
+      #       label: Images
+      #       type: info
+      #     content:
+      #       type: images
+      announcement:
+        label: Annonce
+        fields:
+          info:
+            label: Annonce
+            type: info
+          title:
+            label: Titre
+            type: text
+          summary:
+            label: Texte
+            type: textarea
+          tags:
+            label: Tags
+            type: tags
+          link:
+            label: Lien
+            type: url
+      relatedpages:
+        label: Pages associées
+        fields:
+          info:
+            label: Pages associées
+            type: info
+          title:
+            label: Titre
+            type: text
+          content:
+            type: engineer
+            fields:
+              content:
+                label: Page
+                type: quickselect
+                options: query
+                required: true
+                query:
+                  page: /
+                  fetch: index
+                  template:
+                    - exhibition
+                    - article
+                  value: '{{autoid}}'
+                  text: '{{title}} ({{uri}})'
+      slider:
+        label: Slider
+        fields:
+          info:
+            label: Slider
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          content:
+            type: images
+      embed:
+        label: Embed
+        fields:
+          info:
+            label: Embed
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          thumb:
+            label: Thumb
+            type: image
+          url:
+            label: URL
+            type: url
+            required: true
   tabs2:
     label: Template
     type: tabs
