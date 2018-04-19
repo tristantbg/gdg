@@ -6,7 +6,7 @@
 	/>
 	<label>
 		<input type="submit" value="">
-		<div class="button">
+		<div class="arrow-button">
 			<svg role="presentation">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="<?= url('assets/images/svg-sprite.svg') ?>#arrow-right"></use>
 			</svg>

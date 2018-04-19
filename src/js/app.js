@@ -42,13 +42,15 @@ const App = {
       App.interact.menuBurger()
     },
     linkTargets: () => {
-      document.querySelectorAll("a").forEach(function(element, index) {
+      const links = document.querySelectorAll("a");
+      for (var i = 0; i < links.length; i++) {
+        const element = links[i];
         if (element.host !== window.location.host) {
           element.setAttribute('target', '_blank');
         } else {
           element.setAttribute('target', '_self');
         }
-      });
+      }
     },
     videoPlayers: {
       init: () => {
@@ -96,9 +98,9 @@ const App = {
 
       },
       pause: () => {
-        App.players.forEach((el) => {
-          el.pause();
-        });
+        for (var i = 0; i < App.players.length; i++) {
+          App.players[i].pause();
+        }
       }
     },
     menuBurger: () => {

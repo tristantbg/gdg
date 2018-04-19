@@ -48,9 +48,7 @@
 					</svg>
 				</li>
 				<ul class="submenu">
-					<li>
-						<?php snippet('searchbar') ?>
-					</li>
+					<?php snippet('mc-newsletter') ?>
 				</ul>
 			</ul>
 
