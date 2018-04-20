@@ -3,7 +3,7 @@
 		<?php foreach ($exhibitions as $key => $exhibition): ?>
 			<a href="<?= $exhibition->url() ?>" class="row exhibition-link">
 				<?php if ($exhibition->poster()->toFile()): ?>
-					<?php snippet('responsive-image', array('field' => $exhibition->featured())) ?>
+					<?php snippet('responsive-image', array('field' => $exhibition->poster())) ?>
 				<?php else: ?>
 					<?php snippet('image-placeholder', array('text' => substr($exhibition->title(), 0, 1))) ?>
 				<?php endif ?>

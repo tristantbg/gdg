@@ -10,7 +10,24 @@ pages:
   limit: 200
   sort: false
   hide: false
-files: false
+files:
+  sortable: false
+  max: null
+  hide: false
+  sanitize: true
+  fields: null
+  size: null
+  width: null
+  height: null
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
 fields:
   autoid:
     type: hidden

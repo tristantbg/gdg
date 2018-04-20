@@ -1,16 +1,21 @@
 type: group
 fields:
   previewfiles:
-    type: previewfiles
+    type: hidden
   pageTemplate:
     label: Page template
     type: select
     required: true
+    width: 1/2
     options:
       none: Aucun
       a: A
       b: B
       c: C
+  titleColor:
+    label: Couleur du titre
+    type: color
+    width: 1/2
   templateImage1:
     label: Image 1
     type: hero

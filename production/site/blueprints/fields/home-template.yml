@@ -1,7 +1,7 @@
 type: group
 fields:
   previewfiles:
-    type: previewfiles
+    type: hidden
   reveal: reveal
   pageTemplate:
     label: Page template

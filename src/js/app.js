@@ -6,6 +6,7 @@ require('../../node_modules/lazysizes/plugins/object-fit/ls.object-fit.js');
 import Flickity from 'flickity';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
+import InfiniteGrid, { GridLayout } from "@egjs/infinitegrid";
 
 const freezeVp = (e) => {
   e.preventDefault();
@@ -33,6 +34,7 @@ const App = {
   interact: {
     init: () => {
       App.interact.linkTargets()
+      App.interact.indexGrid()
       App.interact.eventTargets()
       App.interact.embedKirby()
       App.interact.videoPlayers.init()
@@ -110,11 +112,11 @@ const App = {
           document.body.classList.toggle("menu-on");
           burger.classList.toggle("opened");
 
-          // if (burger.classList.contains("opened")) {
-          //   App.interact.menu.on();
-          // } else {
-          //   App.interact.menu.off();
-          // }
+        // if (burger.classList.contains("opened")) {
+        //   App.interact.menu.on();
+        // } else {
+        //   App.interact.menu.off();
+        // }
         });
       }
     },
@@ -158,6 +160,23 @@ const App = {
         d.src = d.dataset.src, e.removeChild(this)
       };
       for (var d = document.getElementsByClassName("embed__thumb"), t = 0; t < d.length; t++) d[t].addEventListener("click", pluginEmbedLoadLazyVideo, !1)
+    },
+    indexGrid: () => {
+      const grid = document.getElementById('index-artpieces');
+
+      if(grid) {  
+      const ig = new InfiniteGrid(grid, {
+        horizontal: false,
+      });
+      ig.setLayout(GridLayout, {
+        margin: 23
+      });
+
+      var event = document.createEvent('HTMLEvents');
+      event.initEvent('resize', true, false);
+      window.dispatchEvent(event);
+      }
+
     },
     loadSliders: () => {
       const initFlickity = (element, options) => {

@@ -22,8 +22,10 @@
 	</div>
 </div>
 
-<?php snippet('sections/artpieces/artpieces-container') ?>
+<div id="page-sections">
+	<?php snippet('sections/artpieces/artpieces-container') ?>
 
-<?php snippet('sections/exhibitions/exhibitions-container', array('center' => true)) ?>
+	<?php snippet('sections/exhibitions/exhibitions-container', array('center' => true)) ?>
+</div>
 
 <?php snippet('footer') ?>

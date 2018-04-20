@@ -2,7 +2,11 @@
 		<?php if ($page->intendedTemplate() != 'artpiece'): ?>
 		<a href="<?= $artpiece->url() ?>" class="artpiece-link">
 		<?php endif ?>
-		<?php snippet('responsive-image', array('field' => $artpiece->featured())) ?>
+		<?php if ($artpiece->featured()->toFile()): ?>
+			<?php snippet('responsive-image', array('field' => $artpiece->featured())) ?>
+		<?php else: ?>
+			<?php snippet('image-placeholder', array('text' => substr($artpiece->title(), 0, 1))) ?>
+		<?php endif ?>
 		<div class="artpiece-infos mt4 tac">
 			<div class="row serif bold caption-title">
 				<a href="<?= $artpiece->parent()->url() ?>"><?= $artpiece->parent()->title()->html() ?></a>

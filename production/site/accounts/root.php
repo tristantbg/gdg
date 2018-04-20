@@ -9,8 +9,8 @@ password: >
 language: en
 role: admin
 history:
-  - expositions/hans-peter-feldmann
+  - home
   - expositions/all-over
+  - expositions/always-someone-asleep-and-someone-awake
+  - expositions/hans-peter-feldmann
   - art-culture
-  - patrimoine/gfdgdf
-  - patrimoine

@@ -14,7 +14,12 @@
 		</div>
 		</a>
 	</div>
-	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></div>
+	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
+		<?= $featuredPage->title()->html() ?>
+		<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
+			<div class="secondary"><?= $featuredPage->secondaryTitle()->html() ?></div>
+		<?php endif ?>
+	</div>
 	<div class="template-component video-player video-cover video-1">
 		<?php snippet('template-videoplayer', array('field' => $page->content('fr')->get('templateVideo1')) ) ?>
 	</div>

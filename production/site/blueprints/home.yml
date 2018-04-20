@@ -32,6 +32,9 @@ fields:
           info:
             label: Texte
             type: info
+          title:
+            label: Titre
+            type: text
           content:
             label: Texte
             type: textarea
@@ -44,11 +47,14 @@ fields:
       #     content:
       #       type: images
       announcement:
-        label: Annonce
+        label: Focus
         fields:
           info:
-            label: Annonce
+            label: Focus
             type: info
+          thumb:
+            label: Vignette
+            type: image
           title:
             label: Titre
             type: text
@@ -62,10 +68,10 @@ fields:
             label: Lien
             type: url
       relatedpages:
-        label: Pages associées
+        label: Brèves
         fields:
           info:
-            label: Pages associées
+            label: Brèves
             type: info
           title:
             label: Titre
@@ -101,10 +107,10 @@ fields:
           content:
             type: images
       embed:
-        label: Embed
+        label: Media
         fields:
           info:
-            label: Embed
+            label: Media
             type: info
           title:
             label: Titre

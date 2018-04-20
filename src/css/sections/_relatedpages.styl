@@ -3,8 +3,22 @@
     .tags
       margin-top 2rem
   .relatedpages-slider
+    span(1)
     .relatedpage
       column(1/4, $gutter: 3, $cycle: 4)
     .flickity-prev-next-button
       .flickity-button-icon
         top 0
+    &.two-columns
+    	.relatedpage
+	      column(1/2, $gutter: 3, $cycle: 2)
+    &.announcement
+    	.relatedpage
+	      span(1)
+	      .responsive-image
+	      	column(4/6, $gutter: 3)
+	      .item-infos
+	      	column(2/6)
+	      	.caption-title
+	      		margin-top 0
+	      	

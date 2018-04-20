@@ -1,11 +1,9 @@
 <?php snippet('header') ?>
 
-<h1 class="title tac"><?= $page->title()->html() ?></h1>
+<?php snippet('tag-template/template-none') ?>
 
-<?php if ($page->text()->isNotEmpty()): ?>
-	<div id="page-text">
-		<?= $page->text()->kt() ?>
-	</div>
-<?php endif ?>
+<div id="page-text" class="row contained text">
+  <div class="c8 co2" md="c12 co0"><?= $page->text()->kt() ?></div>
+</div>
 
 <?php snippet('footer') ?>

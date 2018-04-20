@@ -46,7 +46,7 @@ fields:
     required: true
     width: 1/2
   featured:
-    label: Featured image
+    label: Vignette
     type: image
   summary:
     label: Infos

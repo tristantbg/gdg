@@ -31,7 +31,7 @@ fields:
     type: title
     width: 1/2
   featured:
-    label: Featured image
+    label: Vignette
     type: image
     width: 1/2
   year:

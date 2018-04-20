@@ -8,15 +8,7 @@ v::$validators['unique'] = function($value, $field) {
 
 };
 
-function translate($key, $replacements = array()) {
-  $string = l::get($key);
-  if(is_string($replacements)) $replacements = array($replacements);
-  foreach($replacements as $placeholder => $replace) {
-    $string = str_ireplace('{{' . $placeholder . '}}', $replace, $string);
-  }
-  return $string;
-};
-// HOWTO: e($num > 1, translate('blogposts.plural', $num),  translate('blogposts.singular'));
+// PAGE METHODS
 
 page::$methods['formattedDate'] = function($page) {
 
@@ -59,6 +51,7 @@ page::$methods['displayTags'] = function($page) {
     return '<div class="tags">'.$html.'</div>';
 };
 
+
 page::$methods['getArtpieces'] = function($page) {
 
 	$artpieces = new Collection();
@@ -68,8 +61,8 @@ page::$methods['getArtpieces'] = function($page) {
 		$artpiecesList = $page->artpieces()->toStructure();
 
 		foreach ($artpiecesList as $key => $artId) {
-			$artPage = $index->findBy('autoid', $artId);
-			$artpieces->data[] = $artPage;
+			$artPage = $index->findBy('autoid', strval($artId));
+			if ($artPage) $artpieces->data[] = $artPage;
 		}
 	}
 
@@ -101,10 +94,81 @@ page::$methods['getArtists'] = function($page) {
     $index = site()->index()->filterBy('intendedTemplate', 'artist')->visible();
     $artistsList = $page->artists()->toStructure();
     foreach ($artistsList as $key => $artId) {
-      $artistPage = $index->findBy('autoid', $artId);
-      $artists->data[] = $artistPage;
+      $artistPage = $index->findBy('autoid', strval($artId));
+      if($artistPage) $artists->data[] = $artistPage;
     }
   }
 
-  return $artists;
+  return $artists->sortBy('surname', 'asc');
 };
+
+
+page::$methods['initials'] = function($page) {
+
+  $name = $page->title();
+  $initials = preg_replace("/(?![A-Z])./", "", $name);
+
+  return $initials;
+};
+
+kirbytext::$tags['sup'] = array(
+  'html' => function($tag) {
+    return '<sup>'.html($tag->attr('sup')).'</sup>';
+  }
+);
+
+// FUNCTIONS
+
+function translate($key, $replacements = array()) {
+  $string = l::get($key);
+  if(is_string($replacements)) $replacements = array($replacements);
+  foreach($replacements as $placeholder => $replace) {
+    $string = str_ireplace('{{' . $placeholder . '}}', $replace, $string);
+  }
+  return $string;
+};
+// HOWTO: e($num > 1, translate('blogposts.plural', $num),  translate('blogposts.singular'));
+
+function getRelatedPages($content) {
+
+  $relatedPages = new Collection();
+  $index = site()->index()->visible();
+
+  foreach ($content as $key => $p) {
+  	$rP = $index->findBy('autoid', $p->get('content')->value());
+    if($rP) $relatedPages->data[] = $rP;
+  }
+
+  return $relatedPages;
+};
+
+function displayTags($tags) {
+    $tags = $tags->split();
+    $html = '';
+
+    if(count($tags) > 0) {
+
+      foreach ($tags as $key => $t) {
+        $html .= '<div class="tag">'.html($t).'</div>';
+      }
+
+    }
+
+    return '<div class="tags">'.$html.'</div>';
+};
+
+// ROUTES
+
+kirby()->routes(array(
+	array(
+		'pattern' => 'robots.txt',
+		'action' => function () {
+			return new Response('User-agent: *
+				Disallow: /content/*.txt$
+				Disallow: /kirby/
+				Disallow: /site/
+				Disallow: /*.md$
+				Sitemap: ' . u('sitemap.xml'), 'txt');
+		}
+		)
+));
