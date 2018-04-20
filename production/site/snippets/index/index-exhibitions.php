@@ -1,7 +1,7 @@
 <div id="page-header" class="row contained">
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 	<div id="index-menu" class="bold">
-		<ul class="has-submenu mt2">
+		<ul class="has-submenu hoverable clickable mt2">
 			<li event-target="submenu">
 				<span><?= l::get('index.exhibitions') ?></span>
 				<svg role="presentation">
@@ -24,6 +24,7 @@
 				<?php if ($exhibition->subtitle()->isNotEmpty()): ?>
 					<div class="caption-title serif"><?= $exhibition->subtitle()->html() ?></div>
 				<?php endif ?>
+        <div class="small mt2"><?= $exhibition->formattedDate() ?></div>
 			</a>
 		<?php endforeach ?>
 	</div>

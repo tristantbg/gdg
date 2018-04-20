@@ -1,6 +1,6 @@
 <?php if (isset($artists) && $artists->count() > 0): ?>
 	<section class="section section--artists-grid">
-		<div class="row mb2 tac">
+		<div class="row mb2 tac" sm="mb1">
 			<h2><?php e($artists->count() > 1, translate('artists.plural'),  translate('artists.singular')) ?></h2>
 		</div>
 		<div class="artists-container row x xw four-columns">
@@ -11,7 +11,7 @@
           <?php else: ?>
             <?php snippet('image-placeholder', array('text' => $artist->initials())) ?>
           <?php endif ?>
-          <h3 class="lead serif bold mt1"><?= $artist->title()->html() ?></h3>
+          <h3 class="lead serif bold mt1" sm="mt0"><?= $artist->title()->html() ?></h3>
         </a>
       <?php endforeach ?>
     </div>

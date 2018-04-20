@@ -78,12 +78,11 @@ fields:
             type: text
           content:
             type: engineer
-            fields:
+            fieldsets:
               content:
                 label: Page
                 type: quickselect
                 options: query
-                required: true
                 query:
                   page: /
                   fetch: index
@@ -92,6 +91,22 @@ fields:
                     - article
                   value: '{{autoid}}'
                   text: '{{title}} ({{uri}})'
+              thumb:
+                label: Titre
+                type: image
+                help: optionel
+              title:
+                label: Titre
+                type: text
+                help: optionel
+              text:
+                label: Texte
+                type: text
+                help: optionel
+              link:
+                label: Lien
+                type: url
+                help: optionel
       slider:
         label: Slider
         fields:

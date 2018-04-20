@@ -1,190 +1,212 @@
 .embed__thumb>img
-	opacity 1
-	width 50%
-	max-width 11rem
-	opacity 1
-	cursor pointer
-	transition opacity 200ms ease, width 200ms ease, max-width 200ms ease
-	&:hover
-		width 55%
-		max-width 12rem
+  opacity 1
+  width 50%
+  max-width 11rem
+  opacity 1
+  cursor pointer
+  transition opacity 200ms ease, width 200ms ease, max-width 200ms ease
+  &:hover
+    width 55%
+    max-width 12rem
 
 .lazy, .plyr
-	transition opacity 300ms ease
-	opacity 0
-	// transition filter 300ms ease, opacity 300ms ease
-	// filter: blur(3px)
-	// overflow hidden
-	// opacity 0.3
+  transition opacity 300ms ease
+  opacity 0
+  // transition filter 300ms ease, opacity 300ms ease
+  // filter: blur(3px)
+  // overflow hidden
+  // opacity 0.3
 
 .lazy.lazyloaded, .lazy.flickity-lazyloaded, .plyr.plyr--ready
-	opacity 1
-	// filter: blur(0px)
+  opacity 1
+  // filter: blur(0px)
 
 .responsive-image
-	hideselect()
-	position relative
-	overflow hidden
-	img
-		position absolute
-		top 0
-		left 0
+  hideselect()
+  position relative
+  overflow hidden
+  img
+    position absolute
+    top 0
+    left 0
 
 sup
-	font-size 0.7em
-	position relative
-	top -0.3em
+  font-size 0.7em
+  position relative
+  top -0.3em
 
 hr
-	display block
-	float left
-	border none
-	margin $spacer 0
-	height 2px
-	width 100%
-	color $secondary
-	color var(--font-color)
-	background $secondary
-	background var(--font-color)
+  display block
+  float left
+  border none
+  margin $spacer 0
+  height 2px
+  width 100%
+  color $secondary
+  color var(--font-color)
+  background $secondary
+  background var(--font-color)
+  +below($sm)
+    margin 2rem 0
 
 .spacer-top
-	margin-top $spacer
+  margin-top $spacer
 
 .spacer-bottom
-	margin-bottom $spacer
+  margin-bottom $spacer
 
 input
-	border none
-	background transparent
-	-webkit-appearance none
-	-moz-appearance none
-	border 1px solid $secondary
-	box-shadow none
-	border-radius 0
-	padding 0.8em
-	margin 0
-	sans-serif()
-	&:focus
-		outline none
+  border none
+  background transparent
+  -webkit-appearance none
+  -moz-appearance none
+  border 1px solid $secondary
+  box-shadow none
+  border-radius 0
+  padding 0.8em
+  margin 0
+  font-size inherit
+  sans-serif()
+  &:focus
+    outline none
 
 .searchbar, .arrow-form
-	height 3.5rem
-	width 100%
-	display inline-flex
-	.mc-field-group
-		display inline-flex
-		width 100%
-	#mc_embed_signup_scroll
-		width 100%
-	input
-		flex 1 1 auto
-		height 3.5rem
-		float left
-		display block
-		border-right none
-		&::placeholder
-			font-family "GLBaderBold", Helvetica, sans-serif
-	input + input, input + label input, input + label .arrow-button
-		border-left 0
-	input[type="submit"]
-		display none
-	label
-		height 3.5rem
-	.arrow-button
-		cursor pointer
-		height 3.5rem
-		position relative
-		border 1px solid $secondary
-		display block
-		width 2rem
-		display flex
-		justify-content center
-		align-items center
-		background transparent
-		border 1px solid $secondary
-		border-left none
-		svg
-			display block
-			width 0.8rem
-			height 100%
+  height 3.5rem
+  width 100%
+  display inline-flex
+  .mc-field-group
+    display inline-flex
+    width 100%
+  #mc_embed_signup_scroll
+    width 100%
+  input
+    flex 1 1 auto
+    height 3.5rem
+    float left
+    display block
+    border-right none
+    &::placeholder
+      font-family "GLBaderBold", Helvetica, sans-serif
+  input + input, input + label input, input + label .arrow-button
+    border-left 0
+  input[type="submit"]
+    display none
+  label
+    height 3.5rem
+  .arrow-button
+    cursor pointer
+    height 3.5rem
+    position relative
+    border 1px solid $secondary
+    display block
+    width 2.6rem
+    display flex
+    justify-content center
+    align-items center
+    background transparent
+    border 1px solid $secondary
+    border-left none
+    svg
+      display block
+      width 0.8rem
+      height 100%
 
 a.button
-	display block
-	padding 0.8em
-	&:hover
-		+above($md + 1)
-			background $secondary
-			color $menu-color
+  display block
+  padding 0.8em
+  &:hover
+    +above($md + 1)
+      background $secondary
+      color $menu-color
 
 .menu-item, li[event-target=submenu]
-	display block
-	padding 0.8em 0.8em 0.8em 0
-	&:not(:last-child)
-		border-bottom 2px solid
+  display block
+  padding 0.8em 0.8em 0.8em 0
+  &:not(:last-child)
+    border-bottom 2px solid
+    +below($md)
+      border-width 1px
 
 ul.has-submenu
-	display block
-	float left
-	width 100%
-	ul
-		width 100%
-		display block
-		float left
-		&.submenu
-			.arrow-button
-				width 2.6rem
-			input, .arrow-button
-				border 2px solid
-				border-top none
-			input + input, input + label input, input + label .arrow-button
-				border-left 0
-	li
-		display block
-		float left
-		width 100%
-	li[event-target=submenu]
-		cursor pointer
-		position relative
-		& > svg
-			transition transform 200ms ease
-			width 0.8rem
-			height 100%
-			position absolute
-			top 0
-			right 0.8em
-	&:not(:hover)
-		.submenu
-			display none
-	&:hover
-		li[event-target=submenu]
-			svg
-				transform rotate(90deg)
+  display block
+  float left
+  width 100%
+  ul
+    width 100%
+    display block
+    float left
+    &.submenu
+      display none
+      .arrow-button
+        width 2.6rem
+      input, .arrow-button
+        border-top none
+        border-left none
+        border-right none
+        border-bottom 2px solid
+        +below($md)
+          border-width 1px
+      input + input, input + label input, input + label .arrow-button
+        border-left 0
+  li
+    display block
+    float left
+    width 100%
+  li[event-target=submenu]
+    cursor pointer
+    position relative
+    & > svg
+      transition transform 200ms ease
+      width 0.8rem
+      height 100%
+      position absolute
+      top 0
+      right 0.8em
+  &.hoverable:hover, &.clickable.opened
+    .submenu
+      display block
+    li[event-target=submenu]
+      svg
+        transform rotate(90deg)
 
 .social-icon
-	width 3rem
-	margin-right 0.6rem
+  width 3rem
+  margin-right 0.6rem
 
 .logo-icon
-	margin-right $gutter
-	mix-blend-mode darken
-	max-width 20rem
+  margin-right $gutter
+  mix-blend-mode darken
+  max-width 20rem
 
 .image-placeholder
-	position relative
-	width 100%
-	background #d8d8d8
-	&::before
-		content ''
-		display block
-		padding-top 100%
-	.inner
-		align()
-		font-size 8rem
-		text-transform uppercase
-		color $primary
+  position relative
+  width 100%
+  background #d8d8d8
+  &::before
+    content ''
+    display block
+    padding-top 100%
+  .inner
+    align()
+    font-size 8rem
+    text-transform uppercase
+    color $primary
 
 .tags
-	display inline-flex
-	margin-top 2rem
-	.tag
-		margin-right 0.7em
+  display inline-flex
+  margin-top 2rem
+  .tag
+    margin-right 0.7em
+
+.show-more
+  display inline-block
+  padding 0.5em 1em 0.6em
+  border 1px solid
+
+.desktop
+  +below($sm)
+    display none
+
+.mobile
+  +above($md + 1)
+    display none

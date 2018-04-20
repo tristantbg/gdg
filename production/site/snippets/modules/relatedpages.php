@@ -6,12 +6,12 @@
   <?php endif ?>
   <?php $relatedPages = getRelatedPages($data->get('content')) ?>
   <?php $count = $relatedPages->count() ?>
-  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?>">
+  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?>">
     <?php foreach ($relatedPages as $key => $relatedPage): ?>
         <a href="<?= $relatedPage->url() ?>" class="relatedpage inline-item">
-        	<?php if ($count == 1): ?>	
+        	<?php if ($count == 1): ?>
           	<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 665/498)) ?>
-        	<?php elseif ($count == 2): ?>	
+        	<?php elseif ($count == 2): ?>
           	<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 435/326)) ?>
         	<?php else: ?>
           	<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 1/1)) ?>

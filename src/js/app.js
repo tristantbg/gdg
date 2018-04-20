@@ -42,6 +42,13 @@ const App = {
     },
     eventTargets: () => {
       App.interact.menuBurger()
+      const subClick = document.querySelectorAll('[event-target=submenu]');
+
+      for (var i = subClick.length - 1; i >= 0; i--) {
+        subClick[i].addEventListener('click', (e) => {
+          e.currentTarget.parentNode.classList.toggle('opened');
+        });
+      }
     },
     linkTargets: () => {
       const links = document.querySelectorAll("a");
@@ -164,7 +171,7 @@ const App = {
     indexGrid: () => {
       const grid = document.getElementById('index-artpieces');
 
-      if(grid) {  
+      if(grid) {
       const ig = new InfiniteGrid(grid, {
         horizontal: false,
       });

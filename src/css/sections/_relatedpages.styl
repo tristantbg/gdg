@@ -1,24 +1,28 @@
 .section--relatedpages
-  .relatedpage
-    .tags
-      margin-top 2rem
-  .relatedpages-slider
-    span(1)
-    .relatedpage
-      column(1/4, $gutter: 3, $cycle: 4)
-    .flickity-prev-next-button
-      .flickity-button-icon
-        top 0
-    &.two-columns
-    	.relatedpage
-	      column(1/2, $gutter: 3, $cycle: 2)
-    &.announcement
-    	.relatedpage
-	      span(1)
-	      .responsive-image
-	      	column(4/6, $gutter: 3)
-	      .item-infos
-	      	column(2/6)
-	      	.caption-title
-	      		margin-top 0
-	      	
+	.relatedpage
+		.tags
+			margin-top 2rem
+	.relatedpages-slider
+		span(1)
+		.flickity-prev-next-button
+			.flickity-button-icon
+				top 0
+		&.announcement
+			.relatedpage
+				span(1)
+				.responsive-image
+					span(9/12)
+					width 'calc(75% - %s)' % $gutter
+					+below($sm)
+						stack()
+				.item-infos
+					span(3/12)
+					+above($sm + 1)
+						padding-left $gutter
+					+below($sm)
+						stack()
+					.caption-title
+						margin-top 1em
+						+above($sm + 1)
+							margin-top 0
+

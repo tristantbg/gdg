@@ -1,7 +1,7 @@
 <div id="page-header" class="row contained">
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 	<div id="index-menu" class="bold">
-		<ul class="has-submenu mt2">
+		<ul class="has-submenu hoverable clickable mt2">
 			<li event-target="submenu">
 				<span><?= l::get('index.artists') ?></span>
 				<svg role="presentation">
@@ -27,11 +27,11 @@
 				<?php foreach ($plist as $key => $puri): ?>
 					<?php $artist = page($puri) ?>
 					<div class="row row-item title secondary c10 co2" sm="c12 co0">
-						
+
 						<a href="<?= $artist->url() ?>" class="row artist-link">
 							<?= $artist->title()->html() ?>
 						</a>
-				
+
 					</div>
 				<?php endforeach ?>
 

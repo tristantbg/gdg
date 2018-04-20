@@ -8,7 +8,7 @@
 	<div class="row mb2">
 		<h1 class="title tac"><?= $indexPage->title()->html() ?></h1>
 		<div id="index-menu" class="bold mb2">
-			<ul class="has-submenu mt2">
+			<ul class="has-submenu hoverable clickable mt2">
 				<li event-target="submenu">
 					<span><?= l::get('index.artpieces') ?></span>
 					<svg role="presentation">
@@ -23,7 +23,9 @@
 		</div>
 	</div>
 	<?php snippet('index/artpieces-grid') ?>
-	<a href="<?= $indexPage->url() ?>" class="show-more mt4"><?= l::get('more') ?></a>
+	<div class="row tac">
+    <a href="<?= $indexPage->url() ?>" class="show-more bold mt4"><?= l::get('more') ?></a>
+  </div>
 </div>
 
 <?php snippet('footer') ?>

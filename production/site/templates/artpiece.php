@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-<div id="page-sections" class="m0">
+<div id="page-sections">
 	<section class="section artpieces">
 		<?php snippet('sections/artpieces/artpieces-item', array('artpieces' => $artpiece)) ?>
 	</section>

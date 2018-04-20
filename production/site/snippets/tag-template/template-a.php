@@ -1,6 +1,6 @@
 <section class="header-template home-template desktop template-a">
-	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
-    <h1><?= $page->title()->html() ?></h1>
+	<div class="title sticky-title">
+    <h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $page->title()->html() ?></h1>
     <?php if ($page->secondaryTitle()->isNotEmpty()): ?>
 		<h2 class="title secondary"><?= $page->secondaryTitle()->html() ?></h2>
 	<?php endif ?>

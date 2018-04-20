@@ -1,7 +1,7 @@
 <div id="page-header" class="row contained">
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 	<div id="index-menu" class="bold">
-		<ul class="has-submenu mt2">
+		<ul class="has-submenu hoverable clickable mt2">
 			<li event-target="submenu">
 				<span><?= l::get('index.artpieces') ?></span>
 				<svg role="presentation">

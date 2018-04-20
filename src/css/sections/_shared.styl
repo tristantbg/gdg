@@ -1,31 +1,65 @@
 section.section
-	span(1)
-	&:not(:first-child)
-		margin-top 12rem
+  span(1)
+  &:not(:first-child)
+    margin-top 12rem
 
 .one-column
-	& > *
-		span(1)
-		margin-bottom ($gutter*2)
+  & > *
+    span(1)
+    margin-bottom ($gutter*2)
 
 .two-columns
-	& > *
-		width 'calc(50% - %s)' % $gutter
-		// column(1/2, $gutter: 3, $cycle: 2)
-		margin-right $gutter
-		margin-bottom ($gutter*2)
-		&:last-child:first-child
-			margin-right 0
+  & > *
+    display block
+    float left
+    width 'calc((100% - %s) / 2)' % $gutter
+    margin-right $gutter
+    margin-bottom ($gutter*2)
+    &:nth-child(2n)
+      margin-right 0
+      float right
+    &:nth-child(2n+1)
+      clear both
+    &:last-child:first-child
+      margin-right 0
 
 .four-columns
-	& > *
-		width 'calc(25% - %s)' % $gutter
-		// column(1/4, $gutter: 3, $cycle: 4)
-		margin-bottom ($gutter*2)
-		margin-right $gutter
-		&:last-child:first-child
-			margin-right 0
+  & > *:not(.flickity-viewport), .flickity-slider > *
+    display block
+    float left
+    width 'calc((100% - %s) / 4)' % ($gutter*3)
+    margin-bottom ($gutter*2)
+    margin-right $gutter
+    +above($sm + 1)
+      &:nth-child(4n)
+        margin-right 0
+        float right
+      &:nth-child(4n+1)
+        clear both
+    +below($sm)
+      width 'calc((100% - %s) / 2)' % $gutter
+      &:nth-child(2n)
+        margin-right 0
+        float right
+      &:nth-child(2n+1)
+        clear both
+    &:last-child:first-child
+      margin-right 0
+  .flickity-slider > *
+    +above($sm + 1)
+      &:nth-child(4n)
+        margin-right $gutter
+        float left
+      &:nth-child(4n+1)
+        clear none
+    +below($sm)
+      width 'calc((100% - %s) / 2)' % $gutter
+      &:nth-child(2n)
+        margin-right $gutter
+        float left
+      &:nth-child(2n+1)
+        clear none
 
 .page-section
-	.caption-title + *:not(.caption-title)
-		margin-top 2rem
+  .caption-title + *:not(.caption-title)
+    margin-top 2rem

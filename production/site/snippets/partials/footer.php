@@ -14,7 +14,7 @@
 				</div>
 			</div>
 
-			<ul id="footer-languages" class="has-submenu">
+			<ul id="footer-languages" class="has-submenu hoverable clickable">
 				<li event-target="submenu">
 					<span><?= l::get('change-language') ?></span>
 					<svg role="presentation">
@@ -40,7 +40,7 @@
 			<a class="row menu-item" href="<?= $pressPage->url() ?>"><?= $pressPage->title()->html() ?></a>
 			<?php endif ?>
 
-			<ul id="footer-newsletter" class="has-submenu">
+			<ul id="footer-newsletter" class="has-submenu clickable">
 				<li event-target="submenu">
 					<span><?= l::get('newsletter') ?></span>
 					<svg role="presentation">
@@ -74,7 +74,7 @@
 		</div>
 		<?php if ($legal = $site->index()->findBy('autoid', $site->legalPage()->value())): ?>
 		<div class="c3 co3 fl x xafe" md="c4" sm="c12 co0 mt2">
-			<a href="<?= $legal->url() ?>"><?= $legal->title()->html() ?></a>
+			<a href="<?= $legal->url() ?>" class="link"><?= $legal->title()->html() ?></a>
 		</div>
 		<?php endif ?>
 	</div>
