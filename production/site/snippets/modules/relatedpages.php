@@ -6,9 +6,9 @@
   <?php endif ?>
   <?php $relatedPages = getRelatedPages($data->get('content')) ?>
   <?php $count = $relatedPages->count() ?>
-  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?>">
+  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?><?php e($count == 3, ' x xjc') ?>">
     <?php foreach ($relatedPages as $key => $relatedPage): ?>
-        <a href="<?= $relatedPage->url() ?>" class="relatedpage inline-item">
+        <a href="<?php e($relatedPage->link()->isNotEmpty(), $relatedPage->link(), $relatedPage->url()) ?>" class="relatedpage inline-item">
         	<?php if ($count == 1): ?>
           	<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 665/498)) ?>
         	<?php elseif ($count == 2): ?>
@@ -30,7 +30,7 @@
           	  <?= $relatedPage->summary()->kt() ?>
           	</div>
           	<?php endif ?>
-          	<?= $relatedPage->displayTags() ?>
+          	<?= displayTags($relatedPage->tags()) ?>
           </div>
         </a>
     <?php endforeach ?>

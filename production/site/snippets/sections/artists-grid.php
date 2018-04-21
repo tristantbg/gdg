@@ -7,7 +7,7 @@
       <?php foreach ($artists as $key => $artist): ?>
         <a href="<?= $artist->url() ?>" class="row artist-link">
           <?php if ($artist->featured()->toFile()): ?>
-            <?php snippet('responsive-image', array('field' => $artist->featured())) ?>
+            <?php snippet('responsive-image', array('field' => $artist->featured(), 'maxWidth' => 1000, 'ratio' => 1/1)) ?>
           <?php else: ?>
             <?php snippet('image-placeholder', array('text' => $artist->initials())) ?>
           <?php endif ?>

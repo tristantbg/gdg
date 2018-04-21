@@ -3,6 +3,8 @@ section.header-template
 	min-height 100vh
 	position relative
 	padding-bottom 8rem
+	.responsive-image
+		background alpha($menu-color, 0.5)
 
 .template-component
 	position absolute
@@ -17,6 +19,12 @@ section.header-template
 	.video-container
 		height 100%
 		overflow hidden
+	.slider
+		.flickity-prev-next-button
+			&.previous
+				left 0
+			&.next
+				right 0
 
 .sticky-title
 	position sticky
@@ -27,7 +35,5 @@ section.header-template
 		margin-top 2rem
 
 [page-type=home]
-	.responsive-image .ph
-		background alpha($menu-color, 0.5)
 	#home-index
 		margin-top 12rem

@@ -11,6 +11,9 @@ files:
   width: null
   height: null
   fields:
+    imageTitle:
+      label: Title
+      type: text
     caption:
       label: Description
       type: textarea
@@ -121,7 +124,7 @@ fields:
             type: text
           content:
             type: engineer
-            fieldsets:
+            fields:
               content:
                 label: Page
                 type: quickselect
@@ -135,26 +138,52 @@ fields:
                   value: '{{autoid}}'
                   text: '{{title}} ({{uri}})'
               thumb:
-                label: Titre
+                label: Vignette
                 type: image
-                help: optionel
-              title:
-                label: Titre
-                type: text
-                help: optionel
-              text:
-                label: Texte
-                type: text
-                help: optionel
+                help: Optionnel
+                width: 1/2
               link:
                 label: Lien
                 type: url
-                help: optionel
+                help: Optionnel
+                width: 1/2
+              title:
+                label: Titre
+                type: text
+                help: Optionnel
+                width: 1/2
+              subtitle:
+                label: Sous-titre
+                type: text
+                help: Optionnel
+                width: 1/2
+              summary:
+                label: Texte
+                type: textarea
+                help: Optionnel
+              tags:
+                label: Tags
+                type: tags
+                help: Optionnel
       slider:
         label: Slider
         fields:
           info:
             label: Slider
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          content:
+            type: images
+      images:
+        label: Ouvrages
+        fields:
+          info:
+            label: Ouvrages
             type: info
           title:
             label: Titre

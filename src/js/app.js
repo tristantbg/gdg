@@ -258,17 +258,18 @@ const App = {
         for (var i = 0; i < elements.length; i++) {
           initFlickity(elements[i], {
             cellSelector: '.inline-item',
+            cellAlign: 'left',
             imagesLoaded: true,
-            lazyLoad: 1,
+            lazyLoad: false,
             setGallerySize: true,
             adaptiveHeight: false,
             percentPosition: true,
             accessibility: true,
-            wrapAround: false,
-            contain: true,
+            wrapAround: true,
+            contain: false,
             prevNextButtons: true,
             pageDots: false,
-            draggable: Modernizr.touchevents,
+            draggable: true,
             dragThreshold: 30,
             arrowShape: 'M74.3 99.3L25 50 74.3.7l.7.8L26.5 50 75 98.5z'
           });

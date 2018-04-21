@@ -33,3 +33,7 @@ fields:
     type: hero
     help: Remplace le “Visuel d'Expo”
     width: 1/2
+  templateSlider1:
+    label: Slider 1
+    type: images
+    help: Remplace Image 3

@@ -1,5 +1,5 @@
 <section class="header-template home-template desktop template-c">
-	<div class="title sticky-title">
+	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
     <h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $page->title()->html() ?></h1>
     <?php if ($page->secondaryTitle()->isNotEmpty()): ?>
 		<h2 class="title secondary"><?= $page->secondaryTitle()->html() ?></h2>
@@ -18,7 +18,13 @@
     <?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage2'), 'ratio' => 628/471, 'withCaption' => true)) ?>
   </div>
   <div class="template-component image-3">
-    <?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage3'), 'ratio' => 781/505, 'withCaption' => true)) ?>
+      <?php $sliderImages = $page->content('fr')->get('templateSlider1') ?>
+      <?php if ($sliderImages->isNotEmpty()): ?>
+      <?php snippet('slider', array('medias' => $sliderImages->toStructure())) ?>
+      <div class="slider-caption row caption"></div>
+      <?php else: ?>
+      <?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage3'), 'ratio' => 781/505, 'withCaption' => true)) ?>
+      <?php endif ?>
   </div>
   <?php if ($page->intendedTemplate() != "exhibition" || $page->content('fr')->get('templateImage4')->isNotEmpty()): ?>
     <div class="template-component image-4">

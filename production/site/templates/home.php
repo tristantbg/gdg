@@ -6,8 +6,10 @@
 
 <div id="home-index" class="row contained">
 	<div class="row mb2">
+
 		<h1 class="title tac"><?= $indexPage->title()->html() ?></h1>
-		<div id="index-menu" class="bold mb2">
+
+		<!-- <div id="index-menu" class="bold mb2">
 			<ul class="has-submenu hoverable clickable mt2">
 				<li event-target="submenu">
 					<span><?= l::get('index.artpieces') ?></span>
@@ -20,7 +22,8 @@
 					<li><a href="<?= $indexPage->url().'/by:artist' ?>" class="button"><?= l::get('index.artists') ?></a></li>
 				</ul>
 			</ul>
-		</div>
+		</div> -->
+
 	</div>
 	<?php snippet('index/artpieces-grid') ?>
 	<div class="row tac">

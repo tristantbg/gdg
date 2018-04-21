@@ -14,7 +14,7 @@
 		</div>
 		</a>
 	</div>
-	<div class="title sticky-title">
+	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
 		<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></span>
 		<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
 			<div class="secondary"><?= $featuredPage->secondaryTitle()->html() ?></div>
