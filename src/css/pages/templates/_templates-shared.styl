@@ -1,15 +1,37 @@
 section.header-template
+	position relative
+	+above($sm + 1)
+		min-height 100vh
+		padding-bottom 8rem
+		.responsive-image .ph
+			background alpha($menu-color, 0.5)
+		.slider-caption
+			text-align left
+
+section.header-template.desktop
 	span(1)
 	min-height 100vh
 	position relative
 	padding-bottom 8rem
-	.responsive-image
+	.responsive-image .ph
 		background alpha($menu-color, 0.5)
+	.slider-caption
+		text-align left
+
+section.header-template.mobile
+	.slider
+		height 90vmin
+		.slide .content img
+			object-fit: cover;
+			font-family: "object-fit: cover";
 
 .template-component
-	position absolute
-	top 0
-	left 0
+	+above($sm + 1)
+		position absolute
+		top 0
+		left 0
+	+below($sm)
+		span(1)
 	&.video-cover
 	 overflow hidden
 	 video
@@ -26,11 +48,18 @@ section.header-template
 			&.next
 				right 0
 
+[page-type=articles], [page-type=article], [page-type=exhibition]
+	.template-component, .sticky-title
+		margin-bottom 2rem
+		text-align center
+
 .sticky-title
 	position sticky
 	position -webkit-sticky
 	z-index 10
 	pointer-events none
+	+below($sm)
+		span(1)
 	h1 + .caption-title
 		margin-top 2rem
 

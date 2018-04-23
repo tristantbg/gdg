@@ -22,6 +22,9 @@ section.section
       clear both
     &:last-child:first-child
       margin-right 0
+    +below($sm)
+      width 100%
+      margin-right 0
 
 .four-columns
   & > *:not(.flickity-viewport), .flickity-slider > *
@@ -37,12 +40,14 @@ section.section
       &:nth-child(4n+1)
         clear both
     +below($sm)
-      width 'calc((100% - %s) / 2)' % $gutter
-      &:nth-child(2n)
-        margin-right 0
-        float right
-      &:nth-child(2n+1)
-        clear both
+      width 100%
+      margin-right 0
+      // width 'calc((100% - %s) / 2)' % $gutter
+      // &:nth-child(2n)
+      //   margin-right 0
+      //   float right
+      // &:nth-child(2n+1)
+      //   clear both
     &:last-child:first-child
       margin-right 0
   .flickity-slider > *
@@ -53,12 +58,15 @@ section.section
       &:nth-child(4n+1)
         clear none
     +below($sm)
-      width 'calc((100% - %s) / 2)' % $gutter
-      &:nth-child(2n)
-        margin-right $gutter
-        float left
-      &:nth-child(2n+1)
-        clear none
+      +below($sm)
+        width 100%
+        margin-right 0
+      // width 'calc((100% - %s) / 2)' % $gutter
+      // &:nth-child(2n)
+      //   margin-right $gutter
+      //   float left
+      // &:nth-child(2n+1)
+      //   clear none
 
 .page-section
   .caption-title + *:not(.caption-title)

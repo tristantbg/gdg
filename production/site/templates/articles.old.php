@@ -2,13 +2,11 @@
 
 <?php snippet('tag-template/template-'.$page->pageTemplate()) ?>
 
-<?php snippet('page-sections') ?>
-
-<div id="articles" class="row contained mt4">
+<div id="page-sections">
   <section class="page-section section section--articles four-columns">
       <?php foreach ($articles as $key => $article): ?>
           <a href="<?= $article->url() ?>" class="article-link">
-            <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 3/2)) ?>
+            <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 1/1)) ?>
             <div class="lead bold mt1">
               <?= $article->title()->html() ?>
             </div>

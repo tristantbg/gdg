@@ -67,6 +67,7 @@ fields:
           tags:
             label: Tags
             type: tags
+            lower: true
           link:
             label: Lien
             type: url
@@ -121,6 +122,7 @@ fields:
               tags:
                 label: Tags
                 type: tags
+                lower: true
                 help: Optionnel
       slider:
         label: Slider

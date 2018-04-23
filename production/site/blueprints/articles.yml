@@ -47,6 +47,154 @@ fields:
       date: Publication
       uid: Slug
   tabs2:
+    label: Sections
+    type: tabs
+  sections:
+    type: engineer
+    fieldsets:
+      text:
+        label: Texte
+        fields:
+          info:
+            label: Texte
+            type: info
+          title:
+            label: Titre
+            type: text
+          content:
+            label: Texte
+            type: textarea
+      # images:
+      #   label: Images
+      #   fields:
+      #     info:
+      #       label: Images
+      #       type: info
+      #     content:
+      #       type: images
+      announcement:
+        label: Focus
+        fields:
+          info:
+            label: Focus
+            type: info
+          thumb:
+            label: Vignette
+            type: image
+          title:
+            label: Titre
+            type: text
+          summary:
+            label: Texte
+            type: textarea
+          tags:
+            label: Tags
+            type: tags
+            lower: true
+          link:
+            label: Lien
+            type: url
+      relatedpages:
+        label: Brèves
+        fields:
+          info:
+            label: Brèves
+            type: info
+          title:
+            label: Titre
+            type: text
+          content:
+            type: engineer
+            fields:
+              content:
+                label: Page
+                type: quickselect
+                options: query
+                query:
+                  page: /
+                  fetch: index
+                  template:
+                    - exhibition
+                    - article
+                  value: '{{autoid}}'
+                  text: '{{title}} ({{uri}})'
+              thumb:
+                label: Vignette
+                type: image
+                help: Optionnel
+                width: 1/2
+              link:
+                label: Lien
+                type: url
+                help: Optionnel
+                width: 1/2
+              title:
+                label: Titre
+                type: text
+                help: Optionnel
+                width: 1/2
+              subtitle:
+                label: Sous-titre
+                type: text
+                help: Optionnel
+                width: 1/2
+              summary:
+                label: Texte
+                type: textarea
+                help: Optionnel
+              tags:
+                label: Tags
+                type: tags
+                lower: true
+                help: Optionnel
+      slider:
+        label: Slider
+        fields:
+          info:
+            label: Slider
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          content:
+            type: images
+      images:
+        label: Ouvrages
+        fields:
+          info:
+            label: Ouvrages
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          content:
+            type: images
+      embed:
+        label: Media
+        fields:
+          info:
+            label: Media
+            type: info
+          title:
+            label: Titre
+            type: text
+          subtitle:
+            label: Sous-titre
+            type: textarea
+          thumb:
+            label: Thumb
+            type: image
+          url:
+            label: URL
+            type: url
+            required: true
+  tabs3:
     label: Template
     type: tabs
   templateGroup:

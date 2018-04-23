@@ -8,15 +8,14 @@
       <div class="c8 co2" md="c12 co0"><?= $page->subtitle()->kt() ?></div>
     </div>
   <?php endif ?>
+  <?php if ($page->intendedTemplate() == "exhibition"): ?>
+    <div id="page-date" class="caption-title tac">
+      <div class="c8 co2 mt1" md="c12 co0"><?= $page->formattedDate() ?></div>
+    </div>
+  <?php endif ?>
   <?php if ($featured = $page->featured()->toFile()): ?>
     <div class="row mt2">
       <?php snippet('responsive-image', array('field' => $page->featured(), 'withCaption' => true)) ?>
     </div>
   <?php endif ?>
 </div>
-
-<?php if ($page->summary()->isNotEmpty()): ?>
-  <div id="page-summary" class="row contained bold summary">
-    <div class="c8 co2" md="c12 co0"><?= $page->summary()->kt() ?></div>
-  </div>
-<?php endif ?>

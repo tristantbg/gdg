@@ -18,9 +18,9 @@
           data-srcset="<?= $srcset ?>"
           data-sizes="auto"
           data-optimumx="1.5"
-          alt="<?= $title.' - © '.$site->title()->html() ?>" height="100%" width="auto" />
+          alt="<?= $image->page()->title()->html().' - © '.$site->title()->html() ?>" height="100%" width="auto" />
           <noscript>
-            <img src="<?= $image->width(1000)->url() ?>" alt="<?= $title.' - © '.$site->title()->html() ?>" width="100%" height="auto" />
+            <img src="<?= $image->width(1000)->url() ?>" alt="<?= $image->page()->title()->html().' - © '.$site->title()->html() ?>" width="100%" height="auto" />
           </noscript>
         </div>
 

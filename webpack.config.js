@@ -18,7 +18,7 @@ const modernizrConfig = {
     "css/animations",
     "css/backgroundblendmode",
     // "css/columns",
-    // "css/filters",
+    "css/filters",
     "css/flexbox",
     // "css/hyphens",
     // "css/mask",

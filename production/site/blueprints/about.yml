@@ -4,13 +4,302 @@ options:
   url: false
   template: false
 pages: false
-files: false
+files:
+  sortable: false
+  max: null
+  hide: false
+  sanitize: true
+  fields: null
+  size: null
+  width: null
+  height: null
+  fields:
+    imageTitle:
+      label: Title
+      type: text
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
 fields:
   autoid:
     type: hidden
+  prevnext: prevnext
+  previewfiles:
+    type: hidden
+  reveal: reveal
+  tabs1:
+    label: Général
+    type: tabs
   title:
     label: Titre
-    type:  text
+    type: title
+    width: 1/2
+  featured:
+    label: Vignette
+    type: image
+    width: 1/2
+  summary:
+    label: Chapeau
+    type: simplemde
   text:
     label: Texte
-    type:  simplemde
+    type: simplemde
+  tabs2:
+    label: Sections
+    type: tabs
+  visits:
+    label: Visites
+    type: structure
+    fields:
+      title:
+        label: Titre
+        type: text
+        width: 1/2
+      thumb:
+        label: Vignette
+        type: image
+        width: 1/2
+      summary:
+        label: Texte
+        type: textarea
+  team:
+    label: Équipe
+    type: structure
+    fields:
+      title:
+        label: Titre
+        type: text
+        width: 1/2
+      thumb:
+        label: Vignette
+        type: image
+        width: 1/2
+      summary:
+        label: Texte
+        type: textarea
+  partners:
+    label: Partenaires
+    type: structure
+    fields:
+      title:
+        label: Titre
+        type: text
+      summary:
+        label: Texte
+        type: textarea
+  tabs3:
+    label: Presse
+    type: tabs
+  pressTexts:
+    label: Press infos
+    type: structure
+    fields:
+      title:
+        label: Titre
+        type: text
+      summary:
+        label: Texte
+        type: textarea
+  press:
+    label: Press
+    type: structure
+    fields:
+      title:
+        label: Titre
+        type: text
+        width: 1/2
+      thumb:
+        label: Vignette
+        type: image
+        width: 1/2
+      subtitle:
+        label: Sous-titre
+        type: text
+      presskit:
+        label: Presskit
+        type: select
+        options: files
+      zip:
+        label: Images
+        type: select
+        options: files
+  # sections:
+  #   type: engineer
+  #   fieldsets:
+  #     duo:
+  #     texts:
+  #       label: Partenaires
+  #       fields:
+  #         info:
+  #           label: Partenaires
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         content:
+  #           type: engineer
+  #           fields:
+  #             title:
+  #               label: Titre
+  #               type: text
+  #             summary:
+  #               label: Texte
+  #               type: textarea
+  #     team:
+  #       label: Équipe
+  #       fields:
+  #         info:
+  #           label: Équipe
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         content:
+  #           type: engineer
+  #           fields:
+  #             thumb:
+  #               label: Vignette
+  #               type: image
+  #               width: 1/2
+  #             title:
+  #               label: Titre
+  #               type: text
+  #               width: 1/2
+  #             summary:
+  #               label: Texte
+  #               type: textarea
+  #     press:
+  #       label: Presse
+  #       fields:
+  #         info:
+  #           label: Presse
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         infos:
+  #           label: Infos
+  #           type: textarea
+  #         content:
+  #           type: engineer
+  #           fields:
+  #             thumb:
+  #               label: Vignette
+  #               type: image
+  #               width: 1/2
+  #             title:
+  #               label: Titre
+  #               type: text
+  #               width: 1/2
+  #             subtitle:
+  #               label: Sous-titre
+  #               type: text
+  #               width: 1/2
+  #             presskit:
+  #               label: Presskit
+  #               type: select
+  #               options: files
+  #             zip:
+  #               label: Images
+  #               type: select
+  #               options: files
+  #     text:
+  #       label: Texte
+  #       fields:
+  #         info:
+  #           label: Texte
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         content:
+  #           label: Texte
+  #           type: textarea
+  #     # images:
+  #     #   label: Images
+  #     #   fields:
+  #     #     info:
+  #     #       label: Images
+  #     #       type: info
+  #     #     content:
+  #     #       type: images
+  #     announcement:
+  #       label: Focus
+  #       fields:
+  #         info:
+  #           label: Focus
+  #           type: info
+  #         thumb:
+  #           label: Vignette
+  #           type: image
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         summary:
+  #           label: Texte
+  #           type: textarea
+  #         tags:
+  #           label: Tags
+  #           type: tags
+  #           lower: true
+  #         link:
+  #           label: Lien
+  #           type: url
+  #     slider:
+  #       label: Slider
+  #       fields:
+  #         info:
+  #           label: Slider
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         subtitle:
+  #           label: Sous-titre
+  #           type: textarea
+  #         content:
+  #           type: images
+  #     images:
+  #       label: Ouvrages
+  #       fields:
+  #         info:
+  #           label: Ouvrages
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         subtitle:
+  #           label: Sous-titre
+  #           type: textarea
+  #         content:
+  #           type: images
+  #     embed:
+  #       label: Media
+  #       fields:
+  #         info:
+  #           label: Media
+  #           type: info
+  #         title:
+  #           label: Titre
+  #           type: text
+  #         subtitle:
+  #           label: Sous-titre
+  #           type: textarea
+  #         thumb:
+  #           label: Thumb
+  #           type: image
+  #         url:
+  #           label: URL
+  #           type: url
+  #           required: true
+  tabs4:
+    label: Template
+    type: tabs
+  templateGroup:
+    extends: page-template
+    required: true

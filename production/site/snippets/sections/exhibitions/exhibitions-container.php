@@ -1,4 +1,4 @@
-<?php if (isset($exhibitions)): ?>
+<?php if (isset($exhibitions) && $exhibitions->count() > 0): ?>
 	<section class="section section--exhibitions">
 		<div class="row<?php e(isset($center), ' tac') ?>">
 			<h2><?php e($exhibitions->count() > 1, translate('exhibitions.plural'),  translate('exhibitions.singular')) ?></h2>

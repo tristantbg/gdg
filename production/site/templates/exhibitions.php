@@ -4,7 +4,7 @@
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 </div>
 
-<div id="page-sections">
+<div class="row contained mt4">
 	<?php snippet('sections/exhibitions/exhibitions-grid') ?>
 </div>
 

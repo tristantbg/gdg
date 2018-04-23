@@ -1,9 +1,9 @@
 <footer>
-	<div class="site-title row mb4">
+	<div class="site-title fs1-6 row mb4" sm="dn">
 		<?= $site->title()->html() ?>
 	</div>
 	<div class="row small mb4">
-		<div class="db c6 fl tc2" md="c12 mb4" sm="tc1">
+		<div class="db c6 fl tc2" md="c12 mb4" sm="tc1 dn">
 			<?= $site->footer()->kt() ?>
 		</div>
 		<div id="footer-links" class="c3 co3 fl bold" md="c6 co0" sm="c12">

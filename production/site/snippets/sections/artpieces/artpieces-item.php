@@ -15,7 +15,7 @@
 				<em><?= $artpiece->title()->html() ?></em><?php e($artpiece->year()->isNotEmpty(), ', '.$artpiece->year()->html()) ?>
 			</div>
 			<?php if ($artpiece->summary()->isNotEmpty()): ?>
-				<div class="row pt1 c6 co3" md="c16 co0">
+				<div class="row pt1 c6 co3" md="c12 co0">
 					<?= $artpiece->summary()->kt() ?>
 				</div>
 			<?php endif ?>

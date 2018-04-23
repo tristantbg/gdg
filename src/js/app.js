@@ -4,9 +4,12 @@ import lazysizes from 'lazysizes';
 import optimumx from 'lazysizes';
 require('../../node_modules/lazysizes/plugins/object-fit/ls.object-fit.js');
 import Flickity from 'flickity';
+// import Packery from 'packery';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
-import InfiniteGrid, { GridLayout } from "@egjs/infinitegrid";
+import InfiniteGrid, {
+  GridLayout
+} from "@egjs/infinitegrid";
 
 const freezeVp = (e) => {
   e.preventDefault();
@@ -23,7 +26,6 @@ const stopBodyScrolling = (bool) => {
 const App = {
   header: null,
   siteTitle: null,
-  boardSlider: null,
   initialize: () => {
     App.header = document.querySelector("header");
     App.siteTitle = document.querySelector("#site-title");
@@ -119,11 +121,11 @@ const App = {
           document.body.classList.toggle("menu-on");
           burger.classList.toggle("opened");
 
-        // if (burger.classList.contains("opened")) {
-        //   App.interact.menu.on();
-        // } else {
-        //   App.interact.menu.off();
-        // }
+          // if (burger.classList.contains("opened")) {
+          //   App.interact.menu.on();
+          // } else {
+          //   App.interact.menu.off();
+          // }
         });
       }
     },
@@ -171,18 +173,25 @@ const App = {
     indexGrid: () => {
       const grid = document.getElementById('index-artpieces');
 
-      if(grid) {
-      const ig = new InfiniteGrid(grid, {
-        horizontal: false,
-      });
-      ig.setLayout(GridLayout, {
-        margin: 23
-      });
+      if (grid) {
+        const ig = new InfiniteGrid(grid, {
+          horizontal: false,
+        });
+        ig.setLayout(GridLayout, {
+          margin: 23
+        });
 
-      var event = document.createEvent('HTMLEvents');
-      event.initEvent('resize', true, false);
-      window.dispatchEvent(event);
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        window.dispatchEvent(event);
       }
+
+      // if (grid) {
+      //   var pckry = new Packery(grid, {
+      //     itemSelector: '.artpiece-item',
+      //     gutter: 23
+      //   });
+      // }
 
     },
     loadSliders: () => {

@@ -12,6 +12,8 @@ contained()
 	+above($md + 1)
 		padding-left 13%
 		padding-right 13%
+		// padding-left calc( (100% - 100rem) / 2 )
+		// padding-right calc( (100% - 100rem) / 2 )
 
 .contained
 	contained()
@@ -21,8 +23,8 @@ contained()
 	contained()
 	margin-top 12rem
 	+below($sm)
-		margin-top 2rem
+		margin-top 7rem
 	.page-section:not(:first-child)
 		margin-top 12rem
 		+below($sm)
-			margin-top 2rem
+			margin-top 7rem

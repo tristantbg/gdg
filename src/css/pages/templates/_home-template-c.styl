@@ -1,24 +1,25 @@
 [page-type=home][page-template=c]
-	#container
-		margin-top 7rem
-	.template-component
-		position initial
-		z-index 0
-		&.featuredpage-1
-			span(8/16, $offset: 2/16)
-			.responsive-image
-				width 88%
-				margin-left 12%
+	+above($sm + 1)
+		#container
+			margin-top 7rem
+		.template-component
+			position initial
+			z-index 0
+			&.featuredpage-1
+				span(8/16, $offset: 2/16)
+				.responsive-image
+					width 88%
+					margin-left 12%
+				.page-infos
+					margin-top -5.1rem
+					position relative
+					z-index 1
+			&.featuredpage-2
+				span(6/16)
+				padding-left $gutter
+				margin-top 10vw
 			.page-infos
-				margin-top -5.1rem
-				position relative
-				z-index 1
-		&.featuredpage-2
-			span(6/16)
-			padding-left $gutter
-			margin-top 10vw
-		.page-infos
-			& > *:not(.title):not(.caption-title)
-				width 70%
-			.tags
-				margin-top 1em
+				& > *:not(.title):not(.caption-title)
+					width 70%
+				.tags
+					margin-top 1em

@@ -6,7 +6,7 @@
   <?php endif ?>
   <?php $relatedPages = getRelatedPages($data->get('content')) ?>
   <?php $count = $relatedPages->count() ?>
-  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?><?php e($count == 3, ' x xjc') ?>">
+  <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?><?php e($count == 3, ' x xjc xw') ?>">
     <?php foreach ($relatedPages as $key => $relatedPage): ?>
         <a href="<?php e($relatedPage->link()->isNotEmpty(), $relatedPage->link(), $relatedPage->url()) ?>" class="relatedpage inline-item">
         	<?php if ($count == 1): ?>

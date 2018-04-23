@@ -1,0 +1,1 @@
+<?php go(page('index').'/by:artist') ?>

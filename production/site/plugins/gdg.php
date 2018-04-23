@@ -187,5 +187,5 @@ kirby()->routes(array(
 				Disallow: /*.md$
 				Sitemap: ' . u('sitemap.xml'), 'txt');
 		}
-		)
+	)
 ));

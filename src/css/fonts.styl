@@ -19,8 +19,8 @@ html
 	font-size 10px
 	+above($md + 1)
 		font-size 0.66vw
-	+above($xl + 1)
-		font-size 0.44vw
+	// +above($xl + 1)
+	// 	font-size 0.44vw
 
 body
 	font-size $font
@@ -69,6 +69,8 @@ sans-serif()
 		font-family "GLBaderBold", Helvetica, sans-serif
 	em
 		font-family "GLBaderItalic", Helvetica, sans-serif
+	.bold em
+		font-family "GLBaderBoldItalic", Helvetica, sans-serif
 	&.condensed, .condensed
 		sans-serif-condensed()
 
@@ -122,6 +124,9 @@ h2, .sub-heading
 
 .summary
 	font-size ($font + 0.4)
+	font-family "GLBaderBold", Helvetica, sans-serif
+	em
+		font-family "GLBaderBoldItalic", Helvetica, sans-serif
 
 .text
 	font-size $font-reading
@@ -140,6 +145,7 @@ h2, .sub-heading
 		font-size 0.9rem
 
 .caption
+	font-size 1rem
 	margin-top .1em
 	color #c8c8c8
 

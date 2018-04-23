@@ -2,7 +2,7 @@
 	span(1)
 	.responsive-image
 		span(9/12)
-		width 'calc(75% - %s)' % $gutter
+		width 'calc((100% - %s) * 3 / 4)' % ($gutter/2)
 		+below($sm)
 			stack()
 	.item-infos

@@ -11,6 +11,8 @@
 	display flex
 	justify-content center
 	align-items center
+	+below($sm)
+		padding-bottom 12rem
 
 #navigation
 	width 100%
@@ -39,6 +41,9 @@
 		margin-left $gutter
 		max-width 7rem
 		mix-blend-mode darken
+		+below($sm)
+			max-width 10rem
+			margin 0
 
 body.menu-on
 	overflow hidden

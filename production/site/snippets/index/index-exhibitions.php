@@ -24,7 +24,7 @@
 				<?php if ($exhibition->subtitle()->isNotEmpty()): ?>
 					<div class="caption-title serif"><?= $exhibition->subtitle()->html() ?></div>
 				<?php endif ?>
-        <div class="small mt2"><?= $exhibition->formattedDate() ?></div>
+        		<div class="caption-title serif mt2"><?= $exhibition->formattedDate() ?></div>
 			</a>
 		<?php endforeach ?>
 	</div>

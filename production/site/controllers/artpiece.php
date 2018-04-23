@@ -7,7 +7,7 @@ return function ($site, $pages, $page) {
 
 	return array(
 		'artpiece' => $artpiece,
-		'artpieces' => $page->parent()->children()->visible()->not($page)->filterBy('featured', '!=', ''),
+		'artpieces' => $page->parent()->children()->visible()->filterBy('featured', '!=', '')->not($page),
 		'exhibitions' => $page->getExhibitions(),
 	);
 }

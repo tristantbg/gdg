@@ -1,33 +1,47 @@
-[page-type=article], [page-type=exhibition]
+[page-type=articles], [page-type=about], [page-type=exhibition]
 	&[page-template=c]
-		#container
-			margin-top 7rem
-		.header-template
-			min-height 101vw
-		.sticky-title
-			top 12vh
-			margin-top 14vw
-			span(10/16, $offset: 3/16)
-			text-align center
-		.template-component
-			z-index 0
-			&.image-1
-				top 19vw
-				span(6/16, $offset: 2/16)
-				padding-right $gutter
-			&.image-2
-				span(8/16, $offset: 8/16)
-			&.image-3
-				top 56vw
-				span(10/16)
-				padding-right $gutter
-			&.image-4
-				top 47vw
-				span(5/16, $offset: 10/16)
-				padding-right $gutter
-			&.poster
-				top 47vw
-				span(4/16, $offset: 11/16)
-				padding-right $gutter
-			.slider
-				height 41vw
+		+above($sm + 1)
+			#container
+				margin-top 7rem
+			.header-template
+				min-height 101vw
+			.sticky-title
+				top 12vh
+				margin-top 14vw
+				span(10/16, $offset: 3/16)
+				text-align center
+			.template-component
+				z-index 0
+				&.image-1
+					top 19vw
+					span(6/16, $offset: 2/16)
+					padding-right $gutter
+				&.image-2
+					span(8/16, $offset: 8/16)
+				&.image-3
+					top 56vw
+					span(10/16)
+					padding-right $gutter
+				&.image-4
+					top 47vw
+					span(5/16, $offset: 10/16)
+					padding-right $gutter
+				&.poster
+					top 47vw
+					span(4/16, $offset: 11/16)
+					padding-right $gutter
+				.slider
+					height 41vw
+		+below($sm)
+			.template-component
+				&.image-1
+					span(3/4)
+				&.image-2
+					span(3/4, $offset: 1/4)
+				&.image-3
+					span(1)
+				&.image-4
+					padding-left $gutter
+					span(3/4)
+				&.poster
+					span(3/4, $offset: 1/4)

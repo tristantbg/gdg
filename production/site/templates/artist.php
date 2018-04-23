@@ -3,7 +3,7 @@
 <div id="page-header" class="row contained">
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 	<?php if ($page->summary()->isNotEmpty()): ?>
-		<div id="artist-summary" class="row lead tac c6 co3" md="c12 co0">
+		<div id="artist-summary" class="row lead tac c6 co3 mt1" md="c12 co0">
 			<?= $page->summary()->kt() ?>
 		</div>
 	<?php endif ?>
@@ -17,7 +17,7 @@
 			</div>
 			<div id="page-description" class="c6 fl" md="c12"><?= $page->text()->kt() ?></div>
 		<?php else: ?>
-			<div id="page-description" class="c8 fl" md="c12"><?= $page->text()->kt() ?></div>
+			<div id="page-description" class="c8 fl text" md="c12"><?= $page->text()->kt() ?></div>
 		<?php endif ?>
 	</div>
 </div>

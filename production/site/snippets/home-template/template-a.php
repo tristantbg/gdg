@@ -43,3 +43,36 @@
 		</a>
 	</div>
 </section>
+
+<section class="header-template home-template mobile template-a">
+	
+	<?php if ($medias->count() > 0): ?>
+	<div class="template-component slider-images mb1">
+		<?php snippet('slider') ?>
+		<div class="slider-caption row caption"></div>
+	</div>
+	<?php endif ?>
+
+	<a href="<?= $featuredPage->url() ?>">
+		<div class="template-component title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
+			<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></span>
+			<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
+				<div class="secondary"><?= $featuredPage->secondaryTitle()->html() ?></div>
+			<?php endif ?>
+		</div>
+		<div class="template-component text-1 mt2">
+			<div class="tag mb1"><?= l::get('current-exhibition') ?></div>
+			<div class="bold text"><?= $featuredPage->formattedDate() ?></div>
+			<?php if ($featuredPage->subtitle()->isNotEmpty()): ?>
+			<div class="bold text"><?= $featuredPage->subtitle()->html() ?></div>
+			<?php endif ?>
+		</div>
+	</a>
+	
+	<?php if ($page->content('fr')->get('templateVideo1')->isNotEmpty()): ?>
+		<div class="template-component video-player video-cover video-1 mt2">
+			<?php snippet('template-videoplayer', array('field' => $page->content('fr')->get('templateVideo1')) ) ?>
+		</div>
+	<?php endif ?>
+	
+</section>

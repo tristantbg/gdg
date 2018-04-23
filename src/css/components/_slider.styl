@@ -38,6 +38,8 @@
 		border none
 		border-radius 0
 		z-index 10
+		+below($sm)
+			width 5rem
 		.flickity-button-icon
 			left 15%
 			width 70%
@@ -47,11 +49,15 @@
 			visibility hidden
 		&.previous
 			left -15rem
+			+below($sm)
+				left 0
 			.cursor
 				&::after
 					content 'Previous'
 		&.next
 			right -15rem
+			+below($sm)
+				right 0
 			.cursor
 				&::after
 					content 'Next'
@@ -65,7 +71,7 @@
 			outline none
 
 .slider-caption
-	margin-top 1em
+	margin-top 0.1em
 	text-align center
 	+above($md + 1)
-		padding 0 25%
+		padding 0 22%
