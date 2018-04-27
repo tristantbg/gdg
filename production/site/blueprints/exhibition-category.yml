@@ -1,0 +1,25 @@
+title: Catégorie exposition
+pages:
+  template: exhibitions
+files:
+  fields:
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
+fields:
+  autoid:
+    type: hidden
+  previewfiles:
+    type: hidden
+  reveal: reveal
+  title:
+    label: Titre
+    type:  text
+  text:
+    label: Texte
+    type:  simplemde

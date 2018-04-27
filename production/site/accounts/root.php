@@ -9,8 +9,8 @@ password: >
 language: en
 role: admin
 history:
+  - expositions/la-galerie-de
+  - expositions
   - a-propos
   - art-culture
   - home
-  - expositions/on-off
-  - expositions/always-someone-asleep-and-someone-awake
