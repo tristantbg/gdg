@@ -1,6 +1,6 @@
 [page-type=articles], [page-type=about], [page-type=exhibition]
 	&[page-template=a]
-		+above($sm + 1)
+		+above($md + 1)
 			#container
 				margin-top 7rem
 			.header-template
@@ -30,7 +30,11 @@
 					top 61vw
 					span(4/16, $offset: 11/16)
 					padding-right $gutter
-		+below($sm)
+				.slider
+					height 41vw
+					img
+						object-fit cover
+		+below($md)
 			.template-component
 				&.image-1
 					span(3/4, $offset: 1/4)

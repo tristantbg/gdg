@@ -5,6 +5,6 @@
 		</div>
 	<?php endif ?>
 	<div class="text">
-		<?= $data->get('content')->kt() ?>
+		<div class="c8 co2" md="c12 co0"><?= $data->get('content')->kt() ?></div>
 	</div>
 </section>

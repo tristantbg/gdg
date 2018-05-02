@@ -63,7 +63,7 @@ input
   border 1px solid $secondary
   box-shadow none
   border-radius 0
-  padding 0.8em
+  padding 1em
   margin 0
   font-size inherit
   sans-serif()
@@ -71,7 +71,7 @@ input
     outline none
 
 .searchbar, .arrow-form
-  height 3.5rem
+  height 4rem
   width 100%
   display inline-flex
   .mc-field-group
@@ -81,7 +81,7 @@ input
     width 100%
   input
     flex 1 1 auto
-    height 3.5rem
+    height 4rem
     float left
     display block
     border-right none
@@ -92,14 +92,14 @@ input
   input[type="submit"]
     display none
   label
-    height 3.5rem
+    height 4rem
   .arrow-button
     cursor pointer
-    height 3.5rem
+    height 4rem
     position relative
     border 1px solid $secondary
     display block
-    width 2.6rem
+    width 3.4rem
     display flex
     justify-content center
     align-items center
@@ -113,7 +113,7 @@ input
 
 a.button
   display block
-  padding 0.8em
+  padding 1em 0.8em
   &:hover
     +above($md + 1)
       background $secondary
@@ -121,11 +121,9 @@ a.button
 
 .menu-item, li[event-target=submenu]
   display block
-  padding 0.8em 0.8em 0.8em 0
+  padding 1em 0.8em 1em 0
   &:not(:last-child)
-    border-bottom 2px solid
-    +below($md)
-      border-width 1px
+    border-bottom 1px solid
 
 ul.has-submenu
   display block
@@ -138,14 +136,16 @@ ul.has-submenu
     &.submenu
       display none
       .arrow-button
-        width 2.6rem
+        width 3.4rem
       input, .arrow-button
         border-top none
         border-left none
         border-right none
-        border-bottom 2px solid
-        +below($md)
-          border-width 1px
+        border-bottom 1px solid
+      input
+        border-left 1px solid
+      .arrow-button
+        border-right 1px solid
       input + input, input + label input, input + label .arrow-button
         border-left 0
   li
@@ -161,7 +161,7 @@ ul.has-submenu
       height 100%
       position absolute
       top 0
-      right 0.8em
+      right 1.1em
   &.hoverable:hover, &.clickable.opened
     .submenu
       display block
@@ -203,9 +203,13 @@ ul.has-submenu
   display inline-block
   padding 0.5em 1em 0.6em
   border 1px solid
+  transition background 300ms ease
+  +above($md + 1)
+    &:hover
+      background alpha(#9b9b9b, 0.2)
 
 .desktop
-  +below($sm)
+  +below($md)
     display none
 
 .mobile

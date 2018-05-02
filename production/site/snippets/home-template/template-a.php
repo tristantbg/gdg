@@ -27,8 +27,8 @@
 		<a href="<?= $featuredPage->url() ?>">
 		<div class="tag mb1"><?= l::get('current-exhibition') ?></div>
 		<div class="bold text"><?= $featuredPage->formattedDate() ?></div>
-		<?php if ($featuredPage->subtitle()->isNotEmpty()): ?>
-		<div class="bold text"><?= $featuredPage->subtitle()->html() ?></div>
+		<?php if ($featuredPage->summary()->isNotEmpty()): ?>
+		<div class="bold text"><?= $featuredPage->summary()->kt() ?></div>
 		<?php endif ?>
 		</a>
 	</div>

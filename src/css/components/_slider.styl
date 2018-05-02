@@ -38,6 +38,8 @@
 		border none
 		border-radius 0
 		z-index 10
+		+below($md)
+			display none
 		+below($sm)
 			width 5rem
 		.flickity-button-icon
@@ -69,6 +71,11 @@
 		&:focus
 			box-shadow none
 			outline none
+
+.inline-slider
+	.flickity-prev-next-button
+		+above($md + 1)
+			height 17vw
 
 .slider-caption
 	margin-top 0.1em

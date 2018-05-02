@@ -1,8 +1,6 @@
-<?php snippet('header') ?>
-
-<?php snippet('tag-template/template-'.$page->pageTemplate()) ?>
-
-<?php snippet('page-sections') ?>
+<div id="page-header" class="row contained">
+	<h1 class="title tac"><?= ucfirst($tag) ?></h1>
+</div>
 
 <div id="articles" class="row contained mt4">
   <section class="page-section section section--articles four-columns">
@@ -29,5 +27,3 @@
       <?php endforeach ?>
   </section>
 </div>
-
-<?php snippet('footer') ?>
