@@ -9,8 +9,8 @@ password: >
 language: en
 role: admin
 history:
+  - a-propos
   - expositions/la-galerie-de
   - expositions
-  - a-propos
   - art-culture
   - home

@@ -1,6 +1,6 @@
 section.header-template
 	position relative
-	+above($sm + 1)
+	+above($md + 1)
 		min-height 100vh
 		padding-bottom 8rem
 		.responsive-image .ph
@@ -26,11 +26,11 @@ section.header-template.mobile
 			font-family: "object-fit: cover";
 
 .template-component
-	+above($sm + 1)
+	+above($md + 1)
 		position absolute
 		top 0
 		left 0
-	+below($sm)
+	+below($md)
 		span(1)
 	&.video-cover
 	 overflow hidden
@@ -48,7 +48,7 @@ section.header-template.mobile
 			&.next
 				right 0
 
-[page-type=articles], [page-type=article], [page-type=exhibition]
+[page-type=articles], [page-type=article], [page-type=exhibition], [page-type=exhibition-category]
 	.template-component, .sticky-title
 		margin-bottom 2rem
 		text-align center
@@ -56,9 +56,10 @@ section.header-template.mobile
 .sticky-title
 	position sticky
 	position -webkit-sticky
+	padding-bottom 4rem
 	z-index 10
 	pointer-events none
-	+below($sm)
+	+below($md)
 		span(1)
 	h1 + .caption-title
 		margin-top 2rem

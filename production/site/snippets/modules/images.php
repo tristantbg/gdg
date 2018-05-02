@@ -9,10 +9,11 @@
     <?= $data->get("subtitle")->html() ?>
   </div>
   <?php endif ?>
-  <div class="row four-columns x xjc">
+  <?php $count = $data->get("content")->toStructure()->count() ?>
+  <div class="row relatedpages-slider four-columns<?php e($count > 4, ' inline-slider') ?><?php e($count == 3, ' x xjc xw') ?>">
     <?php foreach ($data->get("content")->toStructure() as $key => $image): ?>
         <?php $imageFile = $image->toFile() ?>
-        <div class="image-item">
+        <div class="image-item inline-item">
           <?php snippet('responsive-image', array('field' => $image)) ?>
           <div class="item-infos">
             <?php if ($imageFile->imageTitle()->isNotEmpty()): ?>

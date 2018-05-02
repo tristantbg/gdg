@@ -13,16 +13,16 @@ v::$validators['unique'] = function($value, $field) {
 page::$methods['formattedDate'] = function($page) {
 
 	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
-		$formattedDate = utf8_encode($page->date('%e&nbsp;%B %Y'));
+		$formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
 	}
 	else if($page->date('%Y') == $page->date('%Y', 'dateEnd')) {
 		$formattedDate = utf8_encode($page->date('%e&nbsp;%B'));
 		$formattedDate .= '–';
-		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B %Y', 'dateEnd'));
+		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
 	} else {
-		$formattedDate = utf8_encode($page->date('%e&nbsp;%B %Y'));
+		$formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
 		$formattedDate .= '–';
-		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B %Y', 'dateEnd'));
+		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
 	}
 
 	return $formattedDate;
@@ -42,7 +42,7 @@ page::$methods['displayTags'] = function($page) {
     if(count($tags) > 0) {
 
       foreach ($tags as $key => $t) {
-        $html .= '<div class="tag">'.html($t).'</div>';
+        $html .= '<a href="'.page('index')->url().'/by:tag/tag:'.$t.'" class="tag">'.html($t).'</a>';
       }
 
     }
@@ -160,19 +160,25 @@ function getRelatedPages($content) {
   return $relatedPages;
 };
 
-function displayTags($tags) {
-    $tags = $tags->split();
-    $html = '';
+function displayTags($tags, $withoutLinks = false) {
 
-    if(count($tags) > 0) {
+	$tags = $tags->split();
+	$html = '';
 
-      foreach ($tags as $key => $t) {
-        $html .= '<div class="tag">'.html($t).'</div>';
-      }
+	if(count($tags) > 0) {
 
-    }
+		foreach ($tags as $key => $t) {
+			if ($withoutLinks) {
+				$html .= '<div class="tag">'.html($t).'</div>';
+			} else {
+				$html .= '<a href="'.page('index')->url().'/by:tag/tag:'.$t.'" class="tag">'.html($t).'</a>';
+			}
+		}
 
-    return '<div class="tags">'.$html.'</div>';
+	}
+
+	return '<div class="tags">'.$html.'</div>';
+
 };
 
 // ROUTES

@@ -1,5 +1,6 @@
-[page-type=home][page-template=c]
-	+above($sm + 1)
+[page-type=home][page-template=c], 
+[page-type=exhibition-category]
+	+above($md + 1)
 		#container
 			margin-top 7rem
 		.template-component
@@ -23,3 +24,12 @@
 					width 70%
 				.tags
 					margin-top 1em
+
+[page-type=exhibition-category]
+	+above($md + 1)
+		.template-component
+			&.featuredpage-1
+				.page-infos
+					margin-top 0
+			.text
+				margin-top 1rem

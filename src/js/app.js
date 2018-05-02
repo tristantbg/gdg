@@ -164,11 +164,18 @@ const App = {
     },
     embedKirby: () => {
       var pluginEmbedLoadLazyVideo = function() {
-        var e = this.parentNode,
-          d = e.children[0];
-        d.src = d.dataset.src, e.removeChild(this)
+        var wrapper = this.parentNode;
+        var embed = wrapper.children[0];
+        var script = wrapper.querySelector('script');
+        embed.src = script.getAttribute('data-src')+'&autoplay=1';
+        wrapper.removeChild(this);
       };
-      for (var d = document.getElementsByClassName("embed__thumb"), t = 0; t < d.length; t++) d[t].addEventListener("click", pluginEmbedLoadLazyVideo, !1)
+
+      var thumb = document.getElementsByClassName('embed__thumb');
+
+      for (var i = 0; i < thumb.length; i++) {
+        thumb[i].addEventListener('click', pluginEmbedLoadLazyVideo, false);
+      }
     },
     indexGrid: () => {
       const grid = document.getElementById('index-artpieces');
@@ -249,6 +256,7 @@ const App = {
             cellSelector: '.slide',
             imagesLoaded: true,
             lazyLoad: 1,
+            autoPlay: Modernizr.touchevents ? 3000 : false,
             setGallerySize: false,
             adaptiveHeight: false,
             percentPosition: true,
@@ -262,14 +270,15 @@ const App = {
           });
         }
       }
-      var elements = document.getElementsByClassName('inline-slider');
-      if (elements.length > 0) {
-        for (var i = 0; i < elements.length; i++) {
-          initFlickity(elements[i], {
+      var inlineElements = document.getElementsByClassName('inline-slider');
+      if (inlineElements.length > 0) {
+        for (var i = 0; i < inlineElements.length; i++) {
+          initFlickity(inlineElements[i], {
             cellSelector: '.inline-item',
             cellAlign: 'left',
             imagesLoaded: true,
             lazyLoad: false,
+            autoPlay: Modernizr.touchevents ? 3000 : false,
             setGallerySize: true,
             adaptiveHeight: false,
             percentPosition: true,

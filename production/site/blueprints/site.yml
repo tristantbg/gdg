@@ -46,7 +46,7 @@ fields:
               page: /
               fetch: index
               value: '{{autoid}}'
-              text: '{{title}}'
+              text: '{{title}} ({{uri}})'
             width: 1/2
           bold:
             label: Titre en gras
@@ -82,8 +82,11 @@ fields:
             label: URL
             type: url
             required: true
-  footer:
-    label: Footer
+  footer1:
+    label: Footer Colonne 1
+    type: simplemde
+  footer2:
+    label: Footer Colonne 2
     type: simplemde
   pressPage:
     label: Page presse
@@ -93,7 +96,7 @@ fields:
       page: /
       fetch: index
       value: '{{autoid}}'
-      text: '{{title}}'
+      text: '{{title}} ({{uri}})'
     width: 1/2
   legalPage:
     label: Mentions légales
@@ -103,7 +106,7 @@ fields:
       page: /
       fetch: index
       value: '{{autoid}}'
-      text: '{{title}}'
+      text: '{{title}} ({{uri}})'
     width: 1/2
   logos:
     label: Logos

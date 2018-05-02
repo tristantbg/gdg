@@ -1,6 +1,6 @@
 [page-type=articles], [page-type=about], [page-type=exhibition]
 	&[page-template=c]
-		+above($sm + 1)
+		+above($md + 1)
 			#container
 				margin-top 7rem
 			.header-template
@@ -32,7 +32,9 @@
 					padding-right $gutter
 				.slider
 					height 41vw
-		+below($sm)
+					img
+						object-fit cover
+		+below($md)
 			.template-component
 				&.image-1
 					span(3/4)

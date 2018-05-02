@@ -3,8 +3,9 @@
 		<?= $site->title()->html() ?>
 	</div>
 	<div class="row small mb4">
-		<div class="db c6 fl tc2" md="c12 mb4" sm="tc1 dn">
-			<?= $site->footer()->kt() ?>
+		<div class="db c6 fl bold" md="c12 mb4" sm="dn">
+			<div class="c6 fl prg" sm="c12 p0"><?= $site->footer1()->kt() ?></div>
+			<div class="c6 fl" sm="c12"><?= $site->footer2()->kt() ?></div>
 		</div>
 		<div id="footer-links" class="c3 co3 fl bold" md="c6 co0" sm="c12">
 			<div class="row mb2">
@@ -36,6 +37,8 @@
 				<?= html::email($site->contactEmail(), l::get('contact-us'), array('class' => 'row menu-item')) ?>
 			<?php endif ?>
 
+			<a class="row menu-item" href="<?= page('a-propos')->url().'/#press' ?>"><?= l::get('press.area') ?></a>
+
 			<?php if ($pressPage = $site->index()->findBy('autoid', $site->pressPage()->value())): ?>
 			<a class="row menu-item" href="<?= $pressPage->url() ?>"><?= $pressPage->title()->html() ?></a>
 			<?php endif ?>
@@ -52,7 +55,7 @@
 				</ul>
 			</ul>
 
-			<div id="footer-socials" class="row menu-item">
+			<div id="footer-socials" class="row menu-item mt2">
 				<div class="row mb1"><?= l::get('follow-us') ?></div>
 				<div class="row x">
 					<?php foreach ($site->socials()->toStructure() as $key => $s): ?>

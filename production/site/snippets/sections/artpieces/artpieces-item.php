@@ -11,7 +11,7 @@
 			<div class="row serif bold caption-title">
 				<a href="<?= $artpiece->parent()->url() ?>"><?= $artpiece->parent()->title()->html() ?></a>
 			</div>
-			<div class="row serif caption-title">
+			<div class="row serif caption-title c6 co3" md="c12 co0">
 				<em><?= $artpiece->title()->html() ?></em><?php e($artpiece->year()->isNotEmpty(), ', '.$artpiece->year()->html()) ?>
 			</div>
 			<?php if ($artpiece->summary()->isNotEmpty()): ?>
