@@ -133,27 +133,28 @@ function getRelatedPages($content) {
 
   $relatedPages = new Collection();
   $index = site()->index()->visible();
+  if ($content->isNotEmpty()) {
+    foreach ($content as $key => $p) {
+      if ($p->get('content')->isNotEmpty()) {
+      	$rP = $index->findBy('autoid', $p->get('content')->value());
+      } else {
+        $rP = new Collection();
+        $rP->set('featured', $p->get('thumb'));
+        $rP->set('title', $p->get('title'));
+        $rP->set('subtitle', $p->get('subtitle'));
+        $rP->set('summary', $p->get('summary'));
+        $rP->set('tags', $p->get('tags'));
+        $rP->set('link', $p->get('link'));
+      }
+      if ($p->get('thumb')->isNotEmpty()) $rP->set('featured', $p->get('thumb'));
+      if ($p->get('title')->isNotEmpty()) $rP->set('title', $p->get('title'));
+      if ($p->get('subtitle')->isNotEmpty()) $rP->set('subtitle', $p->get('subtitle'));
+      if ($p->get('summary')->isNotEmpty()) $rP->set('summary', $p->get('summary'));
+      if ($p->get('tags')->isNotEmpty()) $rP->set('tags', $p->get('tags'));
+      if ($p->get('link')->isNotEmpty()) $rP->set('link', $p->get('link'));
 
-  foreach ($content as $key => $p) {
-    if ($p->get('content')->isNotEmpty()) {
-    	$rP = $index->findBy('autoid', $p->get('content')->value());
-    } else {
-      $rP = new Collection();
-      $rP->set('featured', $p->get('thumb'));
-      $rP->set('title', $p->get('title'));
-      $rP->set('subtitle', $p->get('subtitle'));
-      $rP->set('summary', $p->get('summary'));
-      $rP->set('tags', $p->get('tags'));
-      $rP->set('link', $p->get('link'));
+      if($rP) $relatedPages->data[] = $rP;
     }
-    if ($p->get('thumb')->isNotEmpty()) $rP->set('featured', $p->get('thumb'));
-    if ($p->get('title')->isNotEmpty()) $rP->set('title', $p->get('title'));
-    if ($p->get('subtitle')->isNotEmpty()) $rP->set('subtitle', $p->get('subtitle'));
-    if ($p->get('summary')->isNotEmpty()) $rP->set('summary', $p->get('summary'));
-    if ($p->get('tags')->isNotEmpty()) $rP->set('tags', $p->get('tags'));
-    if ($p->get('link')->isNotEmpty()) $rP->set('link', $p->get('link'));
-
-    if($rP) $relatedPages->data[] = $rP;
   }
 
   return $relatedPages;
