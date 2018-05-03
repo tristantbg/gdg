@@ -1,15 +1,15 @@
 <?php if($image = $field->toFile()): ?>
-	
+
 	<div class="responsive-image">
 		<?php
 		if(!isset($maxWidth)) $maxWidth = 3000;
 		if (isset($ratio)) {
-			$placeholder = $image->crop(50, floor(50/$ratio))->dataUri();
+			$placeholder = $image->crop(100, floor(100/$ratio))->url();
 			$src = $image->crop(1000, floor(1000/$ratio))->url();
 			$srcset = $image->crop(500, floor(500/$ratio))->url() . ' 500w,';
 			for ($i = 1000; $i <= $maxWidth; $i += 1000) $srcset .= $image->crop($i, floor($i/$ratio))->url() . ' ' . $i . 'w,';
 		} else {
-			$placeholder = $image->width(50)->dataUri();
+			$placeholder = $image->width(100)->url();
 			$src = $image->width(1000)->url();
 			$srcset = $image->width(500)->url() . ' 500w,';
 			for ($i = 1000; $i <= $maxWidth; $i += 1000) $srcset .= $image->width($i)->url() . ' ' . $i . 'w,';
