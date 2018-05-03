@@ -1,10 +1,17 @@
 .section--announcement
 	span(1)
-	.responsive-image
+	.responsive-image, .slider
 		span(9/12)
 		width 'calc((100% - %s) * 3 / 4)' % ($gutter*3)
 		+below($sm)
 			stack()
+	.slider
+		height 28vw
+		.flickity-prev-next-button
+			&.next
+				right 0
+			&.previous
+				left 0
 	.item-infos
 		span(3/12)
 		+above($sm + 1)

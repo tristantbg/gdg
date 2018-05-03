@@ -17,8 +17,8 @@ files:
   sanitize: true
   fields: null
   size: null
-  width: null
-  height: null
+  width: 5000
+  height: 5000
   fields:
     caption:
       label: Description
@@ -37,6 +37,12 @@ fields:
   title:
     label: Titre
     type: title
+    width: 3/4
+  grid:
+    label: Grille articles
+    type: toggle
+    default: yes
+    width: 1/4
   pageindex:
     label: Index
     type: index
@@ -94,6 +100,9 @@ fields:
           link:
             label: Lien
             type: url
+          slider:
+            label: Slider
+            type: images
       relatedpages:
         label: Brèves
         fields:

@@ -28,7 +28,7 @@
 		<div class="tag mb1"><?= l::get('current-exhibition') ?></div>
 		<div class="bold text"><?= $featuredPage->formattedDate() ?></div>
 		<?php if ($featuredPage->summary()->isNotEmpty()): ?>
-		<div class="bold text"><?= $featuredPage->summary()->kt() ?></div>
+		<div class="text"><?= $featuredPage->summary()->kt() ?></div>
 		<?php endif ?>
 		</a>
 	</div>
@@ -45,7 +45,7 @@
 </section>
 
 <section class="header-template home-template mobile template-b">
-	
+
 	<?php if ($medias->count() > 0): ?>
 	<div class="template-component slider-images mb1">
 		<?php snippet('slider') ?>
@@ -68,11 +68,11 @@
 			<?php endif ?>
 		</div>
 	</a>
-	
+
 	<?php if ($page->content('fr')->get('templateVideo1')->isNotEmpty()): ?>
 		<div class="template-component video-player video-cover video-1 mt2">
 			<?php snippet('template-videoplayer', array('field' => $page->content('fr')->get('templateVideo1')) ) ?>
 		</div>
 	<?php endif ?>
-	
+
 </section>

@@ -2,6 +2,8 @@ title: Homepage
 icon: home
 pages: false
 files:
+  width: 5000
+  height: 5000
   fields:
     imageTitle:
       label: Title
@@ -71,6 +73,9 @@ fields:
           link:
             label: Lien
             type: url
+          slider:
+            label: Slider
+            type: images
       relatedpages:
         label: Brèves
         fields:

@@ -16,6 +16,9 @@ files: false
 fields:
   autoid:
     type: hidden
+  tabs1:
+    label: Général
+    type: tabs
   title:
     label: Titre
     type: title
@@ -32,3 +35,9 @@ fields:
       date: Début
       dateEnd: Fin
       uid: Slug
+  tabs2:
+    label: Template
+    type: tabs
+  templateGroup:
+    extends: page-template
+    required: true

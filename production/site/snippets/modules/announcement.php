@@ -2,7 +2,11 @@
 		<?php if ($data->get('link')->isNotEmpty()): ?>
 			<a href="<?= $data->get('link') ?>">
 		<?php endif ?>
-		<?php snippet('responsive-image', array('field' => $data->get('thumb'), 'ratio' => 665/498)) ?>
+    <?php if ($data->get('slider')->isNotEmpty()): ?>
+    <?php snippet('slider', array('medias' => $data->get('slider')->toStructure(), 'ratio' => 665/498)) ?>
+    <?php else: ?>
+    <?php snippet('responsive-image', array('field' => $data->get('thumb'), 'ratio' => 665/498)) ?>
+    <?php endif ?>
 		<?php if ($data->get('link')->isNotEmpty()): ?>
 			</a>
 		<?php endif ?>

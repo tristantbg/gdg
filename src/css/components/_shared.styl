@@ -1,217 +1,220 @@
 .embed__thumb>img
-  opacity 1
-  width 50%
-  max-width 11rem
-  opacity 1
-  cursor pointer
-  transition opacity 200ms ease, width 200ms ease, max-width 200ms ease
-  &:hover
-    width 55%
-    max-width 12rem
+	opacity 1
+	width 50%
+	max-width 11rem
+	opacity 1
+	cursor pointer
+	transition opacity 200ms ease, width 200ms ease, max-width 200ms ease
+	&:hover
+		width 55%
+		max-width 12rem
 
 .lazy, .plyr
-  transition opacity 300ms ease
-  opacity 0
-  // transition filter 300ms ease, opacity 300ms ease
-  // filter: blur(3px)
-  // overflow hidden
-  // opacity 0.3
+	transition opacity 300ms ease
+	opacity 0
+	// transition filter 300ms ease, opacity 300ms ease
+	// filter: blur(3px)
+	// overflow hidden
+	// opacity 0.3
 
 .lazy.lazyloaded, .lazy.flickity-lazyloaded, .plyr.plyr--ready
-  opacity 1
-  // filter: blur(0px)
+	opacity 1
+	// filter: blur(0px)
 
 .responsive-image
-  hideselect()
-  position relative
-  overflow hidden
-  img
-    position absolute
-    top 0
-    left 0
+	hideselect()
+	position relative
+	overflow hidden
+	img
+		position absolute
+		top 0
+		left 0
 
 sup
-  font-size 0.7em
-  position relative
-  top -0.3em
+	font-size 0.7em
+	position relative
+	top -0.3em
 
 hr
-  display block
-  float left
-  border none
-  margin $spacer 0
-  height 1px
-  width 100%
-  color $secondary
-  color var(--font-color)
-  background $secondary
-  background var(--font-color)
-  +below($sm)
-    margin 2rem 0
+	display block
+	float left
+	border none
+	margin $spacer 0
+	height 1px
+	width 100%
+	color $secondary
+	color var(--font-color)
+	background $secondary
+	background var(--font-color)
+	+below($sm)
+		margin 2rem 0
 
 .spacer-top
-  margin-top $spacer
+	margin-top $spacer
 
 .spacer-bottom
-  margin-bottom $spacer
+	margin-bottom $spacer
 
 input
-  border none
-  background transparent
-  -webkit-appearance none
-  -moz-appearance none
-  border 1px solid $secondary
-  box-shadow none
-  border-radius 0
-  padding 1em
-  margin 0
-  font-size inherit
-  sans-serif()
-  &:focus
-    outline none
+	border none
+	background transparent
+	-webkit-appearance none
+	-moz-appearance none
+	border 1px solid $secondary
+	box-shadow none
+	border-radius 0
+	padding 1em
+	margin 0
+	font-size inherit
+	sans-serif()
+	&:focus
+		outline none
 
 .searchbar, .arrow-form
-  height 4rem
-  width 100%
-  display inline-flex
-  .mc-field-group
-    display inline-flex
-    width 100%
-  #mc_embed_signup_scroll
-    width 100%
-  input
-    flex 1 1 auto
-    height 4rem
-    float left
-    display block
-    border-right none
-    &::placeholder
-      font-family "GLBaderBold", Helvetica, sans-serif
-  input + input, input + label input, input + label .arrow-button
-    border-left 0
-  input[type="submit"]
-    display none
-  label
-    height 4rem
-  .arrow-button
-    cursor pointer
-    height 4rem
-    position relative
-    border 1px solid $secondary
-    display block
-    width 3.4rem
-    display flex
-    justify-content center
-    align-items center
-    background transparent
-    border 1px solid $secondary
-    border-left none
-    svg
-      display block
-      width 0.8rem
-      height 100%
+	height 4rem
+	width 100%
+	display inline-flex
+	.mc-field-group
+		display inline-flex
+		width 100%
+	#mc_embed_signup_scroll
+		width 100%
+	input
+		flex 1 1 auto
+		height 4rem
+		float left
+		display block
+		border-right none
+		&::placeholder
+			font-family "GLBaderBold", Helvetica, sans-serif
+	input + input, input + label input, input + label .arrow-button
+		border-left 0
+	input[type="submit"]
+		display none
+	label
+		height 4rem
+	.arrow-button
+		cursor pointer
+		height 4rem
+		position relative
+		border 1px solid $secondary
+		display block
+		width 3.4rem
+		display flex
+		justify-content center
+		align-items center
+		background transparent
+		border 1px solid $secondary
+		border-left none
+		svg
+			display block
+			width 0.8rem
+			height 100%
 
 a.button
-  display block
-  padding 1em 0.8em
-  &:hover
-    +above($md + 1)
-      background $secondary
-      color $menu-color
+	display block
+	padding 1em 0.8em
+	&:hover
+		+above($md + 1)
+			background $secondary
+			color $menu-color
 
 .menu-item, li[event-target=submenu]
-  display block
-  padding 1em 0.8em 1em 0
-  &:not(:last-child)
-    border-bottom 1px solid
+	display block
+	padding 1em 0.8em 1em 0
+	&:not(:last-child)
+		border-bottom 1px solid
 
 ul.has-submenu
-  display block
-  float left
-  width 100%
-  ul
-    width 100%
-    display block
-    float left
-    &.submenu
-      display none
-      .arrow-button
-        width 3.4rem
-      input, .arrow-button
-        border-top none
-        border-left none
-        border-right none
-        border-bottom 1px solid
-      input
-        border-left 1px solid
-      .arrow-button
-        border-right 1px solid
-      input + input, input + label input, input + label .arrow-button
-        border-left 0
-  li
-    display block
-    float left
-    width 100%
-  li[event-target=submenu]
-    cursor pointer
-    position relative
-    & > svg
-      transition transform 200ms ease
-      width 0.8rem
-      height 100%
-      position absolute
-      top 0
-      right 1.1em
-  &.hoverable:hover, &.clickable.opened
-    .submenu
-      display block
-    li[event-target=submenu]
-      svg
-        transform rotate(90deg)
+	display block
+	float left
+	width 100%
+	ul
+		width 100%
+		display block
+		float left
+		&.submenu
+			display none
+			.arrow-button
+				width 3.4rem
+			input, .arrow-button
+				border-top none
+				border-left none
+				border-right none
+				border-bottom 1px solid
+			input
+				border-left 1px solid
+			.arrow-button
+				border-right 1px solid
+			input + input, input + label input, input + label .arrow-button
+				border-left 0
+	li
+		display block
+		float left
+		width 100%
+	li[event-target=submenu]
+		cursor pointer
+		position relative
+		& > svg
+			transition transform 200ms ease
+			width 0.8rem
+			height 100%
+			position absolute
+			top 0
+			right 1.1em
+	&.hoverable:hover, &.clickable.opened
+		.submenu
+			display block
+		li[event-target=submenu]
+			svg
+				transform rotate(90deg)
 
 .social-icon
-  width 3rem
-  margin-right 0.6rem
+	width 3rem
+	margin-right 0.6rem
 
 .logo-icon
-  margin-right $gutter
-  mix-blend-mode darken
-  max-width 20rem
+	margin-right $gutter
+	mix-blend-mode darken
+	max-width 20rem
+	+above($xl + 1)
+		max-width 13rem
 
 .image-placeholder
-  position relative
-  width 100%
-  background #d8d8d8
-  &::before
-    content ''
-    display block
-    padding-top 100%
-  .inner
-    align()
-    sub-heading()
-    font-size 8rem
-    text-transform uppercase
-    color $primary
+	position relative
+	width 100%
+	background #d8d8d8
+	&::before
+		content ''
+		display block
+		padding-top 100%
+	.inner
+		align()
+		sub-heading()
+		font-size 8rem
+		text-transform uppercase
+		color $primary
 
 .tags
-  display inline-flex
-  margin-top 2rem
-  .tag
-    margin-right 0.7em
+	display inline-flex
+	flex-wrap wrap
+	margin-top 2rem
+	.tag
+		margin-right 0.7em
 
 .show-more
-  display inline-block
-  padding 0.5em 1em 0.6em
-  border 1px solid
-  transition background 300ms ease
-  +above($md + 1)
-    &:hover
-      background alpha(#9b9b9b, 0.2)
+	display inline-block
+	padding 0.5em 1em 0.6em
+	border 1px solid
+	transition background 300ms ease
+	+above($md + 1)
+		&:hover
+			background alpha(#9b9b9b, 0.2)
 
 .desktop
-  +below($md)
-    display none
+	+below($md)
+		display none
 
 .mobile
-  +above($md + 1)
-    display none
+	+above($md + 1)
+		display none
