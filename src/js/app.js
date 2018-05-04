@@ -287,7 +287,7 @@ const App = {
             contain: false,
             prevNextButtons: true,
             pageDots: false,
-            draggable: true,
+            draggable: Modernizr.touchevents,
             dragThreshold: 30,
             arrowShape: 'M74.3 99.3L25 50 74.3.7l.7.8L26.5 50 75 98.5z'
           });
