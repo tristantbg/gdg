@@ -3,10 +3,17 @@
 	.responsive-image, .slider
 		span(9/12)
 		width 'calc((100% - %s) * 3 / 4)' % ($gutter*3)
-		+below($sm)
+		+below($md)
 			stack()
 	.slider
 		height 28vw
+		+below($xl)
+			height 39vw
+		+below($md)
+			height 71.4vw
+		.img
+			object-fit cover
+			font-family 'object-fit: cover'
 		.flickity-prev-next-button
 			&.next
 				right 0
@@ -14,11 +21,11 @@
 				left 0
 	.item-infos
 		span(3/12)
-		+above($sm + 1)
+		+above($md + 1)
 			padding-left $gutter
-		+below($sm)
+		+below($md)
 			stack()
 		.caption-title
 			margin-top 1em
-			+above($sm + 1)
+			+above($md + 1)
 				margin-top 0
