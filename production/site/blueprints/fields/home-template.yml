@@ -11,6 +11,7 @@ fields:
       a: A
       b: B
       c: C
+      d: D
   featuredPage:
     label: Featured page
     type: quickselect

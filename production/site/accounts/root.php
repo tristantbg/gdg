@@ -9,7 +9,7 @@ password: >
 language: en
 role: admin
 history:
-  - art-culture
   - home
+  - art-culture
   - a-propos
   - expositions
