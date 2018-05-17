@@ -4,7 +4,7 @@
 			#container
 				margin-top 7rem
 			.header-template
-				min-height 100.4vw
+				min-height 97.8vw
 			.sticky-title
 				top 12vh
 				margin-top 14vw
@@ -19,7 +19,7 @@
 					top 19vw
 					span(8/16, $offset: 8/16)
 				&.image-3
-					top 61vw
+					top 58.4vw
 					span(10/16)
 					padding-right $gutter
 				&.image-4
@@ -39,6 +39,9 @@
 					img
 						object-fit cover
 		+below($md)
+			.template-component, .sticky-title
+				margin-bottom 2rem
+				text-align center
 			.template-component
 				&.image-1
 					span(3/4, $offset: 1/4)

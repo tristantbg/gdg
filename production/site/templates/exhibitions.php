@@ -2,7 +2,7 @@
 
 <?php snippet('tag-template/template-'.$page->pageTemplate()) ?>
 
-<div class="row contained mt4">
+<div id="page-sections">
 	<?php snippet('sections/exhibitions/exhibitions-grid') ?>
 </div>
 

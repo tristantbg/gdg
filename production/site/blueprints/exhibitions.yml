@@ -12,7 +12,21 @@ pages:
   limit: 200
   sort: date desc
   hide: false
-files: false
+files:
+  width: 5000
+  height: 5000
+  fields:
+    imageTitle:
+      label: Title
+      type: text
+    caption:
+      label: Description
+      type: textarea
+      buttons:
+        - bold
+        - italic
+        - link
+        - email
 fields:
   autoid:
     type: hidden

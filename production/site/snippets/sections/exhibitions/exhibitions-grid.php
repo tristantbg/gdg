@@ -12,7 +12,6 @@
 				<div class="lead serif"><?= $exhibition->subtitle()->html() ?></div>
 				<?php endif ?>
 				<div class="lead serif"><?= $exhibition->formattedDate() ?></div>
-				<div class="tag mt2"><?= l::get('exhibitions.singular') ?></div>
 			</a>
 		<?php endforeach ?>
 	</section>

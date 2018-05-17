@@ -30,6 +30,8 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 */
 
 c::set('debug', true);
+c::set('cache', false);
+// c::set('cache.driver', 'apc');
 c::set('imagekit.lazy', false);
 c::set('autobuster', true);
 c::set('date.handler', 'strftime');

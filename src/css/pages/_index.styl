@@ -40,9 +40,9 @@
 #index-artpieces
 	.artpiece-item
 		position relative
-		width 'calc((100% - %s) / 4.1)' % ($gutter*3)
+		width 'calc((100% - %s) / 4)' % (23px*3+1)
 		+below($sm)
-			width 'calc((100% - %s) / 2.1)' % ($gutter)
+			width 'calc((100% - %s) / 2)' % (23px+1)
 		&[data-groupkey]
 			margin 0
 	.overlay

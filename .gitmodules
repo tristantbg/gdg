@@ -22,3 +22,6 @@
 [submodule "site/plugins/typography"]
 	path = site/plugins/typography
 	url = https://github.com/fabianmichael/kirby-typography.git
+[submodule "site/plugins/version-widget"]
+	path = site/plugins/version-widget
+	url = https://github.com/omz13/kirby-cache-widgets
