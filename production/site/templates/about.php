@@ -30,7 +30,7 @@
 	</div>
 	<div class="template-component text-1">
 		<?php if ($page->summary()->isNotEmpty()): ?>
-			<div id="page-summary" class="row contained summary mb4">
+			<div id="page-summary" class="row contained summary" md="my4">
 				<div class="c8 co2" md="c12 co0"><?= $page->summary()->kt() ?></div>
 			</div>
 		<?php endif ?>

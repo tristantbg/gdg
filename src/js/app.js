@@ -31,7 +31,24 @@ const App = {
     App.siteTitle = document.querySelector("#site-title");
     App.menu = document.getElementById("menu");
     App.interact.init();
+    App.sizeSet();
+    window.addEventListener('resize', debounce(App.sizeSet, 200));
     document.getElementById("loader").style.display = 'none';
+  },
+  sizeSet: () => {
+    const headerT = document.querySelector('.header-template');
+
+    if (headerT) {
+      let max = 0;
+      const components = headerT.querySelectorAll('.template-component');
+      if(components.length == 0) return;
+      for (var i = 0; i < components.length; i++) {
+        max = Math.max(max, pageYOffset + components[i].getBoundingClientRect().bottom);
+      }
+      headerT.style.minHeight = max - App.header.offsetHeight + 'px'
+    }
+
+
   },
   interact: {
     init: () => {
@@ -167,7 +184,7 @@ const App = {
         var wrapper = this.parentNode;
         var embed = wrapper.children[0];
         var script = wrapper.querySelector('script');
-        embed.src = script ? script.getAttribute('data-src')+'&autoplay=1' : embed.getAttribute('data-src')+'&autoplay=1';
+        embed.src = script ? script.getAttribute('data-src') + '&autoplay=1' : embed.getAttribute('data-src') + '&autoplay=1';
         wrapper.removeChild(this);
       };
 

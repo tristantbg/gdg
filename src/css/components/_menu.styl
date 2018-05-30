@@ -23,10 +23,13 @@
 		menu()
 		backface-visibility hidden
 		-webkit-backface-visibility hidden
-		transition transform 450ms ease, opacity 450ms ease
+		transition opacity 450ms ease, color 200ms ease
 		opacity 0
 		// transform translateY(-50%) translateZ(0)
 		transition-delay 450ms
+		+above($md + 1)
+			&:hover
+				color #4A4A4A
 
 #menu-footer
 	position absolute
@@ -59,7 +62,7 @@ body.menu-on
 			opacity 1
 			for i in (1..10)
 				&:nth-child({i})
-					transition-delay (i * 70ms + 180ms)
+					transition opacity 450ms ease (i * 70ms + 180ms), color 200ms ease
 	#container
 		filter: blur(10px)
 		// opacity 0.75

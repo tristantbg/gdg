@@ -35,7 +35,9 @@
 	<?php else: ?>
 		<div class="template-component text-1">
 		  <a href="<?= $featuredPage->url() ?>">
-			<?php if ($featuredPage->summary()->isNotEmpty()): ?>
+			<?php if ($page->content('fr')->get('templateText1')->isNotEmpty()): ?>
+			<div class="summary"><?= $page->content('fr')->get('templateText1')->kt() ?></div>
+			<?php elseif ($featuredPage->summary()->isNotEmpty()): ?>
 			<div class="summary"><?= $featuredPage->summary()->kt() ?></div>
 			<?php endif ?>
 			</a>

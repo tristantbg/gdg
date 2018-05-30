@@ -15,7 +15,7 @@
 				<a href="<?= $data->get('link') ?>">
 			<?php endif ?>
 			<div class="caption-title serif bold mt1">
-			  <?= $data->get('title') ?>
+			  <?= $data->get('title')->spaceSafe() ?>
 			</div>
 			<?php if ($data->get('summary')->isNotEmpty()): ?>
 			<div class="small mt1">

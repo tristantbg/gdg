@@ -45,6 +45,7 @@
 		.flickity-button-icon
 			left 15%
 			width 70%
+			filter: drop-shadow(1px 0 0 rgba(255, 255, 255, 0.3))
 		.cursor
 			align()
 			pointer-events none
@@ -53,6 +54,8 @@
 			left -15rem
 			+below($sm)
 				left 0
+			.flickity-button-icon
+				filter: drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.3))
 			.cursor
 				&::after
 					content 'Previous'

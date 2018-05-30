@@ -29,3 +29,9 @@
 			margin-top 1em
 			+above($md + 1)
 				margin-top 0
+	&+ .section--announcement
+		+above($md + 1)
+			.responsive-image, .slider
+				move(3/12, $col-or-span: span)
+			.item-infos
+				move(-9/12, $col-or-span: span)

@@ -9,7 +9,7 @@
 			<a href="<?= page('a-propos')->url().'/#press' ?>"><?= l::get('press.area') ?></a>
 			<a href="https://galeriedesgaleries.us18.list-manage.com/subscribe/post?u=eb7b34683fcb919ed54a51cd1&id=28ac524572"><?= l::get('newsletter') ?></a>
 			<div>
-				<a href="<?= $page->url('fr') ?>"><?= l::get('language.fr') ?></a>/<a href="<?= $page->url('en') ?>"><?= l::get('language.en') ?></a>
+				<a href="<?= $page->url('fr') ?>"><?= l::get('language.fr') ?></a> / <a href="<?= $page->url('en') ?>"><?= l::get('language.en') ?></a>
 			</div>
 		</div>
 	</div>

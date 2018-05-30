@@ -6,7 +6,7 @@
   <?php endif ?>
   <?php if ($data->get("subtitle")->isNotEmpty()): ?>
   <div class="caption-title tac">
-    <?= $data->get("subtitle")->html() ?>
+    <?= $data->get("subtitle")->spaceSafe() ?>
   </div>
   <?php endif ?>
   <?php $count = $data->get("content")->toStructure()->count() ?>

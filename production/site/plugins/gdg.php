@@ -25,7 +25,7 @@ page::$methods['formattedDate'] = function($page) {
 		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
 	}
 
-	return $formattedDate;
+	return str_replace('– ', '–', $formattedDate)  ;
 };
 
 page::$methods['displayTags'] = function($page) {
@@ -109,6 +109,23 @@ page::$methods['initials'] = function($page) {
   $initials = preg_replace("/(?![A-Z])./", "", $name);
 
   return $initials;
+};
+
+kirbytext::$tags['sup'] = array(
+  'html' => function($tag) {
+    return '<sup>'.html($tag->attr('sup')).'</sup>';
+  }
+);
+
+field::$methods['spaceSafe'] = function($field) {
+
+	$text = $field->kt();
+	$search  = array(" :", " ?", " !", " ;");
+	$replace = array("&nbsp;:", "&nbsp;?", "&nbsp;!", "&nbsp;;");
+
+	$newText = str_replace($search, $replace, $text);
+
+	return $newText;
 };
 
 kirbytext::$tags['sup'] = array(

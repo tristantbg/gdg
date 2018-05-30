@@ -63,6 +63,10 @@ fields:
     label: Image 5
     type: hero
     width: 1/2
+  templateText1:
+    label: Text 1
+    type: simplemde
+    help: Template D
   templateVideo1:
     label: Video
     type: structure

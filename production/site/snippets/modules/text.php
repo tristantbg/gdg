@@ -1,7 +1,7 @@
 <section class="page-section section section--text">
 	<?php if ($data->get("title")->isNotEmpty()): ?>
 		<div class="sub-heading tac mb3">
-		<?= $data->get("title")->html() ?>
+		<?= $data->get("title")->spaceSafe() ?>
 		</div>
 	<?php endif ?>
 	<div class="text">

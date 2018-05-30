@@ -25,3 +25,6 @@
 [submodule "site/plugins/version-widget"]
 	path = site/plugins/version-widget
 	url = https://github.com/omz13/kirby-cache-widgets
+[submodule "production/site/plugins/tinymce"]
+	path = production/site/plugins/tinymce
+	url = https://github.com/PaulMorel/kirby-tinymce.git

@@ -29,7 +29,7 @@ RewriteRule ^kirby/(.*) index.php [L]
 # make panel links work
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^gdg_admin/(.*) gdg_admin/index.php [L]
+RewriteRule ^panel/(.*) panel/index.php [L]
 
 # make site links work
 RewriteCond %{REQUEST_FILENAME} !-f
