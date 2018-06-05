@@ -21,12 +21,12 @@ l::set('current-exhibition', 'Exposition en cours');
 l::set('index.exhibitions', 'Afficher par événement');
 l::set('index.artists', 'Afficher par invité');
 l::set('index.artpieces', 'Afficher par visuel');
-l::set('more', 'Afficher d’avantage d’élements');
+l::set('more', 'Afficher davantage d’élements');
 l::set('visits', 'Visites guidées');
 l::set('partners', 'Partenaires');
 l::set('team', 'Équipe');
 l::set('press', 'Presse');
-l::set('press.download.singular', 'Télécharger  le dossier de presse');
-l::set('press.download.plural', 'Télécharger  les dossiers  de presse');
+l::set('press.download.singular', 'Télécharger  le dossier de presse');
+l::set('press.download.plural', 'Télécharger  les dossiers  de presse');
 l::set('press.download.images', 'Télécharger les visuels');
 l::set('press.area', 'Espace presse');

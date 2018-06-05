@@ -9,7 +9,8 @@ password: >
 language: en
 role: admin
 history:
+  - a-propos
+  - a-propos/presskit-test
   - home
   - art-culture
-  - a-propos
   - expositions

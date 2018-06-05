@@ -7,7 +7,7 @@ return function ($site, $pages, $page) {
 
 	switch ($by) {
 		case 'exhibition':
-			
+
 			$data = array(
 				'by' => $by,
 				'exhibitions' => site()->index()->filterBy('intendedTemplate', 'exhibition')->visible()->sortBy('date', 'desc')
@@ -16,10 +16,10 @@ return function ($site, $pages, $page) {
 			break;
 
 		case 'artist':
-			
+
 			$allArtists = site()->index()->filterBy('intendedTemplate', 'artist')->visible()->sortBy('surname', 'asc');
-			$artistsByLetter = sortPagesBy($allArtists, array('group' =>'letter'));
-			
+			$artistsByLetter = sortPagesBy($allArtists, array('group' => 'letter'));
+
 			$data = array(
 				'by' => $by,
 				'artists' => $artistsByLetter
@@ -28,12 +28,12 @@ return function ($site, $pages, $page) {
 			break;
 
 		case 'tag':
-			
+
 			$allArticles = site()->index()->filterBy('intendedTemplate', 'article')->visible()->sortBy('date', 'desc')->filterBy('featured', '!=', '');
 
 			if ($tag = param('tag')) {
 				$allArticles = $allArticles->filterBy('tags', $tag, ',');
-			}		
+			}
 
 			$data = array(
 				'by' => $by,

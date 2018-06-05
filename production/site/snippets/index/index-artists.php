@@ -24,8 +24,8 @@
 
 				<div class="sticky-title title"><?= strtoupper($group) ?></div>
 
-				<?php foreach ($plist as $key => $puri): ?>
-					<?php $artist = page($puri) ?>
+				<?php foreach (column_sort($plist, 'surname') as $p): ?>
+					<?php $artist = page($p['uri']) ?>
 					<div class="row row-item title secondary c10 co2" sm="c12 co0">
 
 						<a href="<?= $artist->url() ?>" class="row artist-link">

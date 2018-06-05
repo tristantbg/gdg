@@ -13,16 +13,32 @@ v::$validators['unique'] = function($value, $field) {
 page::$methods['formattedDate'] = function($page) {
 
 	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
-		$formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
+    if (site()->language()->code() == "en") {
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
+    } else {
+		  $formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
+    }
 	}
 	else if($page->date('%Y') == $page->date('%Y', 'dateEnd')) {
-		$formattedDate = utf8_encode($page->date('%e&nbsp;%B'));
-		$formattedDate .= '–';
-		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
+    if (site()->language()->code() == "en") {
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%e'));
+      $formattedDate .= '–';
+      $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
+    } else {
+  		$formattedDate = utf8_encode($page->date('%B&nbsp;%e'));
+  		$formattedDate .= '–';
+  		$formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
+    }
 	} else {
-		$formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
-		$formattedDate .= '–';
-		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
+    if (site()->language()->code() == "en") {
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
+      $formattedDate .= '–';
+      $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
+    } else {
+      $formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
+      $formattedDate .= '–';
+      $formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
+    }
 	}
 
 	return str_replace('– ', '–', $formattedDate)  ;
@@ -163,7 +179,7 @@ function getRelatedPages($content) {
         $rP->set('tags', $p->get('tags'));
         $rP->set('link', $p->get('link'));
       }
-      if($rP) {	
+      if($rP) {
         if ($p->get('thumb')->isNotEmpty()) $rP->set('featured', $p->get('thumb'));
         if ($p->get('title')->isNotEmpty()) $rP->set('title', $p->get('title'));
         if ($p->get('subtitle')->isNotEmpty()) $rP->set('subtitle', $p->get('subtitle'));
@@ -199,6 +215,19 @@ function displayTags($tags, $withoutLinks = false) {
 	return '<div class="tags">'.$html.'</div>';
 
 };
+
+function column_sort($unsorted, $column) {
+    $sorted = $unsorted;
+    for ($i=0; $i < sizeof($sorted)-1; $i++) {
+      for ($j=0; $j<sizeof($sorted)-1-$i; $j++)
+        if ($sorted[$j][$column] > $sorted[$j+1][$column]) {
+          $tmp = $sorted[$j];
+          $sorted[$j] = $sorted[$j+1];
+          $sorted[$j+1] = $tmp;
+      }
+    }
+    return $sorted;
+}
 
 // ROUTES
 

@@ -1,0 +1,14 @@
+title: Presse
+icon: lock
+pages: false
+files:
+  fields:
+    caption:
+      label: Caption
+      type: text
+fields:
+  autoid:
+    type: hidden
+  title:
+    label: Titre
+    type:  text

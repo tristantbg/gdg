@@ -184,6 +184,7 @@ fields:
         fields:
           info:
             label: Slider
+            help: Ratio recommandé (3/2)
             type: info
           title:
             label: Titre

@@ -1,8 +1,14 @@
 .section--announcement
 	span(1)
+	 +above($md + 1)
+		.responsive-image, .slider
+			move(3/12, $col-or-span: span)
+		.item-infos
+			move(-9/12, $col-or-span: span)
+			padding-right $gutter
+			padding-left 0
 	.responsive-image, .slider
 		span(9/12)
-		width 'calc((100% - %s) * 3 / 4)' % ($gutter*3)
 		+below($md)
 			stack()
 	.slider
@@ -21,17 +27,33 @@
 				left 0
 	.item-infos
 		span(3/12)
-		+above($md + 1)
-			padding-left $gutter
 		+below($md)
 			stack()
 		.caption-title
 			margin-top 1em
 			+above($md + 1)
 				margin-top 0
-	&+ .section--announcement
-		+above($md + 1)
+	+above($md + 1)
+		&+ .section--announcement
 			.responsive-image, .slider
-				move(3/12, $col-or-span: span)
+				unmove()
+				position relative
 			.item-infos
-				move(-9/12, $col-or-span: span)
+				unmove()
+				padding-left $gutter
+				padding-right 0
+			&+ .section--announcement
+				.responsive-image, .slider
+					move(3/12, $col-or-span: span)
+				.item-infos
+					move(-9/12, $col-or-span: span)
+					padding-right $gutter
+					padding-left 0
+				&+ .section--announcement
+					.responsive-image, .slider
+						unmove()
+						position relative
+					.item-infos
+						unmove()
+						padding-left $gutter
+						padding-right 0

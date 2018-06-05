@@ -83,3 +83,21 @@ c::set('languages', array(
     'url'     => '/en',
   ),
 ));
+c::set('roles', array(
+  array(
+    'id'      => 'admin',
+    'name'    => 'Admin',
+    'default' => true,
+    'panel'   => true
+  ),
+  array(
+    'id'      => 'editor',
+    'name'    => 'Editor',
+    'panel'   => true
+  ),
+  array(
+    'id'      => 'press',
+    'name'    => 'Press',
+    'panel'   => false
+  )
+));

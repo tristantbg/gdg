@@ -3,7 +3,7 @@ deletable: false
 options:
   url: false
   template: false
-pages: false
+pages: press
 files:
   sortable: false
   max: null
@@ -143,11 +143,11 @@ fields:
       presskit:
         label: Presskit
         type: select
-        options: files
+        options: children
       zip:
-        label: Images (.zip à télécharger)
+        label: Images
         type: select
-        options: files
+        options: children
   # sections:
   #   type: engineer
   #   fieldsets:

@@ -42,7 +42,7 @@
 </div>
 
 <div id="page-sections">
-	
+
 	<?php if ($visits[0]->count() > 0 || $visits[1]->count() > 0 || $visits[2]->count() > 0 || $visits[3]->count() > 0): ?>
 		<section class="section">
 			<hr class="desktop">
@@ -50,25 +50,25 @@
 				<div class="title secondary c3 fl" md="c12 tac"><?= l::get('visits') ?></div>
 				<hr class="mobile">
 				<div class="c5 fl mb4 prg" md="c12 mb2 p0">
-					<?php foreach ($visits[0] as $key => $v): ?>	
+					<?php foreach ($visits[0] as $key => $v): ?>
 					<div class="mb1 serif caption-title bold"><?= $v->title()->html() ?></div>
 					<div class="mb2"><?= $v->summary()->kt() ?></div>
 					<?php endforeach ?>
 				</div>
 				<div class="c3 fl mb4" md="c12 mb2">
-					<?php foreach ($visits[1] as $key => $v): ?>	
+					<?php foreach ($visits[1] as $key => $v): ?>
 					<div class="mb1 serif caption-title bold"><?= $v->title()->html() ?></div>
 					<div class="mb2"><?= $v->summary()->kt() ?></div>
 					<?php endforeach ?>
 				</div>
 				<div class="c5 co3 fl prg" md="c12 co0 p0">
-					<?php foreach ($visits[2] as $key => $v): ?>	
+					<?php foreach ($visits[2] as $key => $v): ?>
 					<div class="mb1 serif caption-title bold"><?= $v->title()->html() ?></div>
 					<div class="mb2"><?= $v->summary()->kt() ?></div>
 					<?php endforeach ?>
 				</div>
 				<div class="c3 fl" md="c12">
-					<?php foreach ($visits[3] as $key => $v): ?>	
+					<?php foreach ($visits[3] as $key => $v): ?>
 					<div class="mb1 serif caption-title bold"><?= $v->title()->html() ?></div>
 					<div class="mb2"><?= $v->summary()->kt() ?></div>
 					<?php endforeach ?>
@@ -97,10 +97,10 @@
 		<section id="press" class="section">
 			<hr class="desktop">
 			<div class="row">
-				<div class="title secondary c3 fl" md="c12 tac"><?= l::get('press') ?></div>
+				<div class="title secondary c3 fl" md="c12 tac"><?= html(l::get('press')) ?></div>
 				<hr class="mobile">
 				<div class="c5 fl prg" md="c12 p0">
-					<div class="my1 serif caption-title bold"><?= l::get('press.download.plural') ?></div>
+					<div class="my1 serif caption-title bold"><?= html(l::get('press.download.plural')) ?></div>
 					<div class="mb2"><?= $page->pressText()->kt() ?></div>
 					<?php foreach ($press as $key => $p): ?>
 						<?php if ($p->presskit()->isNotEmpty() || $p->zip()->isNotEmpty()): ?>
@@ -109,11 +109,11 @@
 								<?php if ($p->subtitle()->isNotEmpty()): ?>
 								<div><?= $p->subtitle()->html() ?></div>
 								<?php endif ?>
-								<?php if ($p->presskit()->isNotEmpty() && $presskit = $p->presskit()->toFile()): ?>
-								<div><a href="<?= $presskit->url() ?>" class="tdu" download><?= l::get('press.download.singular') ?></a></div>
+								<?php if ($p->presskit()->isNotEmpty() && $presskit = page($page->uri().'/'.$p->presskit())): ?>
+								<div><a href="<?= $presskit->url() ?>" class="tdu"><?= html(l::get('press.download.singular')) ?></a></div>
 								<?php endif ?>
-								<?php if ($p->zip()->isNotEmpty() && $zip = $p->zip()->toFile()): ?>
-								<div><a href="<?= $zip->url() ?>" class="tdu" download><?= l::get('press.download.images') ?></a></div>
+								<?php if ($p->zip()->isNotEmpty() && $zip = page($page->uri().'/'.$p->zip())): ?>
+								<div><a href="<?= $zip->url() ?>" class="tdu"><?= html(l::get('press.download.images')) ?></a></div>
 								<?php endif ?>
 							</div>
 						<?php endif ?>

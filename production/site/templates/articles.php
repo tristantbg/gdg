@@ -10,7 +10,7 @@
       <?php foreach ($articles as $key => $article): ?>
           <div class="article-link">
             <a href="<?= $article->url() ?>">
-              <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 3/2)) ?>
+              <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 1/1)) ?>
               <div class="lead bold mt1">
                 <?= $article->title()->html() ?>
               </div>
