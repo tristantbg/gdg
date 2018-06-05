@@ -38,7 +38,7 @@
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
-    "@egjs/infinitegrid": "^3.3.1",
+    "@egjs/infinitegrid": "^3.3.5",
     "flickity": "^2.1.1",
     "gr8": "^3.1.5",
     "gsap": "^1.20.4",

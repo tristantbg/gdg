@@ -519,9 +519,9 @@
   dependencies:
     xml2js "^0.4.19"
 
-"@egjs/infinitegrid@^3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@egjs/infinitegrid/-/infinitegrid-3.3.1.tgz#9946ef9dac90c394bb5e5d87bddada805b2bf55e"
+"@egjs/infinitegrid@^3.3.5":
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/@egjs/infinitegrid/-/infinitegrid-3.3.5.tgz#a40feed6928283024c2dbefab115cd1c69e2e738"
   dependencies:
     "@egjs/component" "^2.1.0"
 

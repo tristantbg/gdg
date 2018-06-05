@@ -4,14 +4,14 @@ module.exports = function(grunt) {
             plugins: {
                 src: [
                 'production/site/plugins/embed/assets/js/embed.js',
-                'node_modules/gsap/TweenMax.js', 
-                'node_modules/Marquee3G/Marquee3G.js', 
-                // 'node_modules/flickity/dist/flickity.pkgd.min.js', 
-                // 'node_modules/hls.js/dist/hls.light.js', 
-                //'node_modules/lazysizes/plugins/object-fit/ls.object-fit.min.js', 
-                // 'node_modules/lazysizes/lazysizes.min.js', 
-                // 'node_modules/lazysizes/plugins/optimumx/ls.optimumx.min.js', 
-                //'node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js', 
+                'node_modules/gsap/TweenMax.js',
+                'node_modules/Marquee3G/Marquee3G.js',
+                // 'node_modules/flickity/dist/flickity.pkgd.min.js',
+                // 'node_modules/hls.js/dist/hls.light.js',
+                //'node_modules/lazysizes/plugins/object-fit/ls.object-fit.min.js',
+                // 'node_modules/lazysizes/lazysizes.min.js',
+                // 'node_modules/lazysizes/plugins/optimumx/ls.optimumx.min.js',
+                //'node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js',
                 // 'node_modules/viewport-units-buggyfill/viewport-units-buggyfill.js',
                 // 'libraries/smoothstate-with-action/src/jquery.smoothState.js'
                 ],
@@ -65,9 +65,9 @@ module.exports = function(grunt) {
           },
           target: {
             files: {
-              'production/assets/css/build/build.min.css': 
-              ['node_modules/normalize-css/normalize.css', 
-              'production/site/plugins/embed/assets/css/embed.css', 
+              'production/assets/css/build/build.min.css':
+              ['node_modules/normalize-css/normalize.css',
+              'production/site/plugins/embed/assets/css/embed.css',
               'node_modules/flickity/dist/flickity.min.css',
               'production/assets/css/app.min.css']
             }
