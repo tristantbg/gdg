@@ -25,4 +25,4 @@ Kirby runs on PHP 5.3+, Apache, or Nginx
 6. `php -S localhost:9000`
 
 ## License
-[MIT license](http://opensource.org/licenses/mit-license.php)
+All rights reserved

@@ -15,7 +15,8 @@ for more information: http://getkirby.com/license
 
 */
 
-c::set('license', 'put your license key here');
+c::set('license', 'K2-PERSONAL-8df69012805173a0bd725c5661bbee6e');
+c::set('imagekit.license', 'IMGKT1-8df69012805173a0bd725c5661bbee6e');
 
 /*
 
@@ -30,15 +31,17 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 */
 
 c::set('debug', true);
-c::set('cache', false);
-// c::set('cache.driver', 'apc');
-c::set('imagekit.lazy', false);
-c::set('imagekit.widget.discover', false);
 c::set('autobuster', true);
+c::set('cache', true);
+c::set('cache.ignore', array(
+  'home'
+));
+c::set('cache.driver', 'memcached');
 c::set('date.handler', 'strftime');
 c::set('plugin.embed.video.lazyload', true);
 c::set('plugin.embed.video.lazyload.btn', 'assets/images/play.png');
 c::set('kirbytext.image.figure', false);
+c::set('imagekit.widget.discover', false);
 c::set('textarea.buttons', array(
   "bold",
   "italic",
@@ -59,7 +62,7 @@ c::set('typography.widget', false);
 c::set('typography.ordinal.suffix', false);
 c::set('typography.fractions', false);
 c::set('typography.dashes.spacing', false);
-c::set('typography.hyphenation', true);
+c::set('typography.hyphenation', false);
 //c::set('typography.hyphenation.language', 'fr');
 //c::set('typography.hyphenation.minlength', 5);
 c::set('typography.hyphenation.headings', false);
@@ -68,7 +71,7 @@ c::set('typography.hyphenation.titlecase', false);
 //Settings
 c::set('sitemap.exclude', array('error'));
 c::set('sitemap.important', array('contact'));
-c::set('thumb.quality', 100);
+c::set('thumb.quality', 90);
 c::set('thumbs.driver', 'im');
 c::set('languages', array(
   array(
@@ -80,7 +83,7 @@ c::set('languages', array(
   ),
   array(
     'code'    => 'en',
-    'name'    => 'English',
+    'name'    => 'Anglais',
     'locale'  => 'en_US',
     'url'     => '/en',
   ),
