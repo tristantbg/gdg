@@ -1,8 +1,9 @@
 <?php if (isset($artists) && $artists->count() > 1): ?>
 	<section class="section section--artists-grid">
-		<div class="row mb2 tac" sm="mb1">
+		<div class="row tac">
 			<h2><?php e($artists->count() > 1, translate('artists.plural'),  translate('artists.singular')) ?></h2>
 		</div>
+    <hr>
 		<div class="artists-container row x xw four-columns" sm="db xdc">
 		<?php foreach ($artists as $key => $artist): ?>
 			<a href="<?= $artist->url() ?>" class="row artist-link">

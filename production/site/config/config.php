@@ -36,7 +36,8 @@ c::set('imagekit.lazy', false);
 c::set('imagekit.widget.discover', false);
 c::set('autobuster', true);
 c::set('date.handler', 'strftime');
-c::set('plugin.embed.video.lazyload', true);
+c::set('plugin.embed.video.lazyload', false);
+c::set('plugin.embed.caching', false);
 c::set('plugin.embed.video.lazyload.btn', 'assets/images/play.png');
 c::set('kirbytext.image.figure', false);
 c::set('textarea.buttons', array(
