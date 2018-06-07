@@ -29,3 +29,5 @@ l::set('press.download.singular', 'Download presskits');
 l::set('press.download.plural', 'Download presskit');
 l::set('press.download.images', 'Download images');
 l::set('press.area', 'Press area');
+l::set('next', 'Next');
+l::set('previous', 'Previous');

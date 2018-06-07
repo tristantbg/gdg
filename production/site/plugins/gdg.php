@@ -13,14 +13,14 @@ v::$validators['unique'] = function($value, $field) {
 page::$methods['formattedDate'] = function($page) {
 
 	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
-    if ($page->language()->code() == "en") {
+    if (site()->language()->code() == "en") {
       $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
     } else {
 		  $formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
     }
 	}
 	else if($page->date('%Y') == $page->date('%Y', 'dateEnd')) {
-    if ($page->language()->code() == "en") {
+    if (site()->language()->code() == "en") {
       $formattedDate = utf8_encode($page->date('%B&nbsp;%e'));
       $formattedDate .= '–';
       $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
@@ -30,7 +30,7 @@ page::$methods['formattedDate'] = function($page) {
   		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
     }
 	} else {
-    if ($page->language()->code() == "en") {
+    if (site()->language()->code() == "en") {
       $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
       $formattedDate .= '–';
       $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));

@@ -6,7 +6,7 @@
 		<span></span>
 	</div>
 	<div id="site-title">
-	<a href="<?= $site->url() ?>">
+	<a href="<?= $site->url($site->language()->code()) ?>">
 		<?php if ($page->isHomepage()): ?>
 			<h1><?= $site->title()->html() ?></h1>
 		<?php else: ?>

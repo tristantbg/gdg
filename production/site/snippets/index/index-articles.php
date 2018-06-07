@@ -26,4 +26,23 @@
       	  </div>
       <?php endforeach ?>
   </section>
+  <?php if($articles->pagination() && $articles->pagination()->hasPages() && $articles->pagination()->hasNextPage()): ?>
+		<!-- pagination -->
+		<nav id="pagination" class="row mt4 x xjb">
+
+		<div>
+			<?php if($articles->pagination()->hasPrevPage()): ?>
+			<a class="prev caption-title" href="<?php echo $articles->pagination()->prevPageURL() ?>"><?= l::get('previous') ?></a>
+			<?php endif ?>
+		</div>
+
+		<div>
+			<?php if($articles->pagination()->hasNextPage()): ?>
+			<a class="next caption-title" href="<?php echo $articles->pagination()->nextPageURL() ?>"><?= l::get('next') ?></a>
+			<?php endif ?>
+		</div>
+
+		</nav>
+		<!-- <div class="ajax-loading"><div class="button rounded infinite-scroll-request">Loading</div></div> -->
+	<?php endif ?>
 </div>

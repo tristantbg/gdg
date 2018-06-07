@@ -3,7 +3,7 @@
 return function ($site, $pages, $page) {
 
 	return array(
-		'articles' => $page->children()->visible()->sortBy('date', 'desc')->filterBy('featured', '!=', ''),
+		'articles' => $page->children()->visible()->sortBy('date', 'desc')->filterBy('featured', '!=', '')->paginate(24),
 	);
 }
 

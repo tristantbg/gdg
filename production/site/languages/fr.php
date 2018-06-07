@@ -30,3 +30,5 @@ l::set('press.download.singular', 'Télécharger  le dossier de presse');
 l::set('press.download.plural', 'Télécharger  les dossiers  de presse');
 l::set('press.download.images', 'Télécharger les visuels');
 l::set('press.area', 'Espace presse');
+l::set('next', 'Suivant');
+l::set('previous', 'Précédent');
