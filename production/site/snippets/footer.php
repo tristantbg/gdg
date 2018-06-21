@@ -8,8 +8,8 @@
 
 <div id="outdated">
 	<div class="inner">
-	<p class="browserupgrade">You are using an <strong>outdated</strong> browser.
-	<br>Please <a href="http://outdatedbrowser.com" target="_blank">upgrade your browser</a> to improve your experience.</p>
+	<p>GALERIE DES GALERIES prend en charge de nombreux navigateurs<br>mais il semble que celui-ci soit obsolète,<br>veuillez utiliser le navigateur Google Chrome ou bien <a href="http://outdatedbrowser.com" target="_blank">mettre à jour votre navigateur.</a></p>
+	<p>GALERIE DES GALERIES supports many browsers<br>but it seems that it is obsolete,<br>please use the Google Chrome browser or <a href="http://outdatedbrowser.com" target="_blank">update your browser.</a></p>
 	</div>
 </div>
 

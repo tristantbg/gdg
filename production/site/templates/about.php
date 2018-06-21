@@ -84,7 +84,11 @@
 			<div class="row four-columns">
 				<?php foreach ($team as $key => $t): ?>
 					<div class="item">
+						<?php if ($t->thumb()->isNotEmpty()): ?>
 						<?php snippet('responsive-image', array('field' => $t->thumb(), 'ratio' => 1/1)) ?>
+						<?php else: ?>
+						<?php snippet('image-placeholder', array('text' => preg_replace("/(?![A-Z])./", "", $t->title()->value()))) ?>
+						<?php endif ?>
 						<div class="my1 serif caption-title bold"><?= $t->title()->html() ?></div>
 						<div><?= $t->summary()->kt() ?></div>
 					</div>
