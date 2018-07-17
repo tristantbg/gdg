@@ -25,6 +25,7 @@ l::set('visits', 'Guided tour');
 l::set('partners', 'Partners');
 l::set('team', 'Team');
 l::set('press', 'Press');
+l::set('press.news', 'Our news');
 l::set('press.download.singular', 'Download presskits');
 l::set('press.download.plural', 'Download presskit');
 l::set('press.download.images', 'Download images');

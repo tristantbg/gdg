@@ -71,7 +71,13 @@
 		<div class="c6 fl tc2 x xac" md="c8" sm="c12">
 			<?php foreach ($site->logos()->toStructure() as $key => $l): ?>
 				<div class="logo-icon">
+          <?php if ($l->toFile()->link()->isNotEmpty()): ?>
+            <a href="<?= $l->toFile()->link() ?>">
+          <?php endif ?>
 					<img src="<?= $l->toFile()->width(300)->url() ?>" width="100%" height="100%">
+          <?php if ($l->toFile()->link()->isNotEmpty()): ?>
+            </a>
+          <?php endif ?>
 				</div>
 			<?php endforeach ?>
 		</div>

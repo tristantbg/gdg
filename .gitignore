@@ -10,6 +10,7 @@ production/assets/js/plugins.concat.js
 production/assets/js/build/*
 /node_modules
 /npm-debug.log
+production/site/config/licence.php
 production/site/accounts
 production/site/cache
 production/assets/avatars

@@ -22,7 +22,7 @@
 				<?php endforeach ?>
 			</div>
 		</div>
-		
+
 		<div id="menu-search" class="c4" sm="c12 xo1 mb1">
 			<?php snippet('searchbar', array('placeholder' => true)) ?>
 		</div>
@@ -30,7 +30,13 @@
 		<div class="x xac xje xx" sm="xi c9 xo3">
 			<?php foreach ($site->logosMenu()->toStructure() as $key => $l): ?>
 				<div class="logo-icon">
-					<img src="<?= $l->toFile()->width(300)->url() ?>" width="100%" height="100%">
+					<?php if ($l->toFile()->link()->isNotEmpty()): ?>
+            <a href="<?= $l->toFile()->link() ?>">
+          <?php endif ?>
+          <img src="<?= $l->toFile()->width(300)->url() ?>" width="100%" height="100%">
+          <?php if ($l->toFile()->link()->isNotEmpty()): ?>
+            </a>
+          <?php endif ?>
 				</div>
 			<?php endforeach ?>
 		</div>

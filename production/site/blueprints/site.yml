@@ -1,4 +1,9 @@
 title: Site
+files:
+  fields:
+    link:
+      label: Link
+      type: url
 fields:
   generalSettings:
     label: Général

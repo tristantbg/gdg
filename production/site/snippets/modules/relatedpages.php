@@ -9,7 +9,7 @@
   <div class="relatedpages-slider<?php e($count > 4, ' inline-slider') ?><?php e($count == 1, ' announcement') ?><?php e($count == 2, ' two-columns') ?><?php e($count > 2, ' four-columns') ?><?php e($count == 3, ' x xjc xw') ?>">
     <?php foreach ($relatedPages as $key => $relatedPage): ?>
 		<div class="relatedpage inline-item">
-			<a href="<?php e($relatedPage->link()->isNotEmpty(), $relatedPage->link(), $relatedPage->url()) ?>">
+			<?php e($relatedPage->link()->isNotEmpty(), '<a href="'.$relatedPage->link().'">') ?>
 			<?php if ($count == 1): ?>
 				<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 665/498)) ?>
 			<?php elseif ($count == 2): ?>
@@ -17,9 +17,9 @@
 			<?php else: ?>
 				<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 1/1, 'maxWidth' => 1000)) ?>
 			<?php endif ?>
-			</a>
+			<?php e($relatedPage->link()->isNotEmpty(), '</a>') ?>
 			<div class="item-infos">
-				<a href="<?php e($relatedPage->link()->isNotEmpty(), $relatedPage->link(), $relatedPage->url()) ?>">
+				<?php e($relatedPage->link()->isNotEmpty(), '<a href="'.$relatedPage->link().'">') ?>
 					<div class="<?php e($count < 3, 'caption-title serif', 'lead') ?> bold mt1">
 					  <?= $relatedPage->title()->spaceSafe() ?>
 					</div>
@@ -33,7 +33,7 @@
 					  <?= $relatedPage->summary()->excerpt(600) ?>
 					</div>
 					<?php endif ?>
-				</a>
+				<?php e($relatedPage->link()->isNotEmpty(), '</a>') ?>
 				<?php if ($relatedPage->link()->empty()): ?>
 					<?= displayTags($relatedPage->tags()) ?>
 				<?php else: ?>
@@ -41,7 +41,7 @@
 				<?php endif ?>
 			</div>
 		</div>
-        
+
     <?php endforeach ?>
   </div>
 </section>

@@ -12,32 +12,32 @@ v::$validators['unique'] = function($value, $field) {
 
 page::$methods['formattedDate'] = function($page) {
 
-	if($page->date('%e %B %Y') == $page->date('%e %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
+	if($page->date('%d %B %Y') == $page->date('%d %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
     if (site()->language()->code() == "en") {
-      $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%d,&nbsp;%Y'));
     } else {
-		  $formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
+		  $formattedDate = utf8_encode($page->date('%d&nbsp;%B&nbsp;%Y'));
     }
 	}
 	else if($page->date('%Y') == $page->date('%Y', 'dateEnd')) {
     if (site()->language()->code() == "en") {
-      $formattedDate = utf8_encode($page->date('%B&nbsp;%e'));
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%d'));
       $formattedDate .= '–';
-      $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
+      $formattedDate .= utf8_encode($page->date('%B&nbsp;%d,&nbsp;%Y', 'dateEnd'));
     } else {
-  		$formattedDate = utf8_encode($page->date('%e&nbsp;%B'));
+  		$formattedDate = utf8_encode($page->date('%d&nbsp;%B'));
   		$formattedDate .= '–';
-  		$formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
+  		$formattedDate .= utf8_encode($page->date('%d&nbsp;%B&nbsp;%Y', 'dateEnd'));
     }
 	} else {
     if (site()->language()->code() == "en") {
-      $formattedDate = utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y'));
+      $formattedDate = utf8_encode($page->date('%B&nbsp;%d,&nbsp;%Y'));
       $formattedDate .= '–';
-      $formattedDate .= utf8_encode($page->date('%B&nbsp;%e,&nbsp;%Y', 'dateEnd'));
+      $formattedDate .= utf8_encode($page->date('%B&nbsp;%d,&nbsp;%Y', 'dateEnd'));
     } else {
-      $formattedDate = utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y'));
+      $formattedDate = utf8_encode($page->date('%d&nbsp;%B&nbsp;%Y'));
       $formattedDate .= '–';
-      $formattedDate .= utf8_encode($page->date('%e&nbsp;%B&nbsp;%Y', 'dateEnd'));
+      $formattedDate .= utf8_encode($page->date('%d&nbsp;%B&nbsp;%Y', 'dateEnd'));
     }
 	}
 

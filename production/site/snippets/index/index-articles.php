@@ -9,13 +9,18 @@
           	<a href="<?= $article->url() ?>">
 	            <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 1/1)) ?>
 	            <div class="lead bold mt1">
-	              <?= $article->title()->html() ?>
+	              <?= $article->title()->spaceSafe() ?>
 	            </div>
-	            <?php if (false && $article->subtitle()->isNotEmpty()): ?>
-	            <div class="lead">
-	              <?= $article->subtitle()->html() ?>
-	            </div>
-	            <?php endif ?>
+	            <?php if ($article->secondaryTitle()->isNotEmpty()): ?>
+              <div class="lead">
+                <?= $article->secondaryTitle()->spaceSafe() ?>
+              </div>
+              <?php endif ?>
+              <?php if ($article->subtitle()->isNotEmpty()): ?>
+              <div class="lead">
+                <?= $article->subtitle()->spaceSafe() ?>
+              </div>
+              <?php endif ?>
 	            <?php if ($article->summary()->isNotEmpty()): ?>
 	            <div class="small mt1">
 	              <?= $article->summary()->kt() ?>

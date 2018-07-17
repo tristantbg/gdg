@@ -104,7 +104,7 @@
 				<div class="title secondary c3 fl" md="c12 tac"><?= html(l::get('press')) ?></div>
 				<hr class="mobile">
 				<div class="c5 fl prg" md="c12 p0">
-					<div class="my1 serif caption-title bold"><?= html(l::get('press.download.plural')) ?></div>
+					<div class="my1 serif caption-title bold"><?= html(l::get('press.news')) ?></div>
 					<div class="mb2"><?= $page->pressText()->kt() ?></div>
 					<?php foreach ($press as $key => $p): ?>
 						<?php if ($p->presskit()->isNotEmpty() || $p->zip()->isNotEmpty()): ?>
