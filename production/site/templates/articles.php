@@ -12,16 +12,16 @@
             <a href="<?= $article->url() ?>">
               <?php snippet('responsive-image', array('field' => $article->featured(), 'ratio' => 1/1)) ?>
               <div class="lead bold mt1">
-                <?= $article->title()->spaceSafe() ?>
+                <?= $article->title()->spaceSafe(true) ?>
               </div>
               <?php if ($article->secondaryTitle()->isNotEmpty()): ?>
               <div class="lead">
-                <?= $article->secondaryTitle()->spaceSafe() ?>
+                <?= $article->secondaryTitle()->spaceSafe(true) ?>
               </div>
               <?php endif ?>
               <?php if ($article->subtitle()->isNotEmpty()): ?>
               <div class="lead">
-                <?= $article->subtitle()->spaceSafe() ?>
+                <?= $article->subtitle()->spaceSafe(true) ?>
               </div>
               <?php endif ?>
               <?php if ($article->summary()->isNotEmpty()): ?>

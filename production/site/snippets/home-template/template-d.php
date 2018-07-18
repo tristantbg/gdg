@@ -5,12 +5,12 @@
 		</a>
 	</div>
 	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
-		<h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></h1>
+		<h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->spaceSafe(true) ?></h1>
 		<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
-			<h2 class="title secondary"><?= $featuredPage->secondaryTitle()->html() ?></h2>
+			<h2 class="title secondary"><?= $featuredPage->secondaryTitle()->spaceSafe(true) ?></h2>
 		<?php endif ?>
 		<!-- <?php if ($featuredPage->subtitle()->isNotEmpty()): ?>
-		<div class="caption-title"><?= $featuredPage->subtitle()->html() ?></div>
+		<div class="caption-title"><?= $featuredPage->subtitle()->spaceSafe(true) ?></div>
 		<?php endif ?>
 		<?php if ($featuredPage->intendedTemplate() == "exhibition"): ?>
 		<div class="caption-title"><?= $featuredPage->formattedDate() ?></div>
@@ -41,6 +41,6 @@
 			<div class="summary"><?= $featuredPage->summary()->kt() ?></div>
 			<?php endif ?>
 			</a>
-		</div>	
+		</div>
 	<?php endif ?>
 </section>

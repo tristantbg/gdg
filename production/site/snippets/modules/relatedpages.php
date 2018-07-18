@@ -21,16 +21,16 @@
 			<div class="item-infos">
 				<?php e($relatedPage->link()->isNotEmpty(), '<a href="'.$relatedPage->link().'">') ?>
 					<div class="<?php e($count < 3, 'caption-title serif', 'lead') ?> bold mt1">
-						<?= $relatedPage->title()->spaceSafe() ?>
+						<?= $relatedPage->title()->spaceSafe(true) ?>
 					</div>
 					<?php if ($relatedPage->secondaryTitle()->isNotEmpty()): ?>
 					<div class="lead">
-						<?= $relatedPage->secondaryTitle()->spaceSafe() ?>
+						<?= $relatedPage->secondaryTitle()->spaceSafe(true) ?>
 					</div>
 					<?php endif ?>
 					<?php if ($relatedPage->subtitle()->isNotEmpty()): ?>
 					<div class="lead">
-						<?= $relatedPage->subtitle()->spaceSafe() ?>
+						<?= $relatedPage->subtitle()->spaceSafe(true) ?>
 					</div>
 					<?php endif ?>
 					<?php if ($relatedPage->summary()->isNotEmpty()): ?>

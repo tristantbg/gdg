@@ -3,12 +3,12 @@
 	<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage1'), 'ratio' => 436/368, 'withCaption' => true)) ?>
 	</div>
 	<div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
-		<h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $page->title()->html() ?></h1>
+		<h1 style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $page->title()->spaceSafe(true) ?></h1>
 		<?php if ($page->secondaryTitle()->isNotEmpty()): ?>
-			<h2 class="title secondary"><?= $page->secondaryTitle()->html() ?></h2>
+			<h2 class="title secondary"><?= $page->secondaryTitle()->spaceSafe(true) ?></h2>
 		<?php endif ?>
 		<?php if ($page->subtitle()->isNotEmpty()): ?>
-		<div class="caption-title"><?= $page->subtitle()->html() ?></div>
+		<div class="caption-title"><?= $page->subtitle()->spaceSafe(true) ?></div>
 		<?php endif ?>
 		<?php if ($page->intendedTemplate() == "exhibition"): ?>
 		<div class="caption-title"><?= $page->formattedDate() ?></div>

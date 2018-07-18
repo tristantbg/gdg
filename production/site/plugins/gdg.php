@@ -10,6 +10,12 @@ v::$validators['unique'] = function($value, $field) {
 
 // PAGE METHODS
 
+field::$methods['ktRaw'] = function($field) {
+  $text = $field->kirbytext();
+  return preg_replace('/(.*)<\/p>/', '$1', preg_replace('/<p>(.*)/', '$1', $text));
+};
+
+
 page::$methods['formattedDate'] = function($page) {
 
 	if($page->date('%d %B %Y') == $page->date('%d %B %Y', 'dateEnd') || !$page->dateEnd()->exists()) {
@@ -129,9 +135,13 @@ kirbytext::$tags['sup'] = array(
   }
 );
 
-field::$methods['spaceSafe'] = function($field) {
+field::$methods['spaceSafe'] = function($field, $raw = false) {
 
-	$text = $field->kt();
+  if($raw) {
+	 $text = $field->ktRaw();
+  } else {
+   $text = $field->kt();
+  }
 	$search  = array(" :", " ?", " !", " ;");
 	$replace = array("&nbsp;:", "&nbsp;?", "&nbsp;!", "&nbsp;;");
 

@@ -10,9 +10,9 @@
 		</a>
   </div>
   <div class="title sticky-title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
-  	<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></span>
+  	<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->spaceSafe(true) ?></span>
   	<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
-		<div class="secondary"><?= $featuredPage->secondaryTitle()->html() ?></div>
+		<div class="secondary"><?= $featuredPage->secondaryTitle()->spaceSafe(true) ?></div>
 	<?php endif ?>
   </div>
   <div class="template-component video-player video-cover video-1">
@@ -55,16 +55,16 @@
 
 	<a href="<?= $featuredPage->url() ?>">
 		<div class="template-component title" style="color: <?= $page->content('fr')->get('titleColor') ?>">
-			<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->html() ?></span>
+			<span style="color: <?= $page->content('fr')->get('titleColor') ?>"><?= $featuredPage->title()->spaceSafe(true) ?></span>
 			<?php if ($featuredPage->secondaryTitle()->isNotEmpty()): ?>
-				<div class="secondary"><?= $featuredPage->secondaryTitle()->html() ?></div>
+				<div class="secondary"><?= $featuredPage->secondaryTitle()->spaceSafe(true) ?></div>
 			<?php endif ?>
 		</div>
 		<div class="template-component text-1 mt2">
 			<div class="tag mb1"><?= l::get('current-exhibition') ?></div>
 			<div class="bold text"><?= $featuredPage->formattedDate() ?></div>
 			<?php if ($featuredPage->subtitle()->isNotEmpty()): ?>
-			<div class="bold text"><?= $featuredPage->subtitle()->html() ?></div>
+			<div class="bold text"><?= $featuredPage->subtitle()->spaceSafe(true) ?></div>
 			<?php endif ?>
 		</div>
 	</a>
