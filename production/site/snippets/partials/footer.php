@@ -5,7 +5,7 @@
 	<div class="row small mb4">
 		<div class="db c6 fl bold" md="c12 mb4" sm="dn">
 			<div class="c6 fl prg" sm="c12 p0"><?= $site->footer1()->kt() ?></div>
-			<div class="c6 fl" sm="c12"><?= $site->footer2()->kt() ?></div>
+			<div class="c6 fl prg" sm="c12 p0"><?= $site->footer2()->kt() ?></div>
 		</div>
 		<div id="footer-links" class="c3 co3 fl bold" md="c6 co0" sm="c12">
 			<div class="row mb2">

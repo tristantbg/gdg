@@ -49,12 +49,6 @@ page::$methods['formattedDate'] = function($page) {
 
 page::$methods['displayTags'] = function($page) {
 
-  if ($page->intendedTemplate() == 'exhibition') {
-
-    $html = '<div class="tag">'.l::get('exhibitions.singular').'</div>';
-
-  } else {
-
     $tags = $page->tags()->split();
     $html = '';
 
@@ -66,7 +60,6 @@ page::$methods['displayTags'] = function($page) {
 
     }
 
-  }
     return '<div class="tags">'.$html.'</div>';
 };
 
@@ -178,6 +171,7 @@ function getRelatedPages($content) {
         $rP->set('featured', $p->get('thumb'));
         $rP->set('title', $p->get('title'));
         $rP->set('subtitle', $p->get('subtitle'));
+        $rP->set('secondaryTitle', $p->get('secondaryTitle'));
         $rP->set('summary', $p->get('summary'));
         $rP->set('tags', $p->get('tags'));
         $rP->set('link', $p->get('link'));
@@ -186,6 +180,7 @@ function getRelatedPages($content) {
         if ($p->get('thumb')->isNotEmpty()) $rP->set('featured', $p->get('thumb'));
         if ($p->get('title')->isNotEmpty()) $rP->set('title', $p->get('title'));
         if ($p->get('subtitle')->isNotEmpty()) $rP->set('subtitle', $p->get('subtitle'));
+        if ($p->get('secondaryTitle')->isNotEmpty()) $rP->set('secondaryTitle', $p->get('secondaryTitle'));
         if ($p->get('summary')->isNotEmpty()) $rP->set('summary', $p->get('summary'));
         if ($p->get('tags')->isNotEmpty()) $rP->set('tags', $p->get('tags'));
         if ($p->get('link')->isNotEmpty()) $rP->set('link', $p->get('link'));

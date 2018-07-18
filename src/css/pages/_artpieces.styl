@@ -1,0 +1,15 @@
+#previous-page, #next-page
+  position absolute
+  top 10rem
+  +below($sm)
+    display none
+  svg
+    width 6rem
+#previous-page
+  left 12.5%
+  +below($xl)
+    left $padding
+#next-page
+  right 12.5%
+  +below($xl)
+    right $padding

@@ -72,6 +72,10 @@ fields:
   summary:
     label: Chapeau
     type: simplemde
+  tags:
+    label: Tags
+    type: tags
+    lower: true
   text:
     label: Texte
     type: simplemde

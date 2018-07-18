@@ -1,5 +1,21 @@
 <?php snippet('header') ?>
 
+<div id="previous-page">
+  <?php if($page->hasPrev('surname', 'asc')): ?>
+  <a class="prev caption-title" href="<?php echo $page->prev('surname', 'asc')->url() ?>">
+    <svg viewBox="0 0 100 100"><path d="M74.3 99.3L25 50 74.3.7l.7.8L26.5 50 75 98.5z" class="arrow"></path></svg>
+  </a>
+  <?php endif ?>
+</div>
+
+<div id="next-page">
+  <?php if($page->hasNext('surname', 'asc')): ?>
+  <a class="next caption-title" href="<?php echo $page->next('surname', 'asc')->url() ?>">
+    <svg viewBox="0 0 100 100"><path d="M74.3 99.3L25 50 74.3.7l.7.8L26.5 50 75 98.5z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+  </a>
+  <?php endif ?>
+</div>
+
 <div id="page-header" class="row contained">
 	<h1 class="title tac"><?= $page->title()->html() ?></h1>
 	<?php if ($page->summary()->isNotEmpty()): ?>

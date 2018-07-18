@@ -29,7 +29,7 @@ return function ($site, $pages, $page) {
 
 		case 'tag':
 
-			$allArticles = site()->index()->filterBy('intendedTemplate', 'article')->visible()->sortBy('date', 'desc')->filterBy('featured', '!=', '');
+			$allArticles = site()->index()->filterBy('intendedTemplate', 'in', ['article', 'exhibition'])->visible()->sortBy('date', 'desc')->filterBy('featured', '!=', '');
 
 			if ($tag = param('tag')) {
 				$allArticles = $allArticles->filterBy('tags', $tag, ',');

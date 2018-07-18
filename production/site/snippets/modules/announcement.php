@@ -25,7 +25,7 @@
 			<?php if ($data->get('link')->isNotEmpty()): ?>
 				</a>
 			<?php endif ?>
-			<?php if ($data->get('link')->isNotEmpty()): ?>
+			<?php if (false && $data->get('link')->isNotEmpty()): ?>
 				<?= displayTags($data->get('tags'), true) ?>
 			<?php else: ?>
 				<?= displayTags($data->get('tags')) ?>

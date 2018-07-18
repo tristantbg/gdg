@@ -2,21 +2,24 @@
 
 <?php snippet('tag-template/template-none') ?>
 
-<div id="page-text" class="row contained small">
+<div id="page-text" class="row contained small mt4">
 
   <?php if($user = $site->user()): ?>
 
     <div class="row four-columns">
 
-      <?php foreach ($page->files() as $key => $file): ?>
-        <a href="<?= $file->url() ?>" class="file-link" target="_blank" download>
+      <?php foreach ($page->downloadFiles()->split(',') as $key => $f): ?>
+        <?php $file = $page->file($f) ?>
+        <a href="<?= $file->url() ?>" class="file-link" target="_blank" <?= e($file->type() != 'document', 'download') ?>>
           <?php if ($file->type() == 'image'): ?>
             <img class="lazy lazyload" data-src="<?= $file->width(500)->url() ?>" width="100%">
+          <?php elseif ($file->altimage()->isNotEmpty() && $file->altimage()->toFile()): ?>
+            <img class="lazy lazyload" data-src="<?= $file->altimage()->toFile()->width(500)->url() ?>" width="100%">
           <?php else: ?>
-            <?php snippet('image-placeholder', array('text' => substr($file->caption(), 0, 1))) ?>
+            <?php //snippet('image-placeholder', array('text' => substr($file->caption(), 0, 1))) ?>
           <?php endif ?>
           <div class="artpiece-infos small mt1 c12" md="c12 co0">
-            <?= $file->caption()->or($file->filename()) ?>
+            <?= $file->caption() ?>
           </div>
         </a>
       <?php endforeach ?>
