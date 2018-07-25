@@ -12,7 +12,8 @@
 				<div class="lead serif"><?= $exhibition->subtitle()->html() ?></div>
 				<?php endif ?>
 				<div class="lead serif"><?= $exhibition->formattedDate() ?></div>
-			</a>
-		<?php endforeach ?>
+        <?= displayTags($exhibition->tags(), true) ?>
+      </a>
+    <?php endforeach ?>
 	</section>
 <?php endif ?>

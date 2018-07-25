@@ -59,14 +59,23 @@ page::$methods['displayTags'] = function($page) {
     $html = '';
 
     if(count($tags) > 0) {
-
+      $html = new Brick('div');
+      $html->attr('class', 'tags');
       foreach ($tags as $key => $t) {
-        $html .= '<a href="'.page('index')->url().'/by:tag/tag:'.$t.'" class="tag">'.html($t).'</a>';
+        $tag = new Brick('a');
+        $tag->attr('href', page('index')->url().'/by:tag/tag:'.$t);
+        $tag->attr('class', 'tag');
+        $tag->append($t);
+        $html->append($tag);
       }
 
     }
 
-    return '<div class="tags">'.$html.'</div>';
+    if ($html != '') {
+      return $html;
+    } else {
+      return '';
+    }
 };
 
 
