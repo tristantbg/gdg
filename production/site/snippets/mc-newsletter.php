@@ -1,5 +1,6 @@
+<?php if ($site->mailchimp()->isNotEmpty()): ?>
 <div id="mc_embed_signup">
-	<form action="https://galeriedesgaleries.us18.list-manage.com/subscribe/post?u=eb7b34683fcb919ed54a51cd1&amp;id=28ac524572" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate arrow-form" target="_blank" novalidate>
+	<form action="<?= $site->mailchimp() ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate arrow-form" target="_blank" novalidate>
 	<div id="mc_embed_signup_scroll">
 
 	<div class="mc-field-group">
@@ -23,3 +24,5 @@
 	</div>
 	</form>
 </div>
+<?php endif ?>
+<?php // https://galeriedesgaleries.us18.list-manage.com/subscribe/post?u=eb7b34683fcb919ed54a51cd1&amp;id=7da157c35e ?>

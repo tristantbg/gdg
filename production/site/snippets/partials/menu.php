@@ -7,7 +7,9 @@
 		<?php endforeach ?>
 		<div class="mt2 bold x xdc">
 			<a href="<?= page('a-propos')->url().'/#press' ?>"><?= l::get('press.area') ?></a>
-			<a href="https://galeriedesgaleries.us18.list-manage.com/subscribe/post?u=eb7b34683fcb919ed54a51cd1&id=28ac524572"><?= l::get('newsletter') ?></a>
+			<?php if ($site->mailchimp()->isNotEmpty()): ?>
+			<a href="<?= $site->mailchimp() ?>"><?= l::get('newsletter') ?></a>
+			<?php endif ?>
 			<div>
 				<a href="<?= $page->url('fr') ?>"><?= l::get('language.fr') ?></a> / <a href="<?= $page->url('en') ?>"><?= l::get('language.en') ?></a>
 			</div>

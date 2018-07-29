@@ -93,6 +93,9 @@ fields:
   footer2:
     label: Footer Colonne 2
     type: simplemde
+  mailchimp:
+    label: Mailchimp
+    type: url
   pressPage:
     label: Page presse
     type: quickselect
