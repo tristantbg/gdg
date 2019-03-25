@@ -23,8 +23,8 @@ return function ($site, $pages, $page) {
 		'indexPage' => page('index'),
 		'medias' => $medias,
 		'featuredPage' => $index->findBy('autoid', $page->featuredPage()->value()),
-    	'featuredPage2' => $index->findBy('autoid', $page->featuredPage2()->value()),
-    	'artpieces' => $artpieces->shuffle()->limit(30)
+  	'featuredPage2' => $index->findBy('autoid', $page->featuredPage2()->value()),
+  	'artpieces' => $artpieces->shuffle()->limit(30)
 	);
 }
 

@@ -10,6 +10,7 @@
 		<?php foreach ($relatedPages as $key => $relatedPage): ?>
 		<div class="relatedpage inline-item">
 			<?php e($relatedPage->link()->isNotEmpty(), '<a href="'.$relatedPage->link().'">') ?>
+      <?php e($relatedPage->url(), '<a href="'.$relatedPage->url().'">') ?>
 			<?php if ($count == 1): ?>
 				<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 665/498)) ?>
 			<?php elseif ($count == 2): ?>
@@ -18,6 +19,7 @@
 				<?php snippet('responsive-image', array('field' => $relatedPage->featured(), 'ratio' => 1/1, 'maxWidth' => 1000)) ?>
 			<?php endif ?>
 			<?php e($relatedPage->link()->isNotEmpty(), '</a>') ?>
+      <?php e($relatedPage->url(), '</a>') ?>
 			<div class="item-infos">
 				<?php e($relatedPage->link()->isNotEmpty(), '<a href="'.$relatedPage->link().'">') ?>
 					<div class="<?php e($count < 3, 'caption-title serif', 'lead') ?> bold mt1">

@@ -1,9 +1,11 @@
 <section class="header-template home-template desktop template-b">
 	<div class="template-component images-1_2">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink1()->isNotEmpty(), $page->templateImageLink1(), $featuredPage->url()) ?>">
 		<div class="image-1">
 			<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage1'), 'ratio' => 1/1)) ?>
 		</div>
+    </a>
+    <a href="<?= e($page->templateImageLink2()->isNotEmpty(), $page->templateImageLink2(), $featuredPage->url()) ?>">
 		<div class="image-2">
 			<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage2'), 'ratio' => 1/1)) ?>
 		</div>
@@ -19,7 +21,7 @@
     <?php snippet('template-videoplayer', array('field' => $page->templateVideo1())) ?>
   </div>
   <div class="template-component image-3">
-    <a href="<?= $featuredPage->url() ?>">
+    <a href="<?= e($page->templateImageLink3()->isNotEmpty(), $page->templateImageLink3(), $featuredPage->url()) ?>">
     <?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage3'), 'ratio' => 322/509)) ?>
     </a>
   </div>
@@ -33,12 +35,12 @@
 		</a>
 	</div>
 	<div class="template-component image-4">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink4()->isNotEmpty(), $page->templateImageLink4(), $featuredPage->url()) ?>">
 		<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage4'), 'ratio' => 1/1)) ?>
 		</a>
 	</div>
 	<div class="template-component image-5">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink5()->isNotEmpty(), $page->templateImageLink5(), $featuredPage->url()) ?>">
 		<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage5'), 'ratio' => 358/269)) ?>
 		</a>
 	</div>

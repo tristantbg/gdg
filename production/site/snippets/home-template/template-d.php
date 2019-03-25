@@ -1,6 +1,6 @@
 <section class="header-template home-template template-d">
 	<div class="template-component image-1">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink1()->isNotEmpty(), $page->templateImageLink1(), $featuredPage->url()) ?>">
 		<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage1'), 'ratio' => 435/649, 'withCaption' => true)) ?>
 		</a>
 	</div>
@@ -17,18 +17,18 @@
 		<?php endif ?> -->
   	</div>
 	<div class="template-component image-2">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink2()->isNotEmpty(), $page->templateImageLink2(), $featuredPage->url()) ?>">
 		<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage2'), 'ratio' => 628/471, 'withCaption' => true)) ?>
 		</a>
 	</div>
 	<div class="template-component image-3">
-		<a href="<?= $featuredPage->url() ?>">
+		<a href="<?= e($page->templateImageLink3()->isNotEmpty(), $page->templateImageLink3(), $featuredPage->url()) ?>">
 		<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage3'), 'ratio' => 781/505, 'withCaption' => true)) ?>
 		</a>
 	</div>
 	<?php if ($page->content('fr')->get('templateImage4')->isNotEmpty()): ?>
 		<div class="template-component image-4">
-			<a href="<?= $featuredPage->url() ?>">
+			<a href="<?= e($page->templateImageLink4()->isNotEmpty(), $page->templateImageLink4(), $featuredPage->url()) ?>">
 				<?php snippet('responsive-image', array('field' => $page->content('fr')->get('templateImage4'), 'ratio' => 359/282, 'withCaption' => true)) ?>
 			</a>
 		</div>

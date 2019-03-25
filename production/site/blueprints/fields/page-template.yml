@@ -24,6 +24,14 @@ fields:
     label: Image 2
     type: hero
     width: 1/2
+  templateImageLink1:
+    label: Image Link 1
+    type: url
+    width: 1/2
+  templateImageLink2:
+    label: Image Link 2
+    type: url
+    width: 1/2
   templateImage3:
     label: Image 3
     type: hero
@@ -32,6 +40,14 @@ fields:
     label: Image 4
     type: hero
     help: Remplace le “Visuel d'Expo”
+    width: 1/2
+  templateImageLink3:
+    label: Image Link 3
+    type: url
+    width: 1/2
+  templateImageLink4:
+    label: Image Link 4
+    type: url
     width: 1/2
   templateSlider1:
     label: Slider 1
