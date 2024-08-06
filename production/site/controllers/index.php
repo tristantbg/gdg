@@ -38,7 +38,7 @@ return function ($site, $pages, $page) {
 			$data = array(
 				'by' => $by,
 				'articles' => $allArticles->paginate(24),
-				'tag' => $tag
+				'tag' => esc($tag)
 			);
 
 			break;
